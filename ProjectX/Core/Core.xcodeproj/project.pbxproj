@@ -13,6 +13,8 @@
 		50A4D8F725BE1E02006E7D1F /* ConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D8F425BE1E02006E7D1F /* ConfigType.swift */; };
 		50A4D8F825BE1E02006E7D1F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D8F525BE1E02006E7D1F /* Environment.swift */; };
 		50A4D8F925BE1E02006E7D1F /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D8F625BE1E02006E7D1F /* AppConfig.swift */; };
+		50A4D91F25BE2483006E7D1F /* GraphQLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D91D25BE2483006E7D1F /* GraphQLClient.swift */; };
+		50A4D92025BE2483006E7D1F /* ApolloClient+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D91E25BE2483006E7D1F /* ApolloClient+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		50A4D8F425BE1E02006E7D1F /* ConfigType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigType.swift; sourceTree = "<group>"; };
 		50A4D8F525BE1E02006E7D1F /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		50A4D8F625BE1E02006E7D1F /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		50A4D91D25BE2483006E7D1F /* GraphQLClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLClient.swift; sourceTree = "<group>"; };
+		50A4D91E25BE2483006E7D1F /* ApolloClient+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApolloClient+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		50A4D8D825BD8412006E7D1F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				50A4D91725BE2451006E7D1F /* GraphQL */,
 				50A4D8F325BE1E02006E7D1F /* Configs */,
 				50A4D8D925BD8412006E7D1F /* Core.h */,
 				50A4D8DA25BD8412006E7D1F /* Info.plist */,
@@ -101,6 +106,55 @@
 				50A4D8F625BE1E02006E7D1F /* AppConfig.swift */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		50A4D91725BE2451006E7D1F /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				50A4D91C25BE2483006E7D1F /* Client */,
+				50A4D91825BE2459006E7D1F /* Operations */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		50A4D91825BE2459006E7D1F /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				50A4D91925BE245D006E7D1F /* Fragments */,
+				50A4D91B25BE2472006E7D1F /* Mutations */,
+				50A4D91A25BE246B006E7D1F /* Queries */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		50A4D91925BE245D006E7D1F /* Fragments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fragments;
+			sourceTree = "<group>";
+		};
+		50A4D91A25BE246B006E7D1F /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Queries;
+			sourceTree = "<group>";
+		};
+		50A4D91B25BE2472006E7D1F /* Mutations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mutations;
+			sourceTree = "<group>";
+		};
+		50A4D91C25BE2483006E7D1F /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				50A4D91D25BE2483006E7D1F /* GraphQLClient.swift */,
+				50A4D91E25BE2483006E7D1F /* ApolloClient+Rx.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A4D91F25BE2483006E7D1F /* GraphQLClient.swift in Sources */,
 				50A4D8F925BE1E02006E7D1F /* AppConfig.swift in Sources */,
+				50A4D92025BE2483006E7D1F /* ApolloClient+Rx.swift in Sources */,
 				50A4D8F725BE1E02006E7D1F /* ConfigType.swift in Sources */,
 				50A4D8F825BE1E02006E7D1F /* Environment.swift in Sources */,
 			);
