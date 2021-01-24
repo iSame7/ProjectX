@@ -9,6 +9,7 @@
 import Foundation
 import Apollo
 import RxSwift
+import Utils
 
 public class GraphQLClient: GraphQLClientProtocol {
     
@@ -23,8 +24,7 @@ public class GraphQLClient: GraphQLClientProtocol {
         
         let urlSessionConfiguration = URLSessionConfiguration.default
         urlSessionConfiguration.httpAdditionalHeaders = [
-            "Authorization": "Bearer \(CoreConfiguration.sharedInstance.sessionToken ?? "")",
-            "User-Agent": CoreConfiguration.sharedInstance.UserAgent,
+            "Authorization": "Bearer \("TOKEN")",
             "Accept-Language": acceptLanguage
         ]
         

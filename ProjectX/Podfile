@@ -1,15 +1,32 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+workspace 'ProjectX.xcworkspace'
+
+def shared_core_pods
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
+  pod 'Apollo', '~> 0.27.0'
+end
+
+target 'Core' do
+  project 'Core/Core'
+  shared_core_pods
+  target 'CoreTests' do
+  end
+end
+
 target 'ProjectX' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for ProjectX
-
+  shared_core_pods
+  
   target 'ProjectXTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
 end
+
