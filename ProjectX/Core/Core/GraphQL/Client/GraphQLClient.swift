@@ -14,7 +14,7 @@ import Utils
 public class GraphQLClient: GraphQLClientProtocol {
     
     private lazy var client: ApolloClient = {
-        let serverUrl = URL(staticString: Config.graphQLBaseURL)
+        let serverUrl = URL(staticString: Config.baseURL)
         
         // Accept-Language HTTP Header; see https://tools.ietf.org/html/rfc7231#section-5.3.5
         let acceptLanguage = Locale.preferredLanguages.prefix(6).enumerated().map { index, languageCode in

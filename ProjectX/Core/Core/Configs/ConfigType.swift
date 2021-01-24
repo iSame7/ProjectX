@@ -8,7 +8,6 @@
 
 public protocol CoreConfigurable {
     static var baseURL: String { get }
-    static var grahQLBaseURL: String { get }
 }
 
 /// Use this method to inject the configuration for this framework.
@@ -29,10 +28,8 @@ final class ConfigType {
     static fileprivate var shared: ConfigType?
     
     let baseURL: String
-    let graphQLBaseURL: String
     
     fileprivate init(_ config: CoreConfigurable.Type) {
         self.baseURL = config.baseURL
-        self.graphQLBaseURL = config.grahQLBaseURL
     }
 }
