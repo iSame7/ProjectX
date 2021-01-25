@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "group:Utils/Utils.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Core/Core.xcodeproj">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "Common">
+      <FileRef
+         location = "group:Utils/Utils.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Core/Core.xcodeproj">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:ProjectX.xcodeproj">
    </FileRef>

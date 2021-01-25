@@ -12,6 +12,7 @@ import Core
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var sceneDelegateViewModel: SceneDelegateViewModellable!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -25,6 +26,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.makeKeyAndVisible()
             
             Core.setup(with: AppConfig.self)
+        }
+    }
+    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        sceneDelegateViewModel.scene(continue: userActivity)
+    }
+
+    // Support url scheme for testing deeplinks with: "xcrun simctl openurl booted" command on simulators.
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        let urlConext = URLContexts.first
+        if let url = urlConext?.url {
+            sceneDelegateViewModel.scene(continue: url)
         }
     }
 }

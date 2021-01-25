@@ -17,6 +17,10 @@
 		50A4D92025BE2483006E7D1F /* ApolloClient+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D91E25BE2483006E7D1F /* ApolloClient+Rx.swift */; };
 		50A4D95F25BE293C006E7D1F /* GraphQLClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D95E25BE293C006E7D1F /* GraphQLClientProtocol.swift */; };
 		50A4D99025BE2A67006E7D1F /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A4D98F25BE2A67006E7D1F /* Utils.framework */; platformFilter = ios; };
+		50A4D99F25BEB6C0006E7D1F /* UniversalLinkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D99C25BEB6BF006E7D1F /* UniversalLinkRoute.swift */; };
+		50A4D9A025BEB6C0006E7D1F /* UniversalLinkRouted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D99D25BEB6BF006E7D1F /* UniversalLinkRouted.swift */; };
+		50A4D9A125BEB6C0006E7D1F /* UniversalLinksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D99E25BEB6C0006E7D1F /* UniversalLinksRouter.swift */; };
+		50A4D9AD25BEC16F006E7D1F /* ViewModellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D9AC25BEC16F006E7D1F /* ViewModellable.swift */; };
 		C0E84C197D79A1F923F6101E /* libPods-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D1F42D4314C9D46F855043 /* libPods-Core.a */; };
 		D93AF14FDF3F9792A16CCE7C /* libPods-Core-CoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9BB368CC695C2D1FC7E68A3 /* libPods-Core-CoreTests.a */; };
 /* End PBXBuildFile section */
@@ -47,6 +51,10 @@
 		50A4D91E25BE2483006E7D1F /* ApolloClient+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApolloClient+Rx.swift"; sourceTree = "<group>"; };
 		50A4D95E25BE293C006E7D1F /* GraphQLClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLClientProtocol.swift; sourceTree = "<group>"; };
 		50A4D98F25BE2A67006E7D1F /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50A4D99C25BEB6BF006E7D1F /* UniversalLinkRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalLinkRoute.swift; sourceTree = "<group>"; };
+		50A4D99D25BEB6BF006E7D1F /* UniversalLinkRouted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalLinkRouted.swift; sourceTree = "<group>"; };
+		50A4D99E25BEB6C0006E7D1F /* UniversalLinksRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalLinksRouter.swift; sourceTree = "<group>"; };
+		50A4D9AC25BEC16F006E7D1F /* ViewModellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModellable.swift; sourceTree = "<group>"; };
 		5A613B0387870021A491822B /* Pods-Core-CoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core-CoreTests.release.xcconfig"; path = "Target Support Files/Pods-Core-CoreTests/Pods-Core-CoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		95D1F42D4314C9D46F855043 /* libPods-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9BB368CC695C2D1FC7E68A3 /* libPods-Core-CoreTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Core-CoreTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +106,8 @@
 		50A4D8D825BD8412006E7D1F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				50A4D9AB25BEC164006E7D1F /* Protocols */,
+				50A4D99B25BEB6B1006E7D1F /* UniversalLinks */,
 				50A4D91725BE2451006E7D1F /* GraphQL */,
 				50A4D8F325BE1E02006E7D1F /* Configs */,
 				50A4D8D925BD8412006E7D1F /* Core.h */,
@@ -179,6 +189,24 @@
 			isa = PBXGroup;
 			children = (
 				50A4D95E25BE293C006E7D1F /* GraphQLClientProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		50A4D99B25BEB6B1006E7D1F /* UniversalLinks */ = {
+			isa = PBXGroup;
+			children = (
+				50A4D99C25BEB6BF006E7D1F /* UniversalLinkRoute.swift */,
+				50A4D99D25BEB6BF006E7D1F /* UniversalLinkRouted.swift */,
+				50A4D99E25BEB6C0006E7D1F /* UniversalLinksRouter.swift */,
+			);
+			path = UniversalLinks;
+			sourceTree = "<group>";
+		};
+		50A4D9AB25BEC164006E7D1F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				50A4D9AC25BEC16F006E7D1F /* ViewModellable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -365,8 +393,12 @@
 				50A4D91F25BE2483006E7D1F /* GraphQLClient.swift in Sources */,
 				50A4D8F925BE1E02006E7D1F /* AppConfig.swift in Sources */,
 				50A4D92025BE2483006E7D1F /* ApolloClient+Rx.swift in Sources */,
+				50A4D99F25BEB6C0006E7D1F /* UniversalLinkRoute.swift in Sources */,
 				50A4D8F725BE1E02006E7D1F /* ConfigType.swift in Sources */,
 				50A4D95F25BE293C006E7D1F /* GraphQLClientProtocol.swift in Sources */,
+				50A4D9A025BEB6C0006E7D1F /* UniversalLinkRouted.swift in Sources */,
+				50A4D9AD25BEC16F006E7D1F /* ViewModellable.swift in Sources */,
+				50A4D9A125BEB6C0006E7D1F /* UniversalLinksRouter.swift in Sources */,
 				50A4D8F825BE1E02006E7D1F /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

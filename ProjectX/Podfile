@@ -9,7 +9,7 @@ def shared_core_pods
   pod 'Apollo', '~> 0.27.0'
 end
 
-target 'Core' do
+target 'Common/Core' do
   project 'Core/Core'
   shared_core_pods
   target 'CoreTests' do
