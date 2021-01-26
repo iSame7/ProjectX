@@ -9,6 +9,7 @@
 import Utils
 import UIKit
 
+/// A module is Generic type that wraps a coordinator
 public struct Module<T> {
     public let coordinator: BaseCoordinator<T>
     
@@ -33,16 +34,16 @@ extension ModuleBuildable {
     public func buildModule<T>(with window: UIWindow) -> Module<T>? {
         return nil
     }
+        
+    public func buildModule<T>(with window: UIWindow, context: Any) -> Module<T>? {
+        return nil
+    }
     
     public func buildModule<T>(with rootViewController: NavigationControllable) -> Module<T>? {
         return nil
     }
     
     public func buildModule<T>(with rootViewController: NavigationControllable, context: Any) -> Module<T>? {
-        return nil
-    }
-    
-    public func buildModule<T>(with window: UIWindow, context: Any) -> Module<T>? {
         return nil
     }
 }
