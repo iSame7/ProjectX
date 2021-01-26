@@ -26,6 +26,13 @@ target 'Core' do
   end
 end
 
+target 'ABExperiment' do
+  project 'Common/ABExperiment/ABExperiment'
+  shared_core_pods
+  target 'ABExperimentTests' do
+  end
+end
+
 target 'DesignSystem' do
   project 'Common/DesignSystem/DesignSystem'
   shared_core_pods

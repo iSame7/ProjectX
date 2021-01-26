@@ -1,0 +1,6 @@
+framework module Pods_ABExperiment_ABExperimentTests {
+  umbrella header "Pods-ABExperiment-ABExperimentTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
