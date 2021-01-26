@@ -1,6 +1,0 @@
-module Apollo {
-  umbrella header "Apollo-library-umbrella.h"
-
-  export *
-  module * { export * }
-}

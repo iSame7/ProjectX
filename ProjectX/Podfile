@@ -1,18 +1,60 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+
+platform :ios, '11.0'
+
+inhibit_all_warnings!
+use_frameworks!
 
 workspace 'ProjectX.xcworkspace'
+
+def shared_UI_pods
+  pod 'SkeletonView'
+  pod 'Nuke'
+end
 
 def shared_core_pods
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'Apollo', '~> 0.27.0'
+  pod 'SwiftDate'
 end
 
-target 'Common/Core' do
-  project 'Core/Core'
+target 'Core' do
+  project 'Common/Core/Core'
   shared_core_pods
   target 'CoreTests' do
+  end
+end
+
+target 'DesignSystem' do
+  project 'Common/DesignSystem/DesignSystem'
+  shared_core_pods
+  shared_UI_pods
+  target 'DesignSystemTests' do
+  end
+end
+
+target 'ShiftOverview' do
+  project 'Features/ShiftOverview/ShiftOverview'
+  shared_core_pods
+  shared_UI_pods
+  target 'ShiftOverviewTests' do
+  end
+end
+
+target 'Filters' do
+  project 'Features/Filters/Filters'
+  shared_core_pods
+  target 'FiltersTests' do
+  end
+end
+
+target 'Location' do
+  project 'Features/Location/Location'
+  shared_core_pods
+  shared_UI_pods
+  pod 'MapboxGeocoder.swift', '~> 0.13'
+  target 'LocationTests' do
   end
 end
 

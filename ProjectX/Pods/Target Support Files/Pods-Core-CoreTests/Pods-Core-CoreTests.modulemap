@@ -1,4 +1,4 @@
-module Pods_Core_CoreTests {
+framework module Pods_Core_CoreTests {
   umbrella header "Pods-Core-CoreTests-umbrella.h"
 
   export *

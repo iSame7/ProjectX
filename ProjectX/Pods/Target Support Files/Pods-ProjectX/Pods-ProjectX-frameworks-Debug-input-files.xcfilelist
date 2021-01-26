@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-ProjectX/Pods-ProjectX-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Apollo-framework/Apollo.framework
-${BUILT_PRODUCTS_DIR}/RxCocoa-framework/RxCocoa.framework
-${BUILT_PRODUCTS_DIR}/RxRelay-framework/RxRelay.framework
-${BUILT_PRODUCTS_DIR}/RxSwift-framework/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework
+${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
+${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework
