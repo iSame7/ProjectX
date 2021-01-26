@@ -23,6 +23,9 @@
    <Group
       location = "container:Features"
       name = "Features">
+      <FileRef
+         location = "group:Map/Map.xcodeproj">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:ProjectX.xcodeproj">
