@@ -19,6 +19,7 @@ def shared_core_pods
   pod 'SwiftDate'
 end
 
+# Common modules
 target 'Core' do
   project 'Common/Core/Core'
   shared_core_pods
@@ -41,30 +42,9 @@ target 'DesignSystem' do
   end
 end
 
-target 'ShiftOverview' do
-  project 'Features/ShiftOverview/ShiftOverview'
-  shared_core_pods
-  shared_UI_pods
-  target 'ShiftOverviewTests' do
-  end
-end
+# Feature modules
 
-target 'Filters' do
-  project 'Features/Filters/Filters'
-  shared_core_pods
-  target 'FiltersTests' do
-  end
-end
-
-target 'Location' do
-  project 'Features/Location/Location'
-  shared_core_pods
-  shared_UI_pods
-  pod 'MapboxGeocoder.swift', '~> 0.13'
-  target 'LocationTests' do
-  end
-end
-
+# Apps
 target 'ProjectX' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!

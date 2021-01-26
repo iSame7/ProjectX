@@ -23,15 +23,6 @@
    <Group
       location = "container:Features"
       name = "Features">
-      <FileRef
-         location = "group:Location/Location.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Filters/Filters.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:ShiftOverview/ShiftOverview.xcodeproj">
-      </FileRef>
    </Group>
    <FileRef
       location = "group:ProjectX.xcodeproj">
