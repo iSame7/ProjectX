@@ -5,6 +5,9 @@
       location = "container:Common"
       name = "Common">
       <FileRef
+         location = "group:Analytics/Analytics.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:ABExperiment/ABExperiment.xcodeproj">
       </FileRef>
       <FileRef
