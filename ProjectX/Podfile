@@ -17,6 +17,7 @@ def shared_core_pods
   pod 'RxCocoa', '~> 5'
   pod 'Apollo', '~> 0.27.0'
   pod 'SwiftDate'
+  pod 'CocoaLumberjack/Swift'
 end
 
 # Common modules
@@ -40,6 +41,11 @@ target 'DesignSystem' do
   shared_UI_pods
   target 'DesignSystemTests' do
   end
+end
+
+target 'Utils' do
+  project 'Common/Utils/Utils'
+  shared_core_pods
 end
 
 # Feature modules
