@@ -9,9 +9,16 @@
 import UIKit
 import Core
 import DesignSystem
+import MapKit
 
 class MapViewController: ViewController<MapViewModel> {
 
+    // MARK: - Properties
+    
+    lazy var mapView: MKMapView {
+        
+    }
+        
     // MARK: - Lifecycle
 
 	override func viewDidLoad() {
