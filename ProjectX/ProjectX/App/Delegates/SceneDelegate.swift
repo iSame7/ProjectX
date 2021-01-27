@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var sceneDelegateViewModel: SceneDelegateViewModellable!
-    private var appRootCoordinator: AppRootCoordinator!
+    private var rootBuilder = RootBuilder()
     private let disposeBag = DisposeBag()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -28,7 +28,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
             
-            appRootCoordinator = AppRootCoordinator(window: window)
+            guard let appRootCoordinator: BaseCoordinator<Void> = rootBuilder.buildModule(with: window)?.coordinator else {
+                preconditionFailure("[SceneDelegate] Cannot get appRootCoordinator from module builder")
+            }
+            
             appRootCoordinator.start()
                 .subscribe()
                 .disposed(by: disposeBag)

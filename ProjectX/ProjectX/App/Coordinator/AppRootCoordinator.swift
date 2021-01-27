@@ -15,14 +15,16 @@ import Utils
 class AppRootCoordinator: BaseCoordinator<Void> {
     
     private let window: UIWindow
-
-    init(window: UIWindow) {
+    private let mapModuleBuilder: MapModuleBuildable
+    
+    init(window: UIWindow, mapModuleBuilder: MapModuleBuildable) {
         self.window = window
+        self.mapModuleBuilder = mapModuleBuilder
     }
     
     override func start() -> Observable<Void> {
-        guard let mapCoordinator: BaseCoordinator<Void> = MapModuleBuilder(container: DependencyManager.shared).buildModule(with: window)?.coordinator else {
-            preconditionFailure("[AppCoordinator] Cannot get ClientLocationSelectorModuleBuilder from module builder")
+        guard let mapCoordinator: BaseCoordinator<Void> = mapModuleBuilder.buildModule(with: window)?.coordinator else {
+            preconditionFailure("[AppCoordinator] Cannot get mapCoordinator from module builder")
         }
         
         _ = coordinate(to: mapCoordinator)

@@ -10,15 +10,12 @@ import UIKit
 import Utils
 import Core
 
-protocol MapModuleBuildable: ModuleBuildable {}
+/// Provides all dependencies to build the MapModuleBuilder
+private final class MapDependencyProvider: DependencyProvider<EmptyDependency> {}
 
-public class MapModuleBuilder: MapModuleBuildable {
-    
-    private let container: DependencyManager
-    
-    public init(container: DependencyManager) {
-        self.container = container
-    }
+public protocol MapModuleBuildable: ModuleBuildable {}
+
+public class MapModuleBuilder: Builder<EmptyDependency>, MapModuleBuildable {
     
     public func buildModule<T>(with window: UIWindow) -> Module<T>? {
         registerService()

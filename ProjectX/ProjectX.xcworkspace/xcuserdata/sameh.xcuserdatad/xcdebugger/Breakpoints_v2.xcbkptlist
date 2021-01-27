@@ -14,8 +14,8 @@
             filePath = "ProjectX/App/Coordinator/AppRootCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "start()"
             landmarkType = "7">
          </BreakpointContent>

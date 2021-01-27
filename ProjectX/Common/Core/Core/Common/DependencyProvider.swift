@@ -6,18 +6,20 @@
 //
 
 /// Provides dependencies to a `Builder`'s build method.
-class DependencyProvider<DependencyType> {
-    let dependency: DependencyType
+open class DependencyProvider<DependencyType> {
+    
+    // `dependency` variable represents a parent dependency
+    let dependency: DependencyType //
 
-    init(dependency: DependencyType) {
+    public init(dependency: DependencyType) {
         self.dependency = dependency
     }
 }
 
-// MARK: - Empty Dependency Support
+// MARK: - Empty Dependency Support if no parent dependencies are needed
 private final class EmptyDependencyImpl: EmptyDependency {}
 
-extension DependencyProvider where DependencyType == EmptyDependency {
+public extension DependencyProvider where DependencyType == EmptyDependency {
     convenience init() {
         self.init(dependency: EmptyDependencyImpl())
     }
