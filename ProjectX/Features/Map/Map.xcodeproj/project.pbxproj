@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0227C279300A7DD9584F12AB /* Pods_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE66E98F3E454B2929D435C2 /* Pods_Map.framework */; };
+		0227C279300A7DD9584F12AB /* Pods_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE66E98F3E454B2929D435C2 /* Pods_Map.framework */; platformFilter = ios; };
 		50A4E0DE25C0D559006E7D1F /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A4E0D425C0D559006E7D1F /* Map.framework */; };
 		50A4E0E325C0D559006E7D1F /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4E0E225C0D559006E7D1F /* MapTests.swift */; };
 		50A4E0E525C0D559006E7D1F /* Map.h in Headers */ = {isa = PBXBuildFile; fileRef = 50A4E0D725C0D559006E7D1F /* Map.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -17,6 +17,7 @@
 		50CA3C1425C0D71700CABE97 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C0E25C0D71700CABE97 /* MapViewController.swift */; };
 		50CA3C1525C0D71700CABE97 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C0F25C0D71700CABE97 /* MapViewModel.swift */; };
 		50CA3C1625C0D71700CABE97 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C1025C0D71700CABE97 /* MapService.swift */; };
+		50CA3C3C25C1676800CABE97 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3C3B25C1676800CABE97 /* DesignSystem.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		50CA3C0E25C0D71700CABE97 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		50CA3C0F25C0D71700CABE97 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		50CA3C1025C0D71700CABE97 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
+		50CA3C3B25C1676800CABE97 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2B708C76AE0A127F941351 /* Pods-Map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Map.debug.xcconfig"; path = "Target Support Files/Pods-Map/Pods-Map.debug.xcconfig"; sourceTree = "<group>"; };
 		7A36A182E73AB2CCBE6734E4 /* Pods-Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Map.release.xcconfig"; path = "Target Support Files/Pods-Map/Pods-Map.release.xcconfig"; sourceTree = "<group>"; };
 		DE66E98F3E454B2929D435C2 /* Pods_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0227C279300A7DD9584F12AB /* Pods_Map.framework in Frameworks */,
+				50CA3C3C25C1676800CABE97 /* DesignSystem.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,14 +93,13 @@
 		50A4E0D625C0D559006E7D1F /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				50A4E0D725C0D559006E7D1F /* Map.h */,
-				50A4E0D825C0D559006E7D1F /* Info.plist */,
-				50CA3C0B25C0D71700CABE97 /* MapCoordinator.swift */,
-				50CA3C0C25C0D71700CABE97 /* MapModuleBuilder.swift */,
-				50CA3C0D25C0D71700CABE97 /* MapUseCase.swift */,
-				50CA3C0E25C0D71700CABE97 /* MapViewController.swift */,
-				50CA3C0F25C0D71700CABE97 /* MapViewModel.swift */,
-				50CA3C1025C0D71700CABE97 /* MapService.swift */,
+				50CA3C3225C1664900CABE97 /* Builder */,
+				50CA3C3525C1665C00CABE97 /* Coordinator */,
+				50CA3C3625C1666700CABE97 /* Service */,
+				50CA3C3725C1667300CABE97 /* UseCase */,
+				50CA3C3325C1664C00CABE97 /* View */,
+				50CA3C3425C1665400CABE97 /* ViewModel */,
+				50CA3C3825C1669400CABE97 /* Supporting Files */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -111,9 +113,67 @@
 			path = MapTests;
 			sourceTree = "<group>";
 		};
+		50CA3C3225C1664900CABE97 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				50CA3C0C25C0D71700CABE97 /* MapModuleBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		50CA3C3325C1664C00CABE97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50CA3C0E25C0D71700CABE97 /* MapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		50CA3C3425C1665400CABE97 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				50CA3C0F25C0D71700CABE97 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		50CA3C3525C1665C00CABE97 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				50CA3C0B25C0D71700CABE97 /* MapCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		50CA3C3625C1666700CABE97 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				50CA3C1025C0D71700CABE97 /* MapService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		50CA3C3725C1667300CABE97 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				50CA3C0D25C0D71700CABE97 /* MapUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		50CA3C3825C1669400CABE97 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50A4E0D725C0D559006E7D1F /* Map.h */,
+				50A4E0D825C0D559006E7D1F /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5DC4122B7D77DAE61807098C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50CA3C3B25C1676800CABE97 /* DesignSystem.framework */,
 				DE66E98F3E454B2929D435C2 /* Pods_Map.framework */,
 			);
 			name = Frameworks;
@@ -425,7 +485,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Map/Info.plist;
+				INFOPLIST_FILE = "Map/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,7 +512,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Map/Info.plist;
+				INFOPLIST_FILE = "Map/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
