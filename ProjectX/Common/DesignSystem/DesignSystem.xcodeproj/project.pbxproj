@@ -66,6 +66,7 @@
 		50CA3C2525C1646D00CABE97 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C2425C1646D00CABE97 /* MapView.swift */; };
 		50CA3C2925C164DC00CABE97 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C2825C164DC00CABE97 /* Map.swift */; };
 		50CA3C2D25C1655700CABE97 /* MapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C2C25C1655700CABE97 /* MapFactory.swift */; };
+		50CA3CC525C1735700CABE97 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3CC425C1735700CABE97 /* Core.framework */; platformFilter = ios; };
 		DCFEA5058749BE40DEFBE958 /* Pods_DesignSystem_DesignSystemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F5DD3B14B561909C19D1EB /* Pods_DesignSystem_DesignSystemTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +145,8 @@
 		50CA3C2425C1646D00CABE97 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		50CA3C2825C164DC00CABE97 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		50CA3C2C25C1655700CABE97 /* MapFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFactory.swift; sourceTree = "<group>"; };
+		50CA3C6425C1727D00CABE97 /* Nuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CA3CC425C1735700CABE97 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F5DD3B14B561909C19D1EB /* Pods_DesignSystem_DesignSystemTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignSystem_DesignSystemTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7595EA7A4F11CA55460F786 /* Pods-DesignSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignSystem.debug.xcconfig"; path = "Target Support Files/Pods-DesignSystem/Pods-DesignSystem.debug.xcconfig"; sourceTree = "<group>"; };
 		D16BE850D8BFD22685F10607 /* Pods-DesignSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignSystem.release.xcconfig"; path = "Target Support Files/Pods-DesignSystem/Pods-DesignSystem.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A4DD1F25BFA066006E7D1F /* Utils.framework in Frameworks */,
+				50CA3CC525C1735700CABE97 /* Core.framework in Frameworks */,
 				007E8781D02EB650D2D82779 /* Pods_DesignSystem.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +178,8 @@
 		46955AF9702D169D6B80304C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50CA3CC425C1735700CABE97 /* Core.framework */,
+				50CA3C6425C1727D00CABE97 /* Nuke.framework */,
 				50A4DD1E25BFA066006E7D1F /* Utils.framework */,
 				3C0FDEB9336984D1909B9D35 /* Pods_DesignSystem.framework */,
 				50F5DD3B14B561909C19D1EB /* Pods_DesignSystem_DesignSystemTests.framework */,
@@ -773,7 +779,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -831,7 +837,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

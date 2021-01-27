@@ -19,6 +19,7 @@
 		50A4DD1325BF9FB1006E7D1F /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4DD1225BF9FB1006E7D1F /* Localize.swift */; };
 		50A4DD1B25BFA03F006E7D1F /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4DD1A25BFA03F006E7D1F /* UIImage+Utils.swift */; };
 		50A4E0AD25C0D40E006E7D1F /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4E0AC25C0D40D006E7D1F /* Logging.swift */; };
+		50CA3C5925C16FC600CABE97 /* UIWindow+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C5825C16FC600CABE97 /* UIWindow+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		50A4DD1225BF9FB1006E7D1F /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		50A4DD1A25BFA03F006E7D1F /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		50A4E0AC25C0D40D006E7D1F /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		50CA3C5825C16FC600CABE97 /* UIWindow+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Utils.swift"; sourceTree = "<group>"; };
 		CF2E01A65EED1F44F3A7203D /* Pods-Utils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils.debug.xcconfig"; path = "Target Support Files/Pods-Utils/Pods-Utils.debug.xcconfig"; sourceTree = "<group>"; };
 		F4D3D79E796A8150A3253E8E /* Pods-Utils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils.release.xcconfig"; path = "Target Support Files/Pods-Utils/Pods-Utils.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +129,7 @@
 			children = (
 				50A4D98925BE2A45006E7D1F /* URL+Utils.swift */,
 				50A4DD1A25BFA03F006E7D1F /* UIImage+Utils.swift */,
+				50CA3C5825C16FC600CABE97 /* UIWindow+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				50A4DD0C25BF9F73006E7D1F /* Presentable.swift in Sources */,
 				50A4D98A25BE2A45006E7D1F /* URL+Utils.swift in Sources */,
 				50A4E0AD25C0D40E006E7D1F /* Logging.swift in Sources */,
+				50CA3C5925C16FC600CABE97 /* UIWindow+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,14 @@
 
 import UIKit
 import Core
+import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var sceneDelegateViewModel: SceneDelegateViewModellable!
+    private var appRootCoordinator: AppRootCoordinator!
+    private let disposeBag = DisposeBag()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -24,6 +27,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             self.window = window
             window.makeKeyAndVisible()
+            
+            appRootCoordinator = AppRootCoordinator(window: window)
+            appRootCoordinator.start()
+                .subscribe()
+                .disposed(by: disposeBag)
             
             Core.setup(with: AppConfig.self)
         }

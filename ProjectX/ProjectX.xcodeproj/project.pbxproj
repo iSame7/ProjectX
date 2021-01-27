@@ -22,7 +22,14 @@
 		50A4D91525BE23A6006E7D1F /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 50A4D91225BE23A6006E7D1F /* Production.xcconfig */; };
 		50A4D9A925BEC11E006E7D1F /* SceneDelegateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D9A825BEC11E006E7D1F /* SceneDelegateViewModel.swift */; };
 		50A4D9B125BEC1A5006E7D1F /* UniversalLinksRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D9B025BEC1A5006E7D1F /* UniversalLinksRoutes.swift */; };
-		EF2B690ABA6B39FAEF5852C3 /* Pods_ProjectX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66390B07404D223856A79FCA /* Pods_ProjectX.framework */; };
+		50CA3C4325C1699100CABE97 /* AppRootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C4225C1699100CABE97 /* AppRootCoordinator.swift */; };
+		50CA3C4925C16A9A00CABE97 /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3C4825C16A9A00CABE97 /* Map.framework */; };
+		50CA3C4A25C16A9A00CABE97 /* Map.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3C4825C16A9A00CABE97 /* Map.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50CA3C4C25C16A9D00CABE97 /* Pods_ProjectX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66390B07404D223856A79FCA /* Pods_ProjectX.framework */; };
+		50CA3C5D25C171DD00CABE97 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3C5C25C171DD00CABE97 /* DesignSystem.framework */; };
+		50CA3C5E25C171DD00CABE97 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3C5C25C171DD00CABE97 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50CA3C6125C171E700CABE97 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3C6025C171E700CABE97 /* Utils.framework */; };
+		50CA3C6225C171E700CABE97 /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3C6025C171E700CABE97 /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +49,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				50CA3C6225C171E700CABE97 /* Utils.framework in Embed Frameworks */,
+				50CA3C5E25C171DD00CABE97 /* DesignSystem.framework in Embed Frameworks */,
 				50A4D90725BE1FF9006E7D1F /* Core.framework in Embed Frameworks */,
+				50CA3C4A25C16A9A00CABE97 /* Map.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +82,10 @@
 		50A4D91225BE23A6006E7D1F /* Production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		50A4D9A825BEC11E006E7D1F /* SceneDelegateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateViewModel.swift; sourceTree = "<group>"; };
 		50A4D9B025BEC1A5006E7D1F /* UniversalLinksRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalLinksRoutes.swift; sourceTree = "<group>"; };
+		50CA3C4225C1699100CABE97 /* AppRootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootCoordinator.swift; sourceTree = "<group>"; };
+		50CA3C4825C16A9A00CABE97 /* Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CA3C5C25C171DD00CABE97 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CA3C6025C171E700CABE97 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66390B07404D223856A79FCA /* Pods_ProjectX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,7 +94,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF2B690ABA6B39FAEF5852C3 /* Pods_ProjectX.framework in Frameworks */,
+				50CA3C4C25C16A9D00CABE97 /* Pods_ProjectX.framework in Frameworks */,
+				50CA3C6125C171E700CABE97 /* Utils.framework in Frameworks */,
+				50CA3C5D25C171DD00CABE97 /* DesignSystem.framework in Frameworks */,
+				50CA3C4925C16A9A00CABE97 /* Map.framework in Frameworks */,
 				50A4D90625BE1FF9006E7D1F /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +116,9 @@
 		07DF6CB792607D67BD2BEB48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50CA3C6025C171E700CABE97 /* Utils.framework */,
+				50CA3C5C25C171DD00CABE97 /* DesignSystem.framework */,
+				50CA3C4825C16A9A00CABE97 /* Map.framework */,
 				50A4D90525BE1FF9006E7D1F /* Core.framework */,
 				66390B07404D223856A79FCA /* Pods_ProjectX.framework */,
 				343D945FF7B3D4F401983838 /* Pods_ProjectXTests.framework */,
@@ -150,6 +170,7 @@
 		50A4D8FC25BE1FC0006E7D1F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				50CA3C4125C1697A00CABE97 /* Coordinator */,
 				50A4D90E25BE2399006E7D1F /* Resources */,
 				50A4D8FE25BE1FCD006E7D1F /* Delegates */,
 				50A4D8FD25BE1FCA006E7D1F /* Config */,
@@ -192,6 +213,14 @@
 				50A4D91225BE23A6006E7D1F /* Production.xcconfig */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		50CA3C4125C1697A00CABE97 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				50CA3C4225C1699100CABE97 /* AppRootCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		CDB92D1D3E488E3E1687D528 /* Pods */ = {
@@ -380,6 +409,7 @@
 				50A4D9A925BEC11E006E7D1F /* SceneDelegateViewModel.swift in Sources */,
 				5065AB4623AFA5FA0011CE98 /* ViewController.swift in Sources */,
 				5065AB4223AFA5FA0011CE98 /* AppDelegate.swift in Sources */,
+				50CA3C4325C1699100CABE97 /* AppRootCoordinator.swift in Sources */,
 				50A4D9B125BEC1A5006E7D1F /* UniversalLinksRoutes.swift in Sources */,
 				50A4D90025BE1FE4006E7D1F /* AppConfig+Client.swift in Sources */,
 				5065AB4423AFA5FA0011CE98 /* SceneDelegate.swift in Sources */,

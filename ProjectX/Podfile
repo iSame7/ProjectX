@@ -9,7 +9,6 @@ workspace 'ProjectX.xcworkspace'
 
 def shared_UI_pods
   pod 'SkeletonView'
-  pod 'Nuke'
 end
 
 def shared_core_pods
@@ -61,7 +60,8 @@ target 'ProjectX' do
 
   # Pods for ProjectX
   shared_core_pods
-  
+  shared_UI_pods
+
   target 'ProjectXTests' do
     inherit! :search_paths
     # Pods for testing

@@ -12,7 +12,7 @@ import Core
 
 protocol MapModuleBuildable: ModuleBuildable {}
 
-class MapModuleBuilder: MapModuleBuildable {
+public class MapModuleBuilder: MapModuleBuildable {
     
     private let container: DependencyManager
     
@@ -20,12 +20,12 @@ class MapModuleBuilder: MapModuleBuildable {
         self.container = container
     }
     
-    func buildModule<T>(with rootViewController: NavigationControllable) -> Module<T>? {
+    public func buildModule<T>(with window: UIWindow) -> Module<T>? {
         registerService()
         registerUsecase()
         registerViewModel()
         registerView()
-        registerCoordinator(rootViewController: rootViewController)
+        registerCoordinator(with: window)
         
         guard let coordinator = container.resolve(MapCoordinator.self) else {
             return nil
@@ -74,13 +74,13 @@ private extension MapModuleBuilder {
         }
     }
     
-    func registerCoordinator(rootViewController: NavigationControllable? = nil) {
+    func registerCoordinator(with window: UIWindow) {
         container.register(MapCoordinator.self) { [weak self] in
             guard let viewController = self?.container.resolve(MapViewController.self) else {
                 return nil
             }
             
-            let coordinator = MapCoordinator(rootViewController: rootViewController, viewController: viewController)
+            let coordinator = MapCoordinator(window: window, viewController: viewController)
             return coordinator
         }
     }
