@@ -3,16 +3,16 @@
 //  Map
 //
 //  Created Sameh Mabrouk on 27/01/2021.
-//  Copyright © 2021 ___ORGANIZATIONNAME___. All rights reserved.
+//  Copyright © 2021 Sameh Mabrouk. All rights reserved.
 //
 
 import UIKit
-import Utils
+import Core
+import DesignSystem
 
-class MapViewController: UIViewController, ViewModelDependable {
+class MapViewController: ViewController<MapViewModel> {
 
-    typealias ViewModel = MapViewModellable
-	var viewModel: ViewModel!
+    // MARK: - Lifecycle
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +21,18 @@ class MapViewController: UIViewController, ViewModelDependable {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-}
+    
+    // MARK: - SetupUI
 
-// MARK: - setupUI
-
-extension MapViewController {
-
-    func setupUI() {}
-
-    func setupConstraints() {}
-
-    func setupObservers() {}
+    override func setupUI() {
+        
+    }
+    
+    override func setupConstraints() {
+        
+    }
+    
+    override func setupObservers() {
+        
+    }
 }

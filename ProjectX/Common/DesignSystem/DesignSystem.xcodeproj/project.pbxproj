@@ -62,6 +62,7 @@
 		50A4DD3825BFD851006E7D1F /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4DD3625BFD851006E7D1F /* ButtonFactory.swift */; };
 		50A4DD3925BFD851006E7D1F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4DD3725BFD851006E7D1F /* Button.swift */; };
 		50A4DD3D25BFD8BE006E7D1F /* UIActivityIndicatorView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4DD3C25BFD8BE006E7D1F /* UIActivityIndicatorView+Utils.swift */; };
+		50CA3C1F25C15F8D00CABE97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C1E25C15F8D00CABE97 /* ViewController.swift */; };
 		DCFEA5058749BE40DEFBE958 /* Pods_DesignSystem_DesignSystemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F5DD3B14B561909C19D1EB /* Pods_DesignSystem_DesignSystemTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +137,7 @@
 		50A4DD3625BFD851006E7D1F /* ButtonFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		50A4DD3725BFD851006E7D1F /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		50A4DD3C25BFD8BE006E7D1F /* UIActivityIndicatorView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Utils.swift"; sourceTree = "<group>"; };
+		50CA3C1E25C15F8D00CABE97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50F5DD3B14B561909C19D1EB /* Pods_DesignSystem_DesignSystemTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignSystem_DesignSystemTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7595EA7A4F11CA55460F786 /* Pods-DesignSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignSystem.debug.xcconfig"; path = "Target Support Files/Pods-DesignSystem/Pods-DesignSystem.debug.xcconfig"; sourceTree = "<group>"; };
 		D16BE850D8BFD22685F10607 /* Pods-DesignSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignSystem.release.xcconfig"; path = "Target Support Files/Pods-DesignSystem/Pods-DesignSystem.release.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				50A4DC7C25BF96B5006E7D1F /* TableView */,
 				50A4DA9E25BF4B3A006E7D1F /* Extensions */,
 				50A4DA9025BF4A3A006E7D1F /* Protocols */,
+				50CA3C1E25C15F8D00CABE97 /* ViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				50A4DCA125BF96B6006E7D1F /* DefaultTableFooterView.swift in Sources */,
 				50A4DD2625BFA126006E7D1F /* CloseBarButtonActionHandling.swift in Sources */,
 				50A4DA5E25BF47C9006E7D1F /* AnimationDuration.swift in Sources */,
+				50CA3C1F25C15F8D00CABE97 /* ViewController.swift in Sources */,
 				50A4DCC025BF97B6006E7D1F /* Colors.swift in Sources */,
 				50A4DCEA25BF9D8C006E7D1F /* SearchBarFactory.swift in Sources */,
 				50A4DCED25BF9D8C006E7D1F /* SearchBarTextField.swift in Sources */,
