@@ -12,6 +12,7 @@
 		50CA3D7425C2C3E700CABE97 /* FoursquareCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 50CA3D6625C2C3E700CABE97 /* FoursquareCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50CA3D9525C2C42700CABE97 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3D9425C2C42700CABE97 /* Core.framework */; platformFilter = ios; };
 		50CA3D9A25C2C43D00CABE97 /* FoursquareError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3D9925C2C43D00CABE97 /* FoursquareError.swift */; };
+		50CA3DB125C2C81000CABE97 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3DB025C2C81000CABE97 /* NetworkRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		50CA3D8B25C2C40400CABE97 /* DetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsResponse.swift; sourceTree = "<group>"; };
 		50CA3D9425C2C42700CABE97 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CA3D9925C2C43D00CABE97 /* FoursquareError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareError.swift; sourceTree = "<group>"; };
+		50CA3DB025C2C81000CABE97 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkRouter.swift; path = ../../../../../Common/Core/Core/Networking/REST/NetworkRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		50CA3D6525C2C3E700CABE97 /* FoursquareCore */ = {
 			isa = PBXGroup;
 			children = (
+				50CA3DAF25C2C80B00CABE97 /* Networking */,
 				50CA3D9825C2C43000CABE97 /* ErrorHandler */,
 				50CA3D8C25C2C40400CABE97 /* Models */,
 				50CA3D6625C2C3E700CABE97 /* FoursquareCore.h */,
@@ -137,6 +140,14 @@
 				50CA3D9925C2C43D00CABE97 /* FoursquareError.swift */,
 			);
 			path = ErrorHandler;
+			sourceTree = "<group>";
+		};
+		50CA3DAF25C2C80B00CABE97 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				50CA3DB025C2C81000CABE97 /* NetworkRouter.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CA3D9A25C2C43D00CABE97 /* FoursquareError.swift in Sources */,
+				50CA3DB125C2C81000CABE97 /* NetworkRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

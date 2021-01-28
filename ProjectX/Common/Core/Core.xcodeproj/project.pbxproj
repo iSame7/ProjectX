@@ -27,6 +27,7 @@
 		50A4E08725C0C9BB006E7D1F /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4E08625C0C9BB006E7D1F /* DependencyProvider.swift */; };
 		50A4E08B25C0D105006E7D1F /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4E08A25C0D105006E7D1F /* Builder.swift */; };
 		50CA3C1B25C15C7C00CABE97 /* ViewControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C1A25C15C7C00CABE97 /* ViewControllable.swift */; };
+		50CA3DB725C2C81E00CABE97 /* NetworkRequestRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3DB625C2C81E00CABE97 /* NetworkRequestRetrier.swift */; };
 		8A788F420BC21ECFAA24A3EF /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076263D45ACB9167D31C44F1 /* Pods_Core.framework */; };
 		DCBC9F55C2F257D534F4725E /* Pods_Core_CoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE67FC1293CC697862578386 /* Pods_Core_CoreTests.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		50A4E08625C0C9BB006E7D1F /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
 		50A4E08A25C0D105006E7D1F /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		50CA3C1A25C15C7C00CABE97 /* ViewControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllable.swift; sourceTree = "<group>"; };
+		50CA3DB625C2C81E00CABE97 /* NetworkRequestRetrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestRetrier.swift; sourceTree = "<group>"; };
 		5A613B0387870021A491822B /* Pods-Core-CoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core-CoreTests.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-Core-CoreTests/Pods-Core-CoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE67FC1293CC697862578386 /* Pods_Core_CoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core_CoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F831ABE2295B6E2F7E25CE3F /* Pods-Core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Core/Pods-Core.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,10 +120,10 @@
 		50A4D8D825BD8412006E7D1F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				50CA3DA725C2C75000CABE97 /* Networking */,
 				50A4DCFE25BF9EA3006E7D1F /* Common */,
 				50A4D9AB25BEC164006E7D1F /* Protocols */,
 				50A4D99B25BEB6B1006E7D1F /* UniversalLinks */,
-				50A4D91725BE2451006E7D1F /* GraphQL */,
 				50A4D8F325BE1E02006E7D1F /* Configs */,
 				50A4D8D925BD8412006E7D1F /* Core.h */,
 				50A4D8DA25BD8412006E7D1F /* Info.plist */,
@@ -235,6 +237,23 @@
 				50CA3C1A25C15C7C00CABE97 /* ViewControllable.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		50CA3DA725C2C75000CABE97 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				50CA3DA825C2C77C00CABE97 /* REST */,
+				50A4D91725BE2451006E7D1F /* GraphQL */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		50CA3DA825C2C77C00CABE97 /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				50CA3DB625C2C81E00CABE97 /* NetworkRequestRetrier.swift */,
+			);
+			path = REST;
 			sourceTree = "<group>";
 		};
 		F9CB39014272F3B2875B814D /* Frameworks */ = {
@@ -445,6 +464,7 @@
 				50A4DD0425BF9F3A006E7D1F /* BaseCoordinator.swift in Sources */,
 				50A4D9AD25BEC16F006E7D1F /* ViewModellable.swift in Sources */,
 				50A4D9A125BEB6C0006E7D1F /* UniversalLinksRouter.swift in Sources */,
+				50CA3DB725C2C81E00CABE97 /* NetworkRequestRetrier.swift in Sources */,
 				50A4DD0025BF9EAB006E7D1F /* Module.swift in Sources */,
 				50A4E08325C0C959006E7D1F /* Dependency.swift in Sources */,
 				50CA3C1B25C15C7C00CABE97 /* ViewControllable.swift in Sources */,
