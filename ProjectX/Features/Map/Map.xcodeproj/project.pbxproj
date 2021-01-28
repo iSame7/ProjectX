@@ -93,6 +93,7 @@
 		50A4E0D625C0D559006E7D1F /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				50CA3D0E25C2BFD600CABE97 /* Models */,
 				50CA3C3225C1664900CABE97 /* Builder */,
 				50CA3C3525C1665C00CABE97 /* Coordinator */,
 				50CA3C3625C1666700CABE97 /* Service */,
@@ -168,6 +169,13 @@
 				50A4E0D825C0D559006E7D1F /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50CA3D0E25C2BFD600CABE97 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5DC4122B7D77DAE61807098C /* Frameworks */ = {
