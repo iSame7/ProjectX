@@ -5,7 +5,7 @@
 //  Created by Sameh Mabrouk on 28/01/2021.
 //
 
-struct Venue: Codable {
+public struct Venue: Codable {
     let id: String
     let name: String
     let contact: Contact?

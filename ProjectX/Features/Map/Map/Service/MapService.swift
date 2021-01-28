@@ -7,8 +7,11 @@
 //
 
 import RxSwift
-import Apollo
-import Core
+import FoursquareCore
+
+protocol VenuFetching {
+    func fetchVenues(coordinates: String) -> Single<([Venue]?, FoursquareError?)>
+}
 
 public protocol MapServicePerforming {
     func doSomething() -> Single<Bool>

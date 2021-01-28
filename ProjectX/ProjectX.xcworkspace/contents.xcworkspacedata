@@ -23,6 +23,13 @@
    <Group
       location = "container:Features"
       name = "Features">
+      <Group
+         location = "group:Shared"
+         name = "Shared">
+         <FileRef
+            location = "group:FoursquareCore/FoursquareCore.xcodeproj">
+         </FileRef>
+      </Group>
       <FileRef
          location = "group:Map/Map.xcodeproj">
       </FileRef>
