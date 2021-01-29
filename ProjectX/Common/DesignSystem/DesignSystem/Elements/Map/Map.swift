@@ -38,10 +38,10 @@ public class Map: UIView {
         mapView.layer.cornerRadius = radius
     }
     
-    public func showPin(latitude: Double, longitude: Double, title: String?, regionDistance: Double) {
-        mapView.addPin(latitude: latitude, longitude: longitude, title: title)
-        mapView.setRegion(centerLatitude: latitude, centerLongitude: longitude, distance: regionDistance)
+    public func setRegion(latitude: Double, longitude: Double, latitudeDelta: Double, longitudeDelta: Double) {
+        mapView.setRegion(centerLatitude: latitude, centerLongitude: longitude, latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta)
     }
+    
     
     public func address(_ text: String) {
         footerLabel.text = text

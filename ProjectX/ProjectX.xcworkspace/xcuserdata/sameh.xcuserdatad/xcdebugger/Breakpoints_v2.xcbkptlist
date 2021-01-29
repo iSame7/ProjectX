@@ -7,32 +7,160 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B0A5BCAD-5231-428B-BB3A-60284DB0F9E3"
+            uuid = "DCE5BA8D-3C75-4352-8B85-9CF981F3DA29"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ProjectX/App/Coordinator/AppRootCoordinator.swift"
+            filePath = "Features/Map/Map/UseCase/MapUseCase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "start()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "determineUserLocation()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DCE5BA8D-3C75-4352-8B85-9CF981F3DA29 - cd83eae05abcfa85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.AnyObserver&lt;FoursquareCore.Location&gt;) -&gt; RxSwift.Disposable in Map.MapUseCase.determineUserLocation() -&gt; RxSwift.Observable&lt;FoursquareCore.Location&gt;"
+                  moduleName = "Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sameh/Developer/ProjectX/ProjectX/Features/Map/Map/UseCase/MapUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "DCE5BA8D-3C75-4352-8B85-9CF981F3DA29 - 5797cffd87da1c4b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FoursquareCore.Location) -&gt; () in closure #1 (RxSwift.AnyObserver&lt;FoursquareCore.Location&gt;) -&gt; RxSwift.Disposable in Map.MapUseCase.determineUserLocation() -&gt; RxSwift.Observable&lt;FoursquareCore.Location&gt;"
+                  moduleName = "Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sameh/Developer/ProjectX/ProjectX/Features/Map/Map/UseCase/MapUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72795BAE-1C86-47BA-8EEF-0AEC84158513"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/Map/Map/Service/LocationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "requestUserLocation(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "35E55E40-696D-4564-94E0-E19C71FF72F4"
+            uuid = "17512B41-9B5A-4752-B573-A8BE979B55CF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Features/Map/Map/Service/MapService.swift"
+            filePath = "Features/Map/Map/UseCase/MapUseCase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "fetchVenues(coordinates:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "determineUserLocation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14B070A6-7953-4A9F-BC59-505FE96BB649"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/Map/Map/Service/LocationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "444ECFBB-538D-437B-BC6C-B5CF2EAFA422"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/Map/Map/Service/LocationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "requestUserLocation(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0513019B-2EF1-481E-9368-4C0477642C4E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/Map/Map/Service/LocationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "init(locationManager:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF94F576-EDF7-4E44-8F14-CE5634151ACC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/Map/Map/Service/LocationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "requestAuthorization()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CEE3DA00-2ADA-450A-A391-6054FBDE76B8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/Map/Map/ViewModel/MapViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "observeInputs()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

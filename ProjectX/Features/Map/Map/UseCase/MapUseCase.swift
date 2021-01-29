@@ -29,7 +29,8 @@ class MapUseCase: MapInteractable {
     }
     
     func determineUserLocation() -> Observable<Location> {
-        Observable.create { [unowned self] observer in
+        locationService.requestAuthorization()
+        return Observable.create { [unowned self] observer in
             locationService.requestUserLocation { location in
                 observer.onNext(location)
             }

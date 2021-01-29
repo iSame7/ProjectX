@@ -24,7 +24,9 @@ class MapViewController: ViewController<MapViewModel> {
 	override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.inputs.viewState.onNext(.loaded)
         setupUI()
+        setupObservers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,10 +51,12 @@ class MapViewController: ViewController<MapViewModel> {
             mapView.leftAnchor.constraint(equalTo: view.leftAnchor),
             mapView.rightAnchor.constraint(equalTo: view.rightAnchor),
             mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])        
+        ])
     }
     
     override func setupObservers() {
-        
+        viewModel.outputs.showUserLocation.subscribe { [weak self] (lat, lng) in
+            self?.mapView.setRegion(latitude: lat, longitude: lng, latitudeDelta: 0.1, longitudeDelta: 0.1)
+        }.disposed(by: viewModel.disposeBag)
     }
 }

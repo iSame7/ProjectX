@@ -23,11 +23,6 @@ public class MapFactory<T>: Factory {
         return self
     }
     
-    public func showPin(latitude: Double, longitude: Double, title: String? = nil, regionDistance: Double) -> Self {
-        map.showPin(latitude: latitude, longitude: longitude, title: title, regionDistance: regionDistance)
-        return self
-    }
-    
     public func address(_ text: String) -> Self {
         map.address(text)
         return self
