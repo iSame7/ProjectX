@@ -5,6 +5,6 @@
 //  Created by Sameh Mabrouk on 28/01/2021.
 //
 
-struct SearchResponse: Codable {
-    let venues: [Venue]
+public struct SearchResponse: Codable {
+    public let venues: [Venue]
 }

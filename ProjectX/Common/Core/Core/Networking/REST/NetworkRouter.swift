@@ -7,7 +7,7 @@
 
 import Alamofire
 
-enum Router: URLRequestConvertible {
+public enum Router: URLRequestConvertible {
     case fetchRestaurants(coordinates: String)
     case fetchPhotos(venueId: String)
     case fetchDetails(venueId: String)
@@ -45,7 +45,7 @@ enum Router: URLRequestConvertible {
         }
     }
     
-    func asURLRequest() throws -> URLRequest {
+    public func asURLRequest() throws -> URLRequest {
         let url = try Router.baseURLString.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))

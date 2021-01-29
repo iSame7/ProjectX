@@ -54,6 +54,13 @@ target 'Map' do
   shared_core_pods
 end
 
+target 'FoursquareCore' do
+  project 'Features/Shared/FoursquareCore/FoursquareCore'
+  shared_core_pods
+  target 'FoursquareCoreTests' do
+  end
+end
+
 # Apps
 target 'ProjectX' do
   # Comment the next line if you don't want to use dynamic frameworks

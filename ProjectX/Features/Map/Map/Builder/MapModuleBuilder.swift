@@ -9,16 +9,25 @@
 import UIKit
 import Utils
 import Core
+import Alamofire
 
 /// Provides all dependencies to build the MapModuleBuilder
-private final class MapDependencyProvider: DependencyProvider<EmptyDependency> {}
+private final class MapDependencyProvider: DependencyProvider<EmptyDependency> {
+    fileprivate var session: Session { AF }
+    fileprivate var requestRetrier: RequestRetrier { NetworkRequestRetrier() }
+    fileprivate var networkRechabilityManager: NetworkReachabilityManager? { NetworkReachabilityManager() }
+}
 
 public protocol MapModuleBuildable: ModuleBuildable {}
 
 public class MapModuleBuilder: Builder<EmptyDependency>, MapModuleBuildable {
     
     public func buildModule<T>(with window: UIWindow) -> Module<T>? {
-        registerService()
+        
+        let mapDependencyProvider = MapDependencyProvider()
+        
+        
+        registerService(session: mapDependencyProvider.session, requestRetrier: mapDependencyProvider.requestRetrier, networkRechabilityManager: mapDependencyProvider.networkRechabilityManager)
         registerUsecase()
         registerViewModel()
         registerView()
@@ -37,19 +46,18 @@ private extension MapModuleBuilder {
     func registerUsecase() {
         container.register(MapInteractable.self) { [weak self] in
             guard let self = self,
-                let service = self.container.resolve(MapServicePerforming.self) else { return nil }
+                let service = self.container.resolve(VenuFetching.self) else { return nil }
             return MapUseCase(service: service)
         }
     }
     
-    func registerService() {
+    func registerService(session: Session, requestRetrier: RequestRetrier, networkRechabilityManager: NetworkReachabilityManager?) {
         container.register(GraphQLClientProtocol.self) {
             return GraphQLClient()
         }
         
-        container.register(MapServicePerforming.self) { [weak self] in
-            guard let client = self?.container.resolve(GraphQLClientProtocol.self) else { return nil }
-            return MapService(client: client)
+        container.register(VenuFetching.self) {
+            return MapService(session: session, requestRetrier: requestRetrier, networkRechabilityManager: networkRechabilityManager)
         }
     }
     

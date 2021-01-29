@@ -11,6 +11,9 @@ public enum Environment {
     public enum Keys {
         public enum Plist: String {
             case baseURL = "BaseURL"
+            case clientId = "ClientID"
+            case clientSecret = "ClientSecret"
+            case categoryId = "CategoryID"
       }
     }
 

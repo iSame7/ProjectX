@@ -7,12 +7,14 @@
 
 import Alamofire
 
-class NetworkRequestRetrier: RequestRetrier {
+public class NetworkRequestRetrier: RequestRetrier {
     
     // [Request url: Number of times retried]
     private var retriedRequests: [String: Int] = [:]
     
-    func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
+    public init() { }
+    
+    public func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
         guard request.task?.response == nil,
               let url = request.request?.url?.absoluteString
         else {
