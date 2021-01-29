@@ -19,6 +19,7 @@
 		50CA3C1625C0D71700CABE97 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C1025C0D71700CABE97 /* MapService.swift */; };
 		50CA3C3C25C1676800CABE97 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3C3B25C1676800CABE97 /* DesignSystem.framework */; platformFilter = ios; };
 		50CA3E9A25C31BF400CABE97 /* FoursquareCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3E9925C31BF400CABE97 /* FoursquareCore.framework */; platformFilter = ios; };
+		50CA3EB125C405B000CABE97 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3EB025C405B000CABE97 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		50CA3C1025C0D71700CABE97 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
 		50CA3C3B25C1676800CABE97 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CA3E9925C31BF400CABE97 /* FoursquareCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FoursquareCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CA3EB025C405B000CABE97 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5F2B708C76AE0A127F941351 /* Pods-Map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Map.debug.xcconfig"; path = "Target Support Files/Pods-Map/Pods-Map.debug.xcconfig"; sourceTree = "<group>"; };
 		7A36A182E73AB2CCBE6734E4 /* Pods-Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Map.release.xcconfig"; path = "Target Support Files/Pods-Map/Pods-Map.release.xcconfig"; sourceTree = "<group>"; };
 		DE66E98F3E454B2929D435C2 /* Pods_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				50CA3C1025C0D71700CABE97 /* MapService.swift */,
+				50CA3EB025C405B000CABE97 /* LocationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CA3EB125C405B000CABE97 /* LocationService.swift in Sources */,
 				50CA3C1325C0D71700CABE97 /* MapUseCase.swift in Sources */,
 				50CA3C1525C0D71700CABE97 /* MapViewModel.swift in Sources */,
 				50CA3C1625C0D71700CABE97 /* MapService.swift in Sources */,

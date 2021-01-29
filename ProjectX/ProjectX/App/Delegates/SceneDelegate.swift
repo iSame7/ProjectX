@@ -9,6 +9,7 @@
 import UIKit
 import Core
 import RxSwift
+import FoursquareCore
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -36,7 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 .subscribe()
                 .disposed(by: disposeBag)
             
-            Core.setup(with: AppConfig.self)
+            FoursquareCore.setup(with: AppConfig.self)
         }
     }
     

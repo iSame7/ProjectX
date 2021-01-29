@@ -11,17 +11,30 @@ import FoursquareCore
 
 public protocol MapInteractable {
     func getRestaurantsAround(coordinates: String) -> Observable<([Venue]?, FoursquareError?)>
+    func determineUserLocation() -> Observable<Location>
 }
 
 class MapUseCase: MapInteractable {
 
     private let service: VenuFetching
+    private let locationService: LocationServiceChecking
     
-    init(service: VenuFetching) {
+    init(service: VenuFetching, locationService: LocationServiceChecking) {
         self.service = service
+        self.locationService = locationService
     }
 
     func getRestaurantsAround(coordinates: String) -> Observable<([Venue]?, FoursquareError?)> {
         service.fetchVenues(coordinates: coordinates)
+    }
+    
+    func determineUserLocation() -> Observable<Location> {
+        Observable.create { [unowned self] observer in
+            locationService.requestUserLocation { location in
+                observer.onNext(location)
+            }
+            
+            return Disposables.create()
+        }
     }
 }
