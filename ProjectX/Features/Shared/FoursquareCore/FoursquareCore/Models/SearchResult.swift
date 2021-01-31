@@ -7,4 +7,8 @@
 
 public struct SearchResult: Codable {
     public let response: SearchResponse
+    
+    public init(response: SearchResponse) {
+        self.response = response
+    }
 }

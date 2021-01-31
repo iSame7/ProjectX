@@ -10,7 +10,7 @@ import RxSwift
 import FoursquareCore
 
 public protocol MapInteractable {
-    func getRestaurantsAround(coordinates: String) -> Observable<([Venue]?, FoursquareError?)>
+    func getRestaurantsAround(coordinates: String) -> Observable<(venues: [Venue]?, error: FoursquareError?)>
     func determineUserLocation() -> Observable<Location>
 }
 
@@ -24,7 +24,7 @@ class MapUseCase: MapInteractable {
         self.locationService = locationService
     }
 
-    func getRestaurantsAround(coordinates: String) -> Observable<([Venue]?, FoursquareError?)> {
+    func getRestaurantsAround(coordinates: String) -> Observable<(venues: [Venue]?, error: FoursquareError?)> {
         service.fetchVenues(coordinates: coordinates)
     }
     

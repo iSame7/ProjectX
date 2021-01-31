@@ -473,6 +473,7 @@
 /* Begin XCBuildConfiguration section */
 		5065AB5B23AFA5FB0011CE98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50A4D91125BE23A6006E7D1F /* Staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -533,6 +534,7 @@
 		};
 		5065AB5C23AFA5FB0011CE98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50A4D91225BE23A6006E7D1F /* Production.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

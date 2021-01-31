@@ -12,7 +12,7 @@ public enum Router: URLRequestConvertible {
     case fetchPhotos(venueId: String)
     case fetchDetails(venueId: String)
     
-    static let baseURLString = Bundle.main.object(forInfoDictionaryKey: "BASE_URL") as? String ?? ""
+    static let baseURLString = Config.baseURL
     
     var method: HTTPMethod {
         switch self {
@@ -57,9 +57,8 @@ public enum Router: URLRequestConvertible {
     }
     
     func getAuthorizationParameters() -> (String, String, String){
-        let bundle = Bundle.main
-        let clientId = bundle.object(forInfoDictionaryKey: "CLIENT_ID") as? String ?? ""
-        let clientSecret = bundle.object(forInfoDictionaryKey: "CLIENT_SECRET") as? String ?? ""
+        let clientId = Config.clientId
+        let clientSecret = Config.clientSecret
         let todaysDate = Date().description.prefix(10).replacingOccurrences(of: "-", with: "")
         
         return (clientId, clientSecret, todaysDate)

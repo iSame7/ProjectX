@@ -7,4 +7,8 @@
 
 public struct SearchResponse: Codable {
     public let venues: [Venue]
+    
+    public init(venues: [Venue]) {
+        self.venues = venues
+    }
 }

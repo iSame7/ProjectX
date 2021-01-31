@@ -5,23 +5,23 @@
 //  Created by Sameh Mabrouk on 28/01/2021.
 //
 
-struct TipsRespose: Codable {
-    let tips: [Tip]
+public struct TipsRespose: Codable {
+    public let tips: [Tip]
 }
 
-struct Tip: Codable {
-    let createdAt: String
-    let text: String
-    let userName: String
+public struct Tip: Codable {
+    public let createdAt: String
+    public let text: String
+    public let userName: String
 }
 
-struct Stats: Codable {
-    let tipCount: Int?
-    let usersCount: Int?
-    let checkinsCount: Int?
-    let visitsCount: Int64?
+public struct Stats: Codable {
+    public let tipCount: Int?
+    public let usersCount: Int?
+    public let checkinsCount: Int?
+    public let visitsCount: Int64?
 }
 
-struct Likes: Codable {
-    let count: Int
+public struct Likes: Codable {
+    public let count: Int
 }

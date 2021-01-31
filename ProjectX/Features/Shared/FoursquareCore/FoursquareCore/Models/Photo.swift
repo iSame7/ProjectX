@@ -7,30 +7,30 @@
 
 import Foundation
 
-struct VenuePhotoResponse: Codable {
-    let response: PhotoResponse
+public struct VenuePhotoResponse: Codable {
+    public let response: PhotoResponse
 }
 
-struct PhotoResponse: Codable {
-    let photos: Photos?
+public struct PhotoResponse: Codable {
+    public let photos: Photos?
 }
 
-struct Photos: Codable {
-    let count: Int
-    let items: [Photo]
+public struct Photos: Codable {
+    public let count: Int
+    public let items: [Photo]
 }
 
-struct Photo: Codable {
-    let id: String
-    let prefix: String
-    let suffix: String
-    let width: Int
-    let height: Int
-    let visibility: String
-    let source: Source
+public struct Photo: Codable {
+    public let id: String
+    public let prefix: String
+    public let suffix: String
+    public let width: Int
+    public let height: Int
+    public let visibility: String
+    public let source: Source
 }
 
-struct Source: Codable {
-    let name: String?
-    let url: String?
+public struct Source: Codable {
+    public let name: String?
+    public let url: String?
 }

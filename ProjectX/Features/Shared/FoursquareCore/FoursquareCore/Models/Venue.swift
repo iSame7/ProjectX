@@ -6,65 +6,65 @@
 //
 
 public struct Venue: Codable {
-    let id: String
-    let name: String
-    let contact: Contact?
-    let location: Location
-    let categories: [Category]
-    let verified: Bool?
-    let url: String?
-    let stats: Stats?
-    let likes: Likes?
-    let rating: Double?
-    let hours: Hours?
-    let photos: VenuePhotos?
-    let tips: Tips?
+    public let id: String
+    public let name: String
+    public let contact: Contact?
+    public let location: Location
+    public let categories: [Category]
+    public let verified: Bool?
+    public let url: String?
+    public let stats: Stats?
+    public let likes: Likes?
+    public let rating: Double?
+    public let hours: Hours?
+    public let photos: VenuePhotos?
+    public let tips: Tips?
 }
 
-struct Hours: Codable {
-    let status: String?
+public struct Hours: Codable {
+    public let status: String?
 }
 
-struct RichStatus: Codable {
-    let text: String?
+public struct RichStatus: Codable {
+    public let text: String?
 }
 
-struct VenuePhotos: Codable {
-    let count: Int?
-    let groups: [Group]?
+public struct VenuePhotos: Codable {
+    public let count: Int?
+    public let groups: [Group]?
 }
 
-struct Group: Codable {
-    let type: String?
-    let name: String?
-    let count: Int?
-    let items: [Photo]?
+public struct Group: Codable {
+    public let type: String?
+    public let name: String?
+    public let count: Int?
+    public let items: [Photo]?
 }
 
-struct Tips: Codable {
-    let count: Int
-    let groups: [TipsGroup]
+public struct Tips: Codable {
+    public let count: Int
+    public let groups: [TipsGroup]
 }
 
-struct TipsGroup: Codable {
-    let type: String?
-    let name: String?
-    let count: Int?
-    let items: [TipItem]?
+public struct TipsGroup: Codable {
+    public let type: String?
+    public let name: String?
+    public let count: Int?
+    public let items: [TipItem]?
 }
 
-struct TipItem: Codable {
-    let createdAt: Int?
-    let text: String?
-    let user: User?
+public struct TipItem: Codable {
+    public let createdAt: Int?
+    public let text: String?
+    public let user: User?
 }
 
-struct User: Codable {
-    let firstName: String?
-    let photo: UserPhoto?
+public struct User: Codable {
+    public let firstName: String?
+    public let photo: UserPhoto?
 }
 
-struct UserPhoto: Codable {
-    let prefix: String
-    let suffix: String
+public struct UserPhoto: Codable {
+    public let prefix: String
+    public let suffix: String
 }

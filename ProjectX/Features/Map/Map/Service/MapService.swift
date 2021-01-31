@@ -11,7 +11,7 @@ import FoursquareCore
 import Alamofire
 
 protocol VenuFetching {
-    func fetchVenues(coordinates: String) -> Observable<([Venue]?, FoursquareError?)>
+    func fetchVenues(coordinates: String) -> Observable<(venues: [Venue]?, error: FoursquareError?)>
 }
 
 class MapService: VenuFetching {
@@ -26,7 +26,7 @@ class MapService: VenuFetching {
         self.networkRechabilityManager = networkRechabilityManager
     }
     
-    func fetchVenues(coordinates: String) -> Observable<([Venue]?, FoursquareError?)> {
+    func fetchVenues(coordinates: String) -> Observable<(venues: [Venue]?, error: FoursquareError?)> {
         return Observable.create { [unowned self] observer in
             session.request(Router.fetchRestaurants(coordinates: coordinates)).responseJSON { response in
                 

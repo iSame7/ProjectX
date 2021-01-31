@@ -57,6 +57,8 @@ class MapViewController: ViewController<MapViewModel> {
     override func setupObservers() {
         viewModel.outputs.showUserLocation.subscribe { [weak self] (lat, lng) in
             self?.mapView.setRegion(latitude: lat, longitude: lng, latitudeDelta: 0.1, longitudeDelta: 0.1)
+            
+            self?.viewModel.inputs.restaurantsListAroundCoordinatedRequested.onNext(("\(lat)", "\(lng)"))
         }.disposed(by: viewModel.disposeBag)
     }
 }
