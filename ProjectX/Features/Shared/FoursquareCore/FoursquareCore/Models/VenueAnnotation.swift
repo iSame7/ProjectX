@@ -8,13 +8,13 @@
 import Foundation
 import MapKit
 
-class VenueAnnotation: NSObject, MKAnnotation {
-    let coordinate: CLLocationCoordinate2D
-    let title: String?
-    let subtitle: String?
-    let category: String?
+public class VenueAnnotation: NSObject, MKAnnotation {
+    public let coordinate: CLLocationCoordinate2D
+    public let title: String?
+    public let subtitle: String?
+    public let category: String?
     
-    init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String, category: String) {
+    public init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String, category: String) {
         self.coordinate = coordinate
         self.title = title
         self.subtitle = subtitle

@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import MapKit
 
-@objc public protocol MapDelegate: class {
+@objc public protocol MapDelegate: MKMapViewDelegate {
     @objc func mapTapped()
 }
 
 public class Map: UIView {
     
-    public weak var delegate: MapDelegate?
+    public weak var delegate: MapDelegate? {
+        didSet {
+            mapView.delegate = delegate
+        }
+    }
     
     private let mapView: MapView = {
         return MapView(frame: .zero)
@@ -45,6 +50,10 @@ public class Map: UIView {
     
     public func address(_ text: String) {
         footerLabel.text = text
+    }
+    
+    public func addAnnotations(_ annotations: [MKAnnotation]) {
+        mapView.addAnnotations(annotations)
     }
 }
 

@@ -21,4 +21,12 @@ public enum Icon: String {
     case arrowLeft
     case close
     case whiteClose
+    
+    case restaurant
+    case bakery
+    case halal
+    case cafe
+    case asian
+    case fish
+    case doughnut
 }
