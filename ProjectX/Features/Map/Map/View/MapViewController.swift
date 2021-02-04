@@ -31,9 +31,6 @@ class MapViewController: ViewController<MapViewModel> {
     lazy var collectionViewLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-//        flowLayout.minimumLineSpacing = 8
-//        flowLayout.minimumInteritemSpacing = 8
-//        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         return flowLayout
     }()
     
@@ -148,13 +145,13 @@ extension MapViewController: MapDelegate {
     
     // View for each annotation
     internal func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        //this keeps the user location point as a default blue dot.
+        // This keeps the user location point as a default blue dot.
         if annotation is MKUserLocation { return nil }
         
-        //setup annotation view for map - we can fully customize the marker
+        // Setup annotation view for map - we can fully customize the marker
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "PlaceAnnotationView") as? MKMarkerAnnotationView
         
-        //setup annotation view
+        // Setup annotation view
         if annotationView == nil {
             annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "PlaceAnnotationView")
             if let venueAnnotation = annotation as? VenueAnnotation, let imageType = ImageType(rawValue: venueAnnotation.category ?? "")  {
@@ -172,12 +169,7 @@ extension MapViewController: MapDelegate {
         return annotationView
     }
     
-    //callout tapped/selected
-    internal func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
-    }
-    
-    //didSelect - setting currentSelected Venue
+    // didSelect - setting currentSelected Venue
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if scrollToItem {
             if let venueAnnotation = view.annotation as? VenueAnnotation {
@@ -213,13 +205,13 @@ extension MapViewController: MapDelegate {
         }
     }
     
-    /* Standardises and angle to [-180 to 180] degrees */
+    // Standardises and angle to [-180 to 180] degrees
     func standardAngle( angle: inout CLLocationDegrees) -> CLLocationDegrees {
         angle = angle.truncatingRemainder(dividingBy: 360)
         return angle < -180 ? -360 - angle : angle > 180 ? 360 - 180 : angle
     }
     
-    /* confirms that a region contains a location */
+    // confirms that a region contains a location
     func regionContains(region: MKCoordinateRegion, location: CLLocation) -> Bool {
         var latitudeAngleDiff = region.center.latitude - location.coordinate.latitude
         let deltaLat = abs(standardAngle(angle: &latitudeAngleDiff))

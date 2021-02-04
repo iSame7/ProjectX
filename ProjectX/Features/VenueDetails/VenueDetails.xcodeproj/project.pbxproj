@@ -3,13 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3244FB4F422653232B4F69EE /* Pods_VenueDetails_VenueDetailsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91BBBF49AB163ECE0864F33B /* Pods_VenueDetails_VenueDetailsTests.framework */; };
 		505CDFB425CC4AA100975DC2 /* VenueDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505CDFAA25CC4AA100975DC2 /* VenueDetails.framework */; };
 		505CDFB925CC4AA100975DC2 /* VenueDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CDFB825CC4AA100975DC2 /* VenueDetailsTests.swift */; };
 		505CDFBB25CC4AA100975DC2 /* VenueDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 505CDFAD25CC4AA100975DC2 /* VenueDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		505CDFCC25CC4AFE00975DC2 /* VenueDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CDFC625CC4AFE00975DC2 /* VenueDetailsCoordinator.swift */; };
+		505CDFCD25CC4AFE00975DC2 /* VenueDetailsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CDFC725CC4AFE00975DC2 /* VenueDetailsModuleBuilder.swift */; };
+		505CDFCE25CC4AFE00975DC2 /* VenueDetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CDFC825CC4AFE00975DC2 /* VenueDetailsUseCase.swift */; };
+		505CDFCF25CC4AFE00975DC2 /* VenueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CDFC925CC4AFE00975DC2 /* VenueDetailsViewController.swift */; };
+		505CDFD025CC4AFE00975DC2 /* VenueDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CDFCA25CC4AFE00975DC2 /* VenueDetailsViewModel.swift */; };
+		505CDFD125CC4AFE00975DC2 /* VenueDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CDFCB25CC4AFE00975DC2 /* VenueDetailsService.swift */; };
+		505CDFD625CC4CA500975DC2 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505CDFD525CC4CA500975DC2 /* Core.framework */; platformFilter = ios; };
+		7446A463675ED4A4E661A459 /* Pods_VenueDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896A386D68CEC0FFB3C6DE38 /* Pods_VenueDetails.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +32,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05CD4DAD4E250CBB1939C277 /* Pods-VenueDetails.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenueDetails.debug.xcconfig"; path = "Target Support Files/Pods-VenueDetails/Pods-VenueDetails.debug.xcconfig"; sourceTree = "<group>"; };
+		25A90DFB828F05B1635164EA /* Pods-VenueDetails-VenueDetailsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenueDetails-VenueDetailsTests.release.xcconfig"; path = "Target Support Files/Pods-VenueDetails-VenueDetailsTests/Pods-VenueDetails-VenueDetailsTests.release.xcconfig"; sourceTree = "<group>"; };
 		505CDFAA25CC4AA100975DC2 /* VenueDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VenueDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505CDFAD25CC4AA100975DC2 /* VenueDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenueDetails.h; sourceTree = "<group>"; };
 		505CDFAE25CC4AA100975DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		505CDFB325CC4AA100975DC2 /* VenueDetailsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenueDetailsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		505CDFB825CC4AA100975DC2 /* VenueDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsTests.swift; sourceTree = "<group>"; };
 		505CDFBA25CC4AA100975DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		505CDFC625CC4AFE00975DC2 /* VenueDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsCoordinator.swift; sourceTree = "<group>"; };
+		505CDFC725CC4AFE00975DC2 /* VenueDetailsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsModuleBuilder.swift; sourceTree = "<group>"; };
+		505CDFC825CC4AFE00975DC2 /* VenueDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsUseCase.swift; sourceTree = "<group>"; };
+		505CDFC925CC4AFE00975DC2 /* VenueDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsViewController.swift; sourceTree = "<group>"; };
+		505CDFCA25CC4AFE00975DC2 /* VenueDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsViewModel.swift; sourceTree = "<group>"; };
+		505CDFCB25CC4AFE00975DC2 /* VenueDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsService.swift; sourceTree = "<group>"; };
+		505CDFD525CC4CA500975DC2 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		896A386D68CEC0FFB3C6DE38 /* Pods_VenueDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenueDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91BBBF49AB163ECE0864F33B /* Pods_VenueDetails_VenueDetailsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenueDetails_VenueDetailsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		979B74023E8084B146E24D39 /* Pods-VenueDetails-VenueDetailsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenueDetails-VenueDetailsTests.debug.xcconfig"; path = "Target Support Files/Pods-VenueDetails-VenueDetailsTests/Pods-VenueDetails-VenueDetailsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA5CCF2E2BBA8C8044D165C7 /* Pods-VenueDetails.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenueDetails.release.xcconfig"; path = "Target Support Files/Pods-VenueDetails/Pods-VenueDetails.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505CDFD625CC4CA500975DC2 /* Core.framework in Frameworks */,
+				7446A463675ED4A4E661A459 /* Pods_VenueDetails.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				505CDFB425CC4AA100975DC2 /* VenueDetails.framework in Frameworks */,
+				3244FB4F422653232B4F69EE /* Pods_VenueDetails_VenueDetailsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +81,8 @@
 				505CDFAC25CC4AA100975DC2 /* VenueDetails */,
 				505CDFB725CC4AA100975DC2 /* VenueDetailsTests */,
 				505CDFAB25CC4AA100975DC2 /* Products */,
+				505CDFD425CC4CA500975DC2 /* Frameworks */,
+				5192CE15D480E9555CBD573C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +100,12 @@
 			children = (
 				505CDFAD25CC4AA100975DC2 /* VenueDetails.h */,
 				505CDFAE25CC4AA100975DC2 /* Info.plist */,
+				505CDFC625CC4AFE00975DC2 /* VenueDetailsCoordinator.swift */,
+				505CDFC725CC4AFE00975DC2 /* VenueDetailsModuleBuilder.swift */,
+				505CDFC825CC4AFE00975DC2 /* VenueDetailsUseCase.swift */,
+				505CDFC925CC4AFE00975DC2 /* VenueDetailsViewController.swift */,
+				505CDFCA25CC4AFE00975DC2 /* VenueDetailsViewModel.swift */,
+				505CDFCB25CC4AFE00975DC2 /* VenueDetailsService.swift */,
 			);
 			path = VenueDetails;
 			sourceTree = "<group>";
@@ -84,6 +117,28 @@
 				505CDFBA25CC4AA100975DC2 /* Info.plist */,
 			);
 			path = VenueDetailsTests;
+			sourceTree = "<group>";
+		};
+		505CDFD425CC4CA500975DC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				505CDFD525CC4CA500975DC2 /* Core.framework */,
+				896A386D68CEC0FFB3C6DE38 /* Pods_VenueDetails.framework */,
+				91BBBF49AB163ECE0864F33B /* Pods_VenueDetails_VenueDetailsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5192CE15D480E9555CBD573C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05CD4DAD4E250CBB1939C277 /* Pods-VenueDetails.debug.xcconfig */,
+				DA5CCF2E2BBA8C8044D165C7 /* Pods-VenueDetails.release.xcconfig */,
+				979B74023E8084B146E24D39 /* Pods-VenueDetails-VenueDetailsTests.debug.xcconfig */,
+				25A90DFB828F05B1635164EA /* Pods-VenueDetails-VenueDetailsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../../Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +159,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 505CDFBE25CC4AA100975DC2 /* Build configuration list for PBXNativeTarget "VenueDetails" */;
 			buildPhases = (
+				2E3C05F543A150EB8B94AD9A /* [CP] Check Pods Manifest.lock */,
 				505CDFA525CC4AA100975DC2 /* Headers */,
 				505CDFA625CC4AA100975DC2 /* Sources */,
 				505CDFA725CC4AA100975DC2 /* Frameworks */,
@@ -122,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 505CDFC125CC4AA100975DC2 /* Build configuration list for PBXNativeTarget "VenueDetailsTests" */;
 			buildPhases = (
+				2745B873020681E42841B3AD /* [CP] Check Pods Manifest.lock */,
 				505CDFAF25CC4AA100975DC2 /* Sources */,
 				505CDFB025CC4AA100975DC2 /* Frameworks */,
 				505CDFB125CC4AA100975DC2 /* Resources */,
+				8AB671F3D8084740CAB3E251 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,6 +205,7 @@
 				TargetAttributes = {
 					505CDFA925CC4AA100975DC2 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					505CDFB225CC4AA100975DC2 = {
 						CreatedOnToolsVersion = 12.3;
@@ -189,11 +248,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2745B873020681E42841B3AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VenueDetails-VenueDetailsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E3C05F543A150EB8B94AD9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VenueDetails-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AB671F3D8084740CAB3E251 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VenueDetails-VenueDetailsTests/Pods-VenueDetails-VenueDetailsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VenueDetails-VenueDetailsTests/Pods-VenueDetails-VenueDetailsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VenueDetails-VenueDetailsTests/Pods-VenueDetails-VenueDetailsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		505CDFA625CC4AA100975DC2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505CDFCD25CC4AFE00975DC2 /* VenueDetailsModuleBuilder.swift in Sources */,
+				505CDFD025CC4AFE00975DC2 /* VenueDetailsViewModel.swift in Sources */,
+				505CDFCE25CC4AFE00975DC2 /* VenueDetailsUseCase.swift in Sources */,
+				505CDFCF25CC4AFE00975DC2 /* VenueDetailsViewController.swift in Sources */,
+				505CDFD125CC4AFE00975DC2 /* VenueDetailsService.swift in Sources */,
+				505CDFCC25CC4AFE00975DC2 /* VenueDetailsCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +469,9 @@
 		};
 		505CDFBF25CC4AA100975DC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05CD4DAD4E250CBB1939C277 /* Pods-VenueDetails.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8U3N7M58T5;
@@ -357,6 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = works.temper.VenueDetails;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,7 +496,9 @@
 		};
 		505CDFC025CC4AA100975DC2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA5CCF2E2BBA8C8044D165C7 /* Pods-VenueDetails.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8U3N7M58T5;
@@ -388,7 +522,9 @@
 		};
 		505CDFC225CC4AA100975DC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 979B74023E8084B146E24D39 /* Pods-VenueDetails-VenueDetailsTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8U3N7M58T5;
 				INFOPLIST_FILE = VenueDetailsTests/Info.plist;
@@ -406,7 +542,9 @@
 		};
 		505CDFC325CC4AA100975DC2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25A90DFB828F05B1635164EA /* Pods-VenueDetails-VenueDetailsTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8U3N7M58T5;
 				INFOPLIST_FILE = VenueDetailsTests/Info.plist;
