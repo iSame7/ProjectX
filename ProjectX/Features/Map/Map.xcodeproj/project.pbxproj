@@ -21,6 +21,8 @@
 		50CA3E9A25C31BF400CABE97 /* FoursquareCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3E9925C31BF400CABE97 /* FoursquareCore.framework */; platformFilter = ios; };
 		50CA3EB125C405B000CABE97 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3EB025C405B000CABE97 /* LocationService.swift */; };
 		50CA3EBE25C6C22E00CABE97 /* UIImage+Glyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3EBD25C6C22E00CABE97 /* UIImage+Glyph.swift */; };
+		50CA3EC625C6CB9200CABE97 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3EC525C6CB9200CABE97 /* CollectionViewCell.swift */; };
+		50CA3ECA25C7406C00CABE97 /* MapViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3EC925C7406C00CABE97 /* MapViewController+UICollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		50CA3E9925C31BF400CABE97 /* FoursquareCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FoursquareCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CA3EB025C405B000CABE97 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		50CA3EBD25C6C22E00CABE97 /* UIImage+Glyph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Glyph.swift"; sourceTree = "<group>"; };
+		50CA3EC525C6CB9200CABE97 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		50CA3EC925C7406C00CABE97 /* MapViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+UICollectionView.swift"; sourceTree = "<group>"; };
 		5F2B708C76AE0A127F941351 /* Pods-Map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Map.debug.xcconfig"; path = "Target Support Files/Pods-Map/Pods-Map.debug.xcconfig"; sourceTree = "<group>"; };
 		7A36A182E73AB2CCBE6734E4 /* Pods-Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Map.release.xcconfig"; path = "Target Support Files/Pods-Map/Pods-Map.release.xcconfig"; sourceTree = "<group>"; };
 		DE66E98F3E454B2929D435C2 /* Pods_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				50CA3EBC25C6C21800CABE97 /* Utils */,
-				50CA3D0E25C2BFD600CABE97 /* Models */,
 				50CA3C3225C1664900CABE97 /* Builder */,
 				50CA3C3525C1665C00CABE97 /* Coordinator */,
 				50CA3C3625C1666700CABE97 /* Service */,
@@ -134,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				50CA3C0E25C0D71700CABE97 /* MapViewController.swift */,
+				50CA3EC525C6CB9200CABE97 /* CollectionViewCell.swift */,
+				50CA3EC925C7406C00CABE97 /* MapViewController+UICollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,13 +183,6 @@
 				50A4E0D825C0D559006E7D1F /* Info.plist */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		50CA3D0E25C2BFD600CABE97 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		50CA3EBC25C6C21800CABE97 /* Utils */ = {
@@ -352,9 +350,11 @@
 			files = (
 				50CA3EB125C405B000CABE97 /* LocationService.swift in Sources */,
 				50CA3C1325C0D71700CABE97 /* MapUseCase.swift in Sources */,
+				50CA3EC625C6CB9200CABE97 /* CollectionViewCell.swift in Sources */,
 				50CA3C1525C0D71700CABE97 /* MapViewModel.swift in Sources */,
 				50CA3C1625C0D71700CABE97 /* MapService.swift in Sources */,
 				50CA3C1225C0D71700CABE97 /* MapModuleBuilder.swift in Sources */,
+				50CA3ECA25C7406C00CABE97 /* MapViewController+UICollectionView.swift in Sources */,
 				50CA3C1125C0D71700CABE97 /* MapCoordinator.swift in Sources */,
 				50CA3EBE25C6C22E00CABE97 /* UIImage+Glyph.swift in Sources */,
 				50CA3C1425C0D71700CABE97 /* MapViewController.swift in Sources */,

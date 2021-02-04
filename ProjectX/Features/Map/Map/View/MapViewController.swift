@@ -17,11 +17,39 @@ class MapViewController: ViewController<MapViewModel> {
     // MARK: - Properties
     
     private var annotationsForVenues = [MKAnnotation]()
-
+    private let cellIdentifier = String(describing: CollectionViewCell.self)
+    var venues = [Venue]()
+    var venuePhotos : [String: String] = [:]
+    var indexOfCellBeforeDragging = 0
+    var scrollToItem = true
+    var selectedItemIndex: Int = 0 {
+        didSet {
+            selectAnnotation(atIndext: selectedItemIndex)
+        }
+    }
+    
+    lazy var collectionViewLayout: UICollectionViewFlowLayout = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+//        flowLayout.minimumLineSpacing = 8
+//        flowLayout.minimumInteritemSpacing = 8
+//        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        return flowLayout
+    }()
+    
     lazy var mapView: Map = {
         MapFactory().build()
     }()
-        
+    
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        return collectionView
+    }()
+    
     // MARK: - Lifecycle
 
 	override func viewDidLoad() {
@@ -45,15 +73,22 @@ class MapViewController: ViewController<MapViewModel> {
     
     func setupSubviews() {
         view.addSubview(mapView)
+        view.addSubview(collectionView)
     }
     
     override func setupConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             mapView.topAnchor.constraint(equalTo: view.topAnchor),
             mapView.leftAnchor.constraint(equalTo: view.leftAnchor),
             mapView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            collectionView.heightAnchor.constraint(equalToConstant: 93.0)
         ])
     }
     
@@ -67,13 +102,28 @@ class MapViewController: ViewController<MapViewModel> {
         viewModel.outputs.showRestaurantsList.subscribe {  [weak self] result in
             if let venues = result.element {
                 self?.addAnnotationsToMap(venues: venues)
-//                for venue in venues {
-//                    print("get photo for venueId: \(venue.id)")
-////                    presenter.getPhotos(venueId: venue.id)
-//                }
-//                collectionView.reloadData()
+                self?.venues = venues
+
+                for venue in venues {
+                    print("get photo for venueId: \(venue.id)")
+                    self?.viewModel.inputs.venuesPhotosRequested.onNext(venue.id)
+                }
+                self?.collectionView.reloadData()
             }
         }.disposed(by: viewModel.disposeBag)
+        
+        viewModel.outputs.showVenuePhoto.subscribe {  [weak self] result in
+            if let result = result.element {
+                self?.venuePhotos[result.venueId] = result.photo
+            }
+        }.disposed(by: viewModel.disposeBag)
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        configureCollectionViewLayoutItemSize()
     }
 }
 
@@ -125,5 +175,56 @@ extension MapViewController: MapDelegate {
     //callout tapped/selected
     internal func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
+    }
+    
+    //didSelect - setting currentSelected Venue
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if scrollToItem {
+            if let venueAnnotation = view.annotation as? VenueAnnotation {
+                let selectedVenueIndex = venues.firstIndex(where: { $0.name == venueAnnotation.title })
+                let indexPath = IndexPath(row: selectedVenueIndex ?? 0, section: 0)
+                collectionViewLayout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            }
+        }
+    }
+    
+    func selectAnnotation(atIndext index: Int) {
+        scrollToItem = false
+        if let annotation = (mapView.annotations.first { (annotation) -> Bool in
+            let venueAnnotation = annotation as? VenueAnnotation
+            return venueAnnotation?.title == venues[index].name
+        }) {
+            mapView.selectAnnotation(annotation)
+            scrollToItem = true
+            
+            let venueAnnotation = annotation as? VenueAnnotation
+            let selectedVenue = venues.first(where: { $0.name == venueAnnotation?.title })
+
+            if let selectedVenue = selectedVenue {
+                let selectedVenueLocation = CLLocation(latitude: CLLocationDegrees(selectedVenue.location.lat), longitude: CLLocationDegrees(selectedVenue.location.lng))
+                // only move to another region if the selected venue's location in not in the current map region
+                if !regionContains(region: mapView.region, location: selectedVenueLocation) {
+                    let coordinates = CLLocationCoordinate2D(latitude: selectedVenue.location.lat, longitude: selectedVenue.location.lng)
+                    let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                    let viewRegion = MKCoordinateRegion(center: coordinates, span: span)
+                    mapView.setRegion(viewRegion)
+                }
+            }
+        }
+    }
+    
+    /* Standardises and angle to [-180 to 180] degrees */
+    func standardAngle( angle: inout CLLocationDegrees) -> CLLocationDegrees {
+        angle = angle.truncatingRemainder(dividingBy: 360)
+        return angle < -180 ? -360 - angle : angle > 180 ? 360 - 180 : angle
+    }
+    
+    /* confirms that a region contains a location */
+    func regionContains(region: MKCoordinateRegion, location: CLLocation) -> Bool {
+        var latitudeAngleDiff = region.center.latitude - location.coordinate.latitude
+        let deltaLat = abs(standardAngle(angle: &latitudeAngleDiff))
+        var longitudeAngleDiff = region.center.longitude - location.coordinate.longitude
+        let deltalong = abs(standardAngle(angle:&longitudeAngleDiff))
+        return region.span.latitudeDelta >= deltaLat && region.span.longitudeDelta >= deltalong
     }
 }

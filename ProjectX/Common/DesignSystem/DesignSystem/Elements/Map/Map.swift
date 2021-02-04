@@ -20,6 +20,14 @@ public class Map: UIView {
         }
     }
     
+    public var annotations: [MKAnnotation] {
+        mapView.annotations
+    }
+    
+    public var region: MKCoordinateRegion {
+        mapView.region
+    }
+    
     private let mapView: MapView = {
         return MapView(frame: .zero)
     }()
@@ -54,6 +62,14 @@ public class Map: UIView {
     
     public func addAnnotations(_ annotations: [MKAnnotation]) {
         mapView.addAnnotations(annotations)
+    }
+    
+    public func selectAnnotation(_ annotation: MKAnnotation) {
+        mapView.selectAnnotation(annotation, animated: true)
+    }
+    
+    public func setRegion(_ region: MKCoordinateRegion) {
+        mapView.setRegion(region, animated: true)
     }
 }
 

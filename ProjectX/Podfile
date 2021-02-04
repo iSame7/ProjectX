@@ -18,6 +18,7 @@ def shared_core_pods
   pod 'SwiftDate'
   pod 'CocoaLumberjack/Swift'
   pod 'Alamofire'
+  pod 'Nuke'
 end
 
 # Common modules

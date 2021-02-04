@@ -30,7 +30,7 @@ public class MapModuleBuilder: Builder<EmptyDependency>, MapModuleBuildable {
         
         
         registerService(session: mapDependencyProvider.session, requestRetrier: mapDependencyProvider.requestRetrier, networkRechabilityManager: mapDependencyProvider.networkRechabilityManager, locationManager: mapDependencyProvider.locationManager)
-        registerUsecase()
+        registerUsecase(networkRechabilityManager: mapDependencyProvider.networkRechabilityManager)
         registerViewModel()
         registerView()
         registerCoordinator(with: window)
@@ -45,12 +45,12 @@ public class MapModuleBuilder: Builder<EmptyDependency>, MapModuleBuildable {
 
 private extension MapModuleBuilder {
     
-    func registerUsecase() {
+    func registerUsecase(networkRechabilityManager: NetworkReachabilityManager?) {
         container.register(MapInteractable.self) { [weak self] in
             guard let self = self,
                   let service = self.container.resolve(VenuFetching.self),
                   let locationService = self.container.resolve(LocationServiceChecking.self) else { return nil }
-            return MapUseCase(service: service, locationService: locationService)
+            return MapUseCase(service: service, locationService: locationService, networkRechabilityManager: networkRechabilityManager)
         }
     }
     

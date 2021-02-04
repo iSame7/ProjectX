@@ -20,11 +20,13 @@ protocol MapViewModellable: ViewModellable {
 struct MapViewModelInputs {
     var viewState = PublishSubject<ViewState>()
     var restaurantsListAroundCoordinatedRequested = PublishSubject<(lat: String, lng: String)>()
+    var venuesPhotosRequested = PublishSubject<String>()
 }
 
 struct MapViewModelOutputs {
     var showUserLocation = PublishSubject<(lat: Double, lng: Double)>()
     var showRestaurantsList = PublishSubject<[Venue]>()
+    var showVenuePhoto = PublishSubject<(venueId: String, photo: String)>()
     var showError = PublishSubject<FoursquareError>()
 }
 
@@ -77,6 +79,18 @@ private extension MapViewModel {
                 } else if let error = result.error {
                     self.outputs.showError.onNext(error)
                 }
+                
+            }).disposed(by: self.disposeBag)
+        }.disposed(by: disposeBag)
+        
+        inputs.venuesPhotosRequested.subscribe { [weak self] event in
+            guard let self = self, let venueId = event.element  else { return }
+
+            self.useCase.getVenuesPhotos(venueId: venueId).subscribe({ event in
+                guard let element = event.element, let photos = element, !photos.isEmpty else { return }
+           
+                let photo = "\(photos[0].prefix)700x500\(photos[0].suffix)"
+                self.outputs.showVenuePhoto.onNext((venueId, photo))
                 
             }).disposed(by: self.disposeBag)
         }.disposed(by: disposeBag)

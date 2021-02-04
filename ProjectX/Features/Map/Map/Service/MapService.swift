@@ -12,6 +12,7 @@ import Alamofire
 
 protocol VenuFetching {
     func fetchVenues(coordinates: String) -> Observable<(venues: [Venue]?, error: FoursquareError?)>
+    func fetchVenuesPhotos(venueId: String) -> Observable<[Photo]?>
 }
 
 class MapService: VenuFetching {
@@ -44,31 +45,56 @@ class MapService: VenuFetching {
                         }
                     }
                 case  let .failure(error):
-//                    if error.isRequestAdaptationError == -1009 {
-//                        completion(nil, .noInternetConnection)
+              
+                    print("Error\(String(describing: error))")
+                    if error.isSessionTaskError {
+                        observer.onNext((nil, .noInternetConnection))
 //
-//                        self?.networkRechabilityManager.listener = { status in
+//                        self.networkRechabilityManager?.startListening(onUpdatePerforming: { status in
 //                            print("Network Status Changed: \(status)")
 //                            switch status {
 //                            case .reachable(_):
-//                                self?.fetchVenues(coordinate: coordinate, completion: completion)
+//                                return self.fetchVenues(coordinates: coordinates)
 //                            default:
 //                                break
 //                            }
-//                        }
-//                        self?.networkRechabilityManager.startListening()
-//                    } else {
-                    observer.onNext((nil, .noResponse))
-//                    }
+//                        })
+                    } else {
+                        observer.onNext((nil, .noResponse))
+                    }
+                    
+                    
                 }
             }
             
             
             return Disposables.create()
         }
-        
-
-        
 //        return .just((nil, nil))
+    }
+    
+    func fetchVenuesPhotos(venueId: String) -> Observable<[Photo]?> {
+        return Observable.create { [unowned self] observer in
+            session.request(Router.fetchPhotos(venueId: venueId)).responseJSON { response in
+                
+                switch response.result {
+                case .success:
+                    if let data = response.data {
+                        do {
+                            let JSON = try JSONDecoder().decode(VenuePhotoResponse.self, from: data)
+                            let photos = JSON.response.photos?.items
+                            observer.onNext(photos)
+                        }
+                        catch {
+                            print("Error processing data \(error)")                            
+                        }
+                    }
+                case  let .failure(error):
+                    print("Error\(String(describing: error))")
+                    observer.onNext(nil)
+                }
+            }
+            return Disposables.create()
+        }
     }
 }
