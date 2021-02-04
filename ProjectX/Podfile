@@ -62,6 +62,13 @@ target 'FoursquareCore' do
   end
 end
 
+target 'VenueDetails' do
+  project 'Features/VenueDetails/VenueDetails'
+  shared_core_pods
+  target 'VenueDetailsTests' do
+  end
+end
+
 # Apps
 target 'ProjectX' do
   # Comment the next line if you don't want to use dynamic frameworks

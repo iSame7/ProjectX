@@ -23,6 +23,9 @@
    <Group
       location = "container:Features"
       name = "Features">
+      <FileRef
+         location = "group:VenueDetails/VenueDetails.xcodeproj">
+      </FileRef>
       <Group
          location = "group:Shared"
          name = "Shared">
