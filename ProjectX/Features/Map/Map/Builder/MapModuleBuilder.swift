@@ -24,8 +24,7 @@ public protocol MapModuleBuildable: ModuleBuildable {}
 
 public class MapModuleBuilder: Builder<EmptyDependency>, MapModuleBuildable {
     
-    public func buildModule<T>(with window: UIWindow) -> Module<T>? {
-        
+    public func buildModule<T>(with window: UIWindow) -> Module<T>? {        
         let mapDependencyProvider = MapDependencyProvider()
         
         

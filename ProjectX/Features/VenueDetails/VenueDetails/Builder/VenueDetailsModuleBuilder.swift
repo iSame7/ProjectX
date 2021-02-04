@@ -10,19 +10,28 @@ import UIKit
 import Utils
 import DesignSystem
 import Core
+import Alamofire
+
+protocol VenueDetailsDependency {
+    var session: Session { get }
+}
+
+/// Provides all dependencies to build the VenueDetailsModuleBuilder
+private final class VenueDetailsDependencyProvider: DependencyProvider<VenueDetailsDependency> {
+    
+    var session: Session {
+        return dependency.session
+    }
+}
 
 protocol VenueDetailsModuleBuildable: ModuleBuildable {}
 
-class VenueDetailsModuleBuilder: VenueDetailsModuleBuildable {
-    
-    private let container: DependencyManager
-    
-    public init(container: DependencyManager) {
-        self.container = container
-    }
+class VenueDetailsModuleBuilder: Builder<VenueDetailsDependency> , VenueDetailsModuleBuildable {
     
     func buildModule<T>(with rootViewController: NavigationControllable) -> Module<T>? {
-        registerService()
+        let venueDetailsDependencyProvider = VenueDetailsDependencyProvider(dependency: dependency)
+        
+        registerService(session: venueDetailsDependencyProvider.session)
         registerUsecase()
         registerViewModel()
         registerView()
@@ -41,14 +50,14 @@ private extension VenueDetailsModuleBuilder {
     func registerUsecase() {
         container.register(VenueDetailsInteractable.self) { [weak self] in
             guard let self = self,
-                let service = self.container.resolve(VenueDetailsServicePerforming.self) else { return nil }
+                let service = self.container.resolve(VenueDetailsServiceFetching.self) else { return nil }
             return VenueDetailsUseCase(service: service)
         }
     }
     
-    func registerService() {
-        container.register(VenueDetailsServicePerforming.self) {
-            return VenueDetailsService()
+    func registerService(session: Session) {
+        container.register(VenueDetailsServiceFetching.self) {
+            return VenueDetailsService(session: session)
         }
     }
     

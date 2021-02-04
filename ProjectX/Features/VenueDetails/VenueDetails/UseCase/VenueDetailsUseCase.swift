@@ -12,9 +12,9 @@ public protocol VenueDetailsInteractable {}
 
 class VenueDetailsUseCase: VenueDetailsInteractable {
 
-    private let service: VenueDetailsServicePerforming
+    private let service: VenueDetailsServiceFetching
     
-    init(service: VenueDetailsServicePerforming) {
+    init(service: VenueDetailsServiceFetching) {
         self.service = service
     }
 }

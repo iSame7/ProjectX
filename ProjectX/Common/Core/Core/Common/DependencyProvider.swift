@@ -9,7 +9,7 @@
 open class DependencyProvider<DependencyType> {
     
     // `dependency` variable represents a parent dependency
-    let dependency: DependencyType //
+    public let dependency: DependencyType //
 
     public init(dependency: DependencyType) {
         self.dependency = dependency
