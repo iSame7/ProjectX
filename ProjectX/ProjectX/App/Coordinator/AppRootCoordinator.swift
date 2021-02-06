@@ -27,7 +27,9 @@ class AppRootCoordinator: BaseCoordinator<Void> {
             preconditionFailure("[AppCoordinator] Cannot get mapCoordinator from module builder")
         }
         
-        _ = coordinate(to: mapCoordinator)
+        _ = coordinate(to: mapCoordinator).subscribe({ event in
+            
+        }).disposed(by: disposeBag)
         return .never()
     }
 }

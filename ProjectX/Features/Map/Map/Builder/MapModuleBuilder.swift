@@ -11,28 +11,29 @@ import Utils
 import Core
 import Alamofire
 import CoreLocation
+import VenueDetails
 
 /// Provides all dependencies to build the MapModuleBuilder
-private final class MapDependencyProvider: DependencyProvider<EmptyDependency> {
+private final class MapDependencyProvider: DependencyProvider<EmptyDependency>, VenueDetailsDependency {
     fileprivate var session: Session { AF }
     fileprivate var requestRetrier: RequestRetrier { NetworkRequestRetrier() }
     fileprivate var networkRechabilityManager: NetworkReachabilityManager? { NetworkReachabilityManager() }
     fileprivate var locationManager: CLLocationManager { CLLocationManager() }
+    fileprivate var venueDetailsModuleBuilder: VenueDetailsModuleBuildable { VenueDetailsModuleBuilder(dependency: self) }
 }
 
 public protocol MapModuleBuildable: ModuleBuildable {}
 
 public class MapModuleBuilder: Builder<EmptyDependency>, MapModuleBuildable {
     
-    public func buildModule<T>(with window: UIWindow) -> Module<T>? {        
+    public func buildModule<T>(with window: UIWindow) -> Module<T>? {
         let mapDependencyProvider = MapDependencyProvider()
-        
         
         registerService(session: mapDependencyProvider.session, requestRetrier: mapDependencyProvider.requestRetrier, networkRechabilityManager: mapDependencyProvider.networkRechabilityManager, locationManager: mapDependencyProvider.locationManager)
         registerUsecase(networkRechabilityManager: mapDependencyProvider.networkRechabilityManager)
         registerViewModel()
         registerView()
-        registerCoordinator(with: window)
+        registerCoordinator(with: window, venueDetailsModuleBuilder: mapDependencyProvider.venueDetailsModuleBuilder)
         
         guard let coordinator = container.resolve(MapCoordinator.self) else {
             return nil
@@ -68,7 +69,7 @@ private extension MapModuleBuilder {
     }
     
     func registerViewModel() {
-        container.register(MapViewModel.self) { [weak self] in
+        container.register(MapViewModellable.self) { [weak self] in
             guard let useCase = self?.container.resolve(MapInteractable.self) else { return nil }
             
             return MapViewModel(useCase: useCase)
@@ -77,7 +78,7 @@ private extension MapModuleBuilder {
     
     func registerView() {
         container.register(MapViewController.self) { [weak self] in
-            guard let viewModel = self?.container.resolve(MapViewModel.self) else {
+            guard let viewModel = self?.container.resolve(MapViewModellable.self) as? MapViewModel else {
                 return nil
             }
             
@@ -85,13 +86,14 @@ private extension MapModuleBuilder {
         }
     }
     
-    func registerCoordinator(with window: UIWindow) {
+    func registerCoordinator(with window: UIWindow, venueDetailsModuleBuilder: VenueDetailsModuleBuildable) {
         container.register(MapCoordinator.self) { [weak self] in
             guard let viewController = self?.container.resolve(MapViewController.self) else {
                 return nil
             }
             
-            let coordinator = MapCoordinator(window: window, viewController: viewController)
+            let coordinator = MapCoordinator(window: window, viewController: UINavigationController(rootViewController: viewController), venueDetailsModuleBuilder: venueDetailsModuleBuilder)
+            coordinator.showVenueDetials = viewController.viewModel.outputs.showVenueDetials
             return coordinator
         }
     }

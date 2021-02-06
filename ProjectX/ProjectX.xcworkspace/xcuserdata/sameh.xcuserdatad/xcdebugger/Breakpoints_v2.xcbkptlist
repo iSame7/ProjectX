@@ -7,224 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "82549A39-2F52-4A81-8EDD-B2847047949D"
+            uuid = "BD3450BC-F966-4DFB-B5D8-02C46A2F6262"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Features/Map/Map/UseCase/MapUseCase.swift"
+            filePath = "Features/Map/Map/Coordinator/MapCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "getRestaurantsAround(coordinates:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "start()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3583B86F-93CE-4312-938C-AD183A8E3A36"
+            uuid = "85DC6726-B5C2-4C9F-A4AA-2C389CFA4095"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Features/Map/Map/Service/MapService.swift"
+            filePath = "Features/Map/Map/Builder/MapModuleBuilder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "fetchVenues(coordinates:)"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "registerCoordinator(with:venueDetailsModuleBuilder:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CDAD10CC-7D5D-4D1E-BE8C-519BEC08E113"
+            uuid = "140085A4-4351-47C3-9E18-E2A99B9206EE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Features/Map/Map/Service/MapService.swift"
+            filePath = "Features/VenueDetails/VenueDetails/Coordinator/VenueDetailsCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "fetchVenues(coordinates:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "start()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9DB35DCA-BCE9-4871-8DB8-941EADC89C12"
+            uuid = "7BF8B945-EB20-4951-84E3-D85E71ED3F92"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Features/Map/Map/UseCase/MapUseCase.swift"
+            filePath = "Features/VenueDetails/VenueDetails/View/VenueDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "getRestaurantsAround(coordinates:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C44B9271-BD72-4BBB-8708-AE039EAA7EE9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Features/Map/Map/UseCase/MapUseCase.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "getRestaurantsAround(coordinates:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C44B9271-BD72-4BBB-8708-AE039EAA7EE9 - 6c61aec2bd29f492"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.NetworkReachabilityManager.NetworkReachabilityStatus) -&gt; () in closure #1 (RxSwift.Event&lt;(venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)&gt;) -&gt; () in closure #1 (RxSwift.AnyObserver&lt;(venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)&gt;) -&gt; RxSwift.Disposable in Map.MapUseCase.getRestaurantsAround(coordinates: Swift.String) -&gt; RxSwift.Observable&lt;(venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)&gt;"
-                  moduleName = "Map"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sameh/Developer/ProjectX/ProjectX/Features/Map/Map/UseCase/MapUseCase.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "1004">
-               </Location>
-               <Location
-                  uuid = "C44B9271-BD72-4BBB-8708-AE039EAA7EE9 - 6de4ea105fb0537b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 ((venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)) -&gt; () in closure #1 (Alamofire.NetworkReachabilityManager.NetworkReachabilityStatus) -&gt; () in closure #1 (RxSwift.Event&lt;(venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)&gt;) -&gt; () in closure #1 (RxSwift.AnyObserver&lt;(venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)&gt;) -&gt; RxSwift.Disposable in Map.MapUseCase.getRestaurantsAround(coordinates: Swift.String) -&gt; RxSwift.Observable&lt;(venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)&gt;"
-                  moduleName = "Map"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sameh/Developer/ProjectX/ProjectX/Features/Map/Map/UseCase/MapUseCase.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "176">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "79871BC4-E5C1-4D2B-BA98-F238006A734C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Features/Map/Map/UseCase/MapUseCase.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "getRestaurantsAround(coordinates:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "79871BC4-E5C1-4D2B-BA98-F238006A734C - 6c61aec2bd29f4d0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.NetworkReachabilityManager.NetworkReachabilityStatus) -&gt; () in closure #1 (RxSwift.Event&lt;(venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)&gt;) -&gt; () in closure #1 (RxSwift.AnyObserver&lt;(venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)&gt;) -&gt; RxSwift.Disposable in Map.MapUseCase.getRestaurantsAround(coordinates: Swift.String) -&gt; RxSwift.Observable&lt;(venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)&gt;"
-                  moduleName = "Map"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sameh/Developer/ProjectX/ProjectX/Features/Map/Map/UseCase/MapUseCase.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "556">
-               </Location>
-               <Location
-                  uuid = "79871BC4-E5C1-4D2B-BA98-F238006A734C - 6de4ea105fb05318"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 ((venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)) -&gt; () in closure #1 (Alamofire.NetworkReachabilityManager.NetworkReachabilityStatus) -&gt; () in closure #1 (RxSwift.Event&lt;(venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)&gt;) -&gt; () in closure #1 (RxSwift.AnyObserver&lt;(venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)&gt;) -&gt; RxSwift.Disposable in Map.MapUseCase.getRestaurantsAround(coordinates: Swift.String) -&gt; RxSwift.Observable&lt;(venues: Swift.Optional&lt;Swift.Array&lt;FoursquareCore.Venue&gt;&gt;, error: Swift.Optional&lt;FoursquareCore.FoursquareError&gt;)&gt;"
-                  moduleName = "Map"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sameh/Developer/ProjectX/ProjectX/Features/Map/Map/UseCase/MapUseCase.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1A7175F5-F23D-493E-8CC1-89B7189193E7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Features/Map/Map/UseCase/MapUseCase.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "getRestaurantsAround(coordinates:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4CE68E0E-63B7-4CC5-B3C2-0B2367583963"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Features/Map/Map/UseCase/MapUseCase.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "getRestaurantsAround(coordinates:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EB3C867E-61E3-4165-990F-7D3A22F3D70D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Features/Map/Map/ViewModel/MapViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "observeInputs()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5075EFAC-1E23-4895-BAD1-DF5D0E86D3B7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Features/Map/Map/ViewModel/MapViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "observeInputs()"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

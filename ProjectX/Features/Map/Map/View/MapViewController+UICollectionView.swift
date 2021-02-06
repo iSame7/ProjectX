@@ -52,7 +52,6 @@ extension MapViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
 }
 
 extension MapViewController: UICollectionViewDelegate {
@@ -79,7 +78,6 @@ extension MapViewController: UICollectionViewDelegate {
         let didUseSwipeToSkipCell = majorCellIsTheCellBeforeDragging && (hasEnoughVelocityToSlideToTheNextCell || hasEnoughVelocityToSlideToThePreviousCell)
         
         if didUseSwipeToSkipCell {
-            
             let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
             let toValue = collectionViewLayout.itemSize.width * CGFloat(snapToIndex)
             
@@ -97,7 +95,8 @@ extension MapViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let venue = venues[indexPath.row]
-//        presenter.showDetailsViewController(venue: venue, venuePhotoURL: venuePhotos[venue.id])
+        let venue = venues[indexPath.row]
+        let venuePhotoURL = venuePhotos[venue.id]
+        viewModel.inputs.itemSelected.onNext((venue: venue, venuePhotoURL: venuePhotoURL))
     }
 }

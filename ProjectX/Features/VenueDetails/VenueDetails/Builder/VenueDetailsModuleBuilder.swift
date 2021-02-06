@@ -12,7 +12,7 @@ import DesignSystem
 import Core
 import Alamofire
 
-protocol VenueDetailsDependency {
+public protocol VenueDetailsDependency {
     var session: Session { get }
 }
 
@@ -24,11 +24,11 @@ private final class VenueDetailsDependencyProvider: DependencyProvider<VenueDeta
     }
 }
 
-protocol VenueDetailsModuleBuildable: ModuleBuildable {}
+public protocol VenueDetailsModuleBuildable: ModuleBuildable {}
 
-class VenueDetailsModuleBuilder: Builder<VenueDetailsDependency> , VenueDetailsModuleBuildable {
+public class VenueDetailsModuleBuilder: Builder<VenueDetailsDependency> , VenueDetailsModuleBuildable {
     
-    func buildModule<T>(with rootViewController: NavigationControllable) -> Module<T>? {
+    public func buildModule<T>(with rootViewController: NavigationControllable) -> Module<T>? {
         let venueDetailsDependencyProvider = VenueDetailsDependencyProvider(dependency: dependency)
         
         registerService(session: venueDetailsDependencyProvider.session)

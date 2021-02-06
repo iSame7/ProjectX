@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C0E4AF1B604F831E4B111BF /* Pods_ProjectXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 343D945FF7B3D4F401983838 /* Pods_ProjectXTests.framework */; };
+		505CE07525CE94F400975DC2 /* VenueDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505CE07425CE94F400975DC2 /* VenueDetails.framework */; };
+		505CE07625CE94F400975DC2 /* VenueDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 505CE07425CE94F400975DC2 /* VenueDetails.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5065AB4223AFA5FA0011CE98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5065AB4123AFA5FA0011CE98 /* AppDelegate.swift */; };
 		5065AB4423AFA5FA0011CE98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5065AB4323AFA5FA0011CE98 /* SceneDelegate.swift */; };
 		5065AB4623AFA5FA0011CE98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5065AB4523AFA5FA0011CE98 /* ViewController.swift */; };
@@ -53,6 +55,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				50CA3DA125C2C54900CABE97 /* FoursquareCore.framework in Embed Frameworks */,
+				505CE07625CE94F400975DC2 /* VenueDetails.framework in Embed Frameworks */,
 				50CA3C6225C171E700CABE97 /* Utils.framework in Embed Frameworks */,
 				50CA3C5E25C171DD00CABE97 /* DesignSystem.framework in Embed Frameworks */,
 				50A4D90725BE1FF9006E7D1F /* Core.framework in Embed Frameworks */,
@@ -69,6 +72,7 @@
 		1F1E1CF2BB500B9E8A37B92B /* Pods-ProjectX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectX.release.xcconfig"; path = "Target Support Files/Pods-ProjectX/Pods-ProjectX.release.xcconfig"; sourceTree = "<group>"; };
 		343D945FF7B3D4F401983838 /* Pods_ProjectXTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BF31EBCD39F33F01F97006 /* Pods-ProjectXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectXTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectXTests/Pods-ProjectXTests.debug.xcconfig"; sourceTree = "<group>"; };
+		505CE07425CE94F400975DC2 /* VenueDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VenueDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5065AB3E23AFA5FA0011CE98 /* ProjectX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5065AB4123AFA5FA0011CE98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5065AB4323AFA5FA0011CE98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CA3DA025C2C54900CABE97 /* FoursquareCore.framework in Frameworks */,
+				505CE07525CE94F400975DC2 /* VenueDetails.framework in Frameworks */,
 				50CA3C4C25C16A9D00CABE97 /* Pods_ProjectX.framework in Frameworks */,
 				50CA3C6125C171E700CABE97 /* Utils.framework in Frameworks */,
 				50CA3C5D25C171DD00CABE97 /* DesignSystem.framework in Frameworks */,
@@ -123,6 +128,7 @@
 		07DF6CB792607D67BD2BEB48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				505CE07425CE94F400975DC2 /* VenueDetails.framework */,
 				50CA3D9F25C2C54900CABE97 /* FoursquareCore.framework */,
 				50CA3C6025C171E700CABE97 /* Utils.framework */,
 				50CA3C5C25C171DD00CABE97 /* DesignSystem.framework */,

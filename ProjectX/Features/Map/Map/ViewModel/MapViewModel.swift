@@ -21,6 +21,7 @@ struct MapViewModelInputs {
     var viewState = PublishSubject<ViewState>()
     var restaurantsListAroundCoordinatedRequested = PublishSubject<(lat: String, lng: String)>()
     var venuesPhotosRequested = PublishSubject<String>()
+    var itemSelected = PublishSubject<(venue: Venue, venuePhotoURL: String?)>()
 }
 
 struct MapViewModelOutputs {
@@ -28,6 +29,7 @@ struct MapViewModelOutputs {
     var showRestaurantsList = PublishSubject<[Venue]>()
     var showVenuePhoto = PublishSubject<(venueId: String, photo: String)>()
     var showError = PublishSubject<FoursquareError>()
+    var showVenueDetials = PublishSubject<(venue: Venue, venuePhotoURL: String?)>()
 }
 
 class MapViewModel: MapViewModellable {
@@ -40,7 +42,7 @@ class MapViewModel: MapViewModellable {
     init(useCase: MapInteractable) {
         self.useCase = useCase
         
-         observeInputs()
+        setupObservables()
     }
 }
 
@@ -93,6 +95,12 @@ private extension MapViewModel {
                 self.outputs.showVenuePhoto.onNext((venueId, photo))
                 
             }).disposed(by: self.disposeBag)
+        }.disposed(by: disposeBag)
+        
+        inputs.itemSelected.subscribe { [weak self] event in
+            guard let self = self, let element = event.element  else { return }
+            
+            self.outputs.showVenueDetials.onNext((venue: element.venue, venuePhotoURL: element.venuePhotoURL))
         }.disposed(by: disposeBag)
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0227C279300A7DD9584F12AB /* Pods_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE66E98F3E454B2929D435C2 /* Pods_Map.framework */; platformFilter = ios; };
+		505CE03F25CE860800975DC2 /* VenueDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505CE03E25CE860800975DC2 /* VenueDetails.framework */; platformFilter = ios; };
+		505CE06E25CE94D700975DC2 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505CE06D25CE94D700975DC2 /* Core.framework */; platformFilter = ios; };
 		50A4E0DE25C0D559006E7D1F /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A4E0D425C0D559006E7D1F /* Map.framework */; };
 		50A4E0E325C0D559006E7D1F /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4E0E225C0D559006E7D1F /* MapTests.swift */; };
 		50A4E0E525C0D559006E7D1F /* Map.h in Headers */ = {isa = PBXBuildFile; fileRef = 50A4E0D725C0D559006E7D1F /* Map.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		505CE03E25CE860800975DC2 /* VenueDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VenueDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		505CE06D25CE94D700975DC2 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A4E0D425C0D559006E7D1F /* Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A4E0D725C0D559006E7D1F /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		50A4E0D825C0D559006E7D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 				50CA3E9A25C31BF400CABE97 /* FoursquareCore.framework in Frameworks */,
 				0227C279300A7DD9584F12AB /* Pods_Map.framework in Frameworks */,
 				50CA3C3C25C1676800CABE97 /* DesignSystem.framework in Frameworks */,
+				505CE06E25CE94D700975DC2 /* Core.framework in Frameworks */,
+				505CE03F25CE860800975DC2 /* VenueDetails.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +202,8 @@
 		5DC4122B7D77DAE61807098C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				505CE06D25CE94D700975DC2 /* Core.framework */,
+				505CE03E25CE860800975DC2 /* VenueDetails.framework */,
 				50CA3E9925C31BF400CABE97 /* FoursquareCore.framework */,
 				50CA3C3B25C1676800CABE97 /* DesignSystem.framework */,
 				DE66E98F3E454B2929D435C2 /* Pods_Map.framework */,

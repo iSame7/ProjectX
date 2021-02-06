@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var sceneDelegateViewModel: SceneDelegateViewModellable!
     private var rootBuilder = RootBuilder()
     private let disposeBag = DisposeBag()
+    private var appRootCoordinator: BaseCoordinator<Void>?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -29,7 +30,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
             
-            guard let appRootCoordinator: BaseCoordinator<Void> = rootBuilder.buildModule(with: window)?.coordinator else {
+            appRootCoordinator = rootBuilder.buildModule(with: window)?.coordinator
+            guard let appRootCoordinator = appRootCoordinator else {
                 preconditionFailure("[SceneDelegate] Cannot get appRootCoordinator from module builder")
             }
             

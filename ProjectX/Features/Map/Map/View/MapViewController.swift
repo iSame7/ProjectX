@@ -66,6 +66,8 @@ class MapViewController: ViewController<MapViewModel> {
     override func setupUI() {
         setupSubviews()
         setupConstraints()
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func setupSubviews() {
