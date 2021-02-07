@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B605B217CB906055938609B /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31044250C4CD8586DCE97340 /* Pods_Utils.framework */; };
 		505CDF7625C9CB6100975DC2 /* Error+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CDF7525C9CB6100975DC2 /* Error+Utils.swift */; };
+		505CE08725D0213000975DC2 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE08625D0212F00975DC2 /* UIView+Utils.swift */; };
 		50A4D97625BE2A0A006E7D1F /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A4D96C25BE2A0A006E7D1F /* Utils.framework */; };
 		50A4D97B25BE2A0A006E7D1F /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D97A25BE2A0A006E7D1F /* UtilsTests.swift */; };
 		50A4D97D25BE2A0A006E7D1F /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 50A4D96F25BE2A0A006E7D1F /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		31044250C4CD8586DCE97340 /* Pods_Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505CDF7525C9CB6100975DC2 /* Error+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Utils.swift"; sourceTree = "<group>"; };
+		505CE08625D0212F00975DC2 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		50A4D96C25BE2A0A006E7D1F /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A4D96F25BE2A0A006E7D1F /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		50A4D97025BE2A0A006E7D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				50A4DD1A25BFA03F006E7D1F /* UIImage+Utils.swift */,
 				50CA3C5825C16FC600CABE97 /* UIWindow+Utils.swift */,
 				505CDF7525C9CB6100975DC2 /* Error+Utils.swift */,
+				505CE08625D0212F00975DC2 /* UIView+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				50A4E0AD25C0D40E006E7D1F /* Logging.swift in Sources */,
 				505CDF7625C9CB6100975DC2 /* Error+Utils.swift in Sources */,
 				50CA3C5925C16FC600CABE97 /* UIWindow+Utils.swift in Sources */,
+				505CE08725D0213000975DC2 /* UIView+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

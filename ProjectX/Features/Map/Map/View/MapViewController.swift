@@ -59,6 +59,8 @@ class MapViewController: ViewController<MapViewModel> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     // MARK: - SetupUI
@@ -66,8 +68,6 @@ class MapViewController: ViewController<MapViewModel> {
     override func setupUI() {
         setupSubviews()
         setupConstraints()
-        
-        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func setupSubviews() {
