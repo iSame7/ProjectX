@@ -10,13 +10,13 @@ import Alamofire
 public enum Router: URLRequestConvertible {
     case fetchRestaurants(coordinates: String)
     case fetchPhotos(venueId: String)
-    case fetchDetails(venueId: String)
+    case fetchVenueDetails(venueId: String)
     
     static let baseURLString = Config.baseURL
     
     var method: HTTPMethod {
         switch self {
-        case .fetchRestaurants, .fetchPhotos, .fetchDetails:
+        case .fetchRestaurants, .fetchPhotos, .fetchVenueDetails:
             return .get
         }
     }
@@ -27,7 +27,7 @@ public enum Router: URLRequestConvertible {
             return "/venues/search"
         case let .fetchPhotos(venueId):
             return "/venues/\(venueId)/photos"
-        case let .fetchDetails(venueId):
+        case let .fetchVenueDetails(venueId):
             return "/venues/\(venueId)"
         }
     }
@@ -38,7 +38,7 @@ public enum Router: URLRequestConvertible {
             let authorizationParams = getAuthorizationParameters()
             let params = ["ll": coordinates, "client_id" :  authorizationParams.0 , "client_secret": authorizationParams.1, "categoryId": "4d4b7105d754a06374d81259", "v": authorizationParams.2]
             return params as [String : AnyObject]?
-        case .fetchPhotos, .fetchDetails:
+        case .fetchPhotos, .fetchVenueDetails:
             let authorizationParams = getAuthorizationParameters()
             let params = ["client_id" :  authorizationParams.0 , "client_secret": authorizationParams.1, "v": authorizationParams.2]
             return params as [String : AnyObject]?

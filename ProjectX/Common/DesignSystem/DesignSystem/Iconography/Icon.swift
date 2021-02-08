@@ -30,4 +30,5 @@ public enum Icon: String {
     case fish
     case doughnut
     case restaurantPlaceholder
+    case back
 }

@@ -32,7 +32,7 @@ class MapCoordinator: BaseCoordinator<Void> {
         showVenueDetials.subscribe { [weak self] (venue, venuePhotoURL) in
             guard let self = self else { return }
             
-            guard let venueDetailsCoordinator: BaseCoordinator<Void> = self.venueDetailsModuleBuilder.buildModule(with: self.viewController)?.coordinator else {
+            guard let venueDetailsCoordinator: BaseCoordinator<Void> = self.venueDetailsModuleBuilder.buildModule(with: self.viewController, venueId: venue.id, venuePhotoURL: venuePhotoURL)?.coordinator else {
                 preconditionFailure("Cannot get venueDetailsCoordinator from module builder")
             }
             

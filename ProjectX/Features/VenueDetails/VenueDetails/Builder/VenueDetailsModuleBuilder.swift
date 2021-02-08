@@ -14,6 +14,7 @@ import Alamofire
 
 public protocol VenueDetailsDependency {
     var session: Session { get }
+    var networkRechabilityManager: NetworkReachabilityManager? { get }
 }
 
 /// Provides all dependencies to build the VenueDetailsModuleBuilder
@@ -22,18 +23,24 @@ private final class VenueDetailsDependencyProvider: DependencyProvider<VenueDeta
     var session: Session {
         return dependency.session
     }
+    
+    fileprivate var networkRechabilityManager: NetworkReachabilityManager? {
+        return dependency.networkRechabilityManager
+    }
 }
 
-public protocol VenueDetailsModuleBuildable: ModuleBuildable {}
+public protocol VenueDetailsModuleBuildable: ModuleBuildable {
+    func buildModule<T>(with rootViewController: NavigationControllable, venueId: String, venuePhotoURL: String?) -> Module<T>?
+}
 
 public class VenueDetailsModuleBuilder: Builder<VenueDetailsDependency> , VenueDetailsModuleBuildable {
     
-    public func buildModule<T>(with rootViewController: NavigationControllable) -> Module<T>? {
+    public func buildModule<T>(with rootViewController: NavigationControllable, venueId: String, venuePhotoURL: String?) -> Module<T>? {
         let venueDetailsDependencyProvider = VenueDetailsDependencyProvider(dependency: dependency)
         
         registerService(session: venueDetailsDependencyProvider.session)
-        registerUsecase()
-        registerViewModel()
+        registerUsecase(networkRechabilityManager: venueDetailsDependencyProvider.networkRechabilityManager)
+        registerViewModel(venueId: venueId, venuePhotoURL: venuePhotoURL)
         registerView()
         registerCoordinator(rootViewController: rootViewController)
         
@@ -47,11 +54,11 @@ public class VenueDetailsModuleBuilder: Builder<VenueDetailsDependency> , VenueD
 
 private extension VenueDetailsModuleBuilder {
     
-    func registerUsecase() {
+    func registerUsecase(networkRechabilityManager: NetworkReachabilityManager?) {
         container.register(VenueDetailsInteractable.self) { [weak self] in
             guard let self = self,
                 let service = self.container.resolve(VenueDetailsServiceFetching.self) else { return nil }
-            return VenueDetailsUseCase(service: service)
+            return VenueDetailsUseCase(service: service, networkRechabilityManager: networkRechabilityManager)
         }
     }
     
@@ -61,11 +68,11 @@ private extension VenueDetailsModuleBuilder {
         }
     }
     
-    func registerViewModel() {
+    func registerViewModel(venueId: String, venuePhotoURL: String?) {
         container.register(VenueDetailsViewModel.self) { [weak self] in
             guard let useCase = self?.container.resolve(VenueDetailsInteractable.self) else { return nil }
             
-            return VenueDetailsViewModel(useCase: useCase)
+            return VenueDetailsViewModel(useCase: useCase, venueId: venueId, venuePhotoURL: venuePhotoURL)
         }
     }
     
@@ -86,6 +93,7 @@ private extension VenueDetailsModuleBuilder {
             }
             
             let coordinator = VenueDetailsCoordinator(rootViewController: rootViewController, viewController: viewController)
+            coordinator.backButtonTapped = viewController.viewModel.outputs.showMap
             return coordinator
         }
     }

@@ -5,10 +5,10 @@
 //  Created by Sameh Mabrouk on 28/01/2021.
 //
 
-struct DetailsResult: Codable {
-    let response: DetailsResponse
+public struct DetailsResult: Codable {
+    public let response: DetailsResponse
 }
 
-struct DetailsResponse: Codable {
-    let venue: Venue
+public struct DetailsResponse: Codable {
+    public let venue: Venue
 }

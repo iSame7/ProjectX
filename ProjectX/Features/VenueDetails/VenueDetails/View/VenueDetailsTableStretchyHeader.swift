@@ -7,12 +7,15 @@
 
 import UIKit
 import DesignSystem
+import Nuke
 
 class VenueDetailsTableStretchyHeader: UIView {
     
     public struct ViewData {
         var title: String
         var description: String
+        var imageURL: String?
+        var imagePlaceholder: String
     }
     
     lazy var imageView: UIImageView = {
@@ -64,6 +67,14 @@ class VenueDetailsTableStretchyHeader: UIView {
     func setup(with viewData: ViewData) {
         titleLabel.text = viewData.title
         descriptionLabel.text = viewData.description
+        
+        let placeholderImage = UIImage(named: viewData.imagePlaceholder, in: Bundle(for: VenueDetailsTableStretchyHeader.self), with: nil)
+        
+        if let imagePath = viewData.imageURL, let imageURL = URL(string: imagePath) {
+            Nuke.loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: placeholderImage, transition: nil, failureImage: placeholderImage, failureImageTransition: nil, contentModes: nil), into: imageView, progress: nil, completion: nil)
+        } else {
+            imageView.image = placeholderImage
+        }
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -111,7 +122,7 @@ private extension VenueDetailsTableStretchyHeader {
             shadowView.rightAnchor.constraint(equalTo: containerView.rightAnchor),
             shadowView.heightAnchor.constraint(equalToConstant: 60),
             shadowView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            stackView.leftAnchor.constraint(equalTo: containerView.leftAnchor),
+            stackView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 0),
             stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
             stackView.rightAnchor.constraint(equalTo: containerView.rightAnchor),
             stackView.heightAnchor.constraint(equalToConstant: 70)

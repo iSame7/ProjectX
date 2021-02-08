@@ -16,6 +16,8 @@ class VenueDetailsCoordinator: BaseCoordinator<Void> {
     private weak var rootViewController: NavigationControllable?
     private let viewController: UIViewController
     
+    var backButtonTapped = PublishSubject<Void>()
+
     init(rootViewController: NavigationControllable?, viewController: UIViewController) {
         self.rootViewController = rootViewController
         self.viewController = viewController
@@ -24,6 +26,8 @@ class VenueDetailsCoordinator: BaseCoordinator<Void> {
     override public func start() -> Observable<Void> {
         rootViewController?.pushViewController(viewController, animated: true)
         
-        return .never()
+        return backButtonTapped.do(onNext: { [weak self] in
+           _ = self?.rootViewController?.popViewController(animated: true)
+        })
     }
 }

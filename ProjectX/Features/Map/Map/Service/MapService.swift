@@ -45,20 +45,9 @@ class MapService: VenuFetching {
                         }
                     }
                 case  let .failure(error):
-              
                     print("Error\(String(describing: error))")
                     if error.isSessionTaskError {
                         observer.onNext((nil, .noInternetConnection))
-//
-//                        self.networkRechabilityManager?.startListening(onUpdatePerforming: { status in
-//                            print("Network Status Changed: \(status)")
-//                            switch status {
-//                            case .reachable(_):
-//                                return self.fetchVenues(coordinates: coordinates)
-//                            default:
-//                                break
-//                            }
-//                        })
                     } else {
                         observer.onNext((nil, .noResponse))
                     }
@@ -66,17 +55,13 @@ class MapService: VenuFetching {
                     
                 }
             }
-            
-            
             return Disposables.create()
         }
-//        return .just((nil, nil))
     }
     
     func fetchVenuesPhotos(venueId: String) -> Observable<[Photo]?> {
         return Observable.create { [unowned self] observer in
             session.request(Router.fetchPhotos(venueId: venueId)).responseJSON { response in
-                
                 switch response.result {
                 case .success:
                     if let data = response.data {
