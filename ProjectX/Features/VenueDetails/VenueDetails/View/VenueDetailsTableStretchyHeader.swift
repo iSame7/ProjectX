@@ -20,6 +20,7 @@ class VenueDetailsTableStretchyHeader: UIView {
     
     lazy var imageView: UIImageView = {
         let imageView: UIImageView = ImageViewFactory().build()
+        imageView.image = UIImage(named: "placeholder", in: Bundle(for: VenueDetailsTableStretchyHeader.self), with: nil)
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -34,7 +35,6 @@ class VenueDetailsTableStretchyHeader: UIView {
         stackView.distribution = .fill
         stackView.axis = .vertical
         stackView.spacing = 0
-        stackView.backgroundColor = .red
         
         return stackView
     }()
@@ -44,7 +44,7 @@ class VenueDetailsTableStretchyHeader: UIView {
     }()
 
     private lazy var descriptionLabel: Label = {
-        LabelFactory().textAlignment(.left).style(style: .footNoteRegular).textColor(with: DesignSystem.Colors.Palette.brandWhite.color).build()
+        LabelFactory().textAlignment(.left).style(style: .footNoteMedium).textColor(with: DesignSystem.Colors.Palette.brandWhite.color).build()
     }()
     
     
@@ -52,6 +52,15 @@ class VenueDetailsTableStretchyHeader: UIView {
     private var imageViewBottom = NSLayoutConstraint()
     private var containerView = UIView()
     private var containerViewHeight = NSLayoutConstraint()
+    
+    init(frame: CGRect, viewData: ViewData) {
+        super.init(frame: frame)
+        
+        setupUI()
+
+        titleLabel.text = viewData.title
+        descriptionLabel.text = viewData.description
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -123,8 +132,8 @@ private extension VenueDetailsTableStretchyHeader {
             shadowView.heightAnchor.constraint(equalToConstant: 60),
             shadowView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
             stackView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 0),
-            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            stackView.rightAnchor.constraint(equalTo: containerView.rightAnchor),
+            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -5),
+            stackView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: 0),
             stackView.heightAnchor.constraint(equalToConstant: 70)
         ])
         

@@ -15,6 +15,8 @@ protocol VenueDetailsViewModellable: ViewModellable {
     var disposeBag: DisposeBag { get }
     var inputs: VenueDetailsViewModelInputs { get }
     var outputs: VenueDetailsViewModelOutputs { get }
+    
+    func buildVenueTableHeaderViewData() -> VenueDetailsTableStretchyHeader.ViewData
 }
 
 struct VenueDetailsViewModelInputs {
@@ -29,27 +31,31 @@ struct VenueDetailsViewModelOutputs {
 }
 
 class VenueDetailsViewModel: VenueDetailsViewModellable {
-
+    
     let disposeBag = DisposeBag()
     let inputs = VenueDetailsViewModelInputs()
     let outputs = VenueDetailsViewModelOutputs()
     private let useCase: VenueDetailsInteractable
-    private let venueId: String
+    private let venue: Venue
     private let venuePhotoURL: String?
     
-    init(useCase: VenueDetailsInteractable, venueId: String, venuePhotoURL: String?) {
+    init(useCase: VenueDetailsInteractable, venue: Venue, venuePhotoURL: String?) {
         self.useCase = useCase
-        self.venueId = venueId
+        self.venue = venue
         self.venuePhotoURL = venuePhotoURL
         
         setupObservables()
+    }
+    
+    func buildVenueTableHeaderViewData() -> VenueDetailsTableStretchyHeader.ViewData {
+        return VenueDetailsTableStretchyHeader.ViewData(title: venue.name, description: venue.categories.first?.name ?? "", imageURL: nil, imagePlaceholder: "restraunt-placeholder")
     }
 }
 
 // MARK: - Observables
 
 private extension VenueDetailsViewModel {
-
+    
     func setupObservables() {
         observeInputs()
     }
@@ -60,7 +66,7 @@ private extension VenueDetailsViewModel {
             
             switch state {
             case .loaded:
-                self.useCase.getVenueDetails(venueId: self.venueId).subscribe { event in
+                self.useCase.getVenueDetails(venueId: self.venue.id).subscribe { event in
                     if let venue = event.element?.venue, let category = venue.categories.first {
                         self.outputs.showVenueDetailsHeader.onNext(VenueDetailsTableStretchyHeader.ViewData(title: venue.name, description: category.name, imageURL: self.venuePhotoURL, imagePlaceholder: "restraunt-placeholder"))
                     } else if let error = event.element?.error {

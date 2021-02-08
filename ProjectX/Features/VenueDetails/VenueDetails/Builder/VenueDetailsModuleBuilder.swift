@@ -11,6 +11,7 @@ import Utils
 import DesignSystem
 import Core
 import Alamofire
+import FoursquareCore
 
 public protocol VenueDetailsDependency {
     var session: Session { get }
@@ -30,17 +31,17 @@ private final class VenueDetailsDependencyProvider: DependencyProvider<VenueDeta
 }
 
 public protocol VenueDetailsModuleBuildable: ModuleBuildable {
-    func buildModule<T>(with rootViewController: NavigationControllable, venueId: String, venuePhotoURL: String?) -> Module<T>?
+    func buildModule<T>(with rootViewController: NavigationControllable, venue: Venue, venuePhotoURL: String?) -> Module<T>?
 }
 
 public class VenueDetailsModuleBuilder: Builder<VenueDetailsDependency> , VenueDetailsModuleBuildable {
     
-    public func buildModule<T>(with rootViewController: NavigationControllable, venueId: String, venuePhotoURL: String?) -> Module<T>? {
+    public func buildModule<T>(with rootViewController: NavigationControllable, venue: Venue, venuePhotoURL: String?) -> Module<T>? {
         let venueDetailsDependencyProvider = VenueDetailsDependencyProvider(dependency: dependency)
         
         registerService(session: venueDetailsDependencyProvider.session)
         registerUsecase(networkRechabilityManager: venueDetailsDependencyProvider.networkRechabilityManager)
-        registerViewModel(venueId: venueId, venuePhotoURL: venuePhotoURL)
+        registerViewModel(venue: venue, venuePhotoURL: venuePhotoURL)
         registerView()
         registerCoordinator(rootViewController: rootViewController)
         
@@ -68,11 +69,11 @@ private extension VenueDetailsModuleBuilder {
         }
     }
     
-    func registerViewModel(venueId: String, venuePhotoURL: String?) {
+    func registerViewModel(venue: Venue, venuePhotoURL: String?) {
         container.register(VenueDetailsViewModel.self) { [weak self] in
             guard let useCase = self?.container.resolve(VenueDetailsInteractable.self) else { return nil }
             
-            return VenueDetailsViewModel(useCase: useCase, venueId: venueId, venuePhotoURL: venuePhotoURL)
+            return VenueDetailsViewModel(useCase: useCase, venue: venue, venuePhotoURL: venuePhotoURL)
         }
     }
     

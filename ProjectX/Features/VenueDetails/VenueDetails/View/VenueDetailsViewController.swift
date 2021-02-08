@@ -78,9 +78,7 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
     
     func setupSubviews() {
         view.addSubview(tableView)
-        stretchyHeader = VenueDetailsTableStretchyHeader(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width))
-        let image = UIImage(named: "placeholder", in: Bundle(for: VenueDetailsViewController.self), with: nil)
-        stretchyHeader.imageView.image = image
+        stretchyHeader = VenueDetailsTableStretchyHeader(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width), viewData: viewModel.buildVenueTableHeaderViewData())
         tableView.tableHeaderView = stretchyHeader
         
         view.addSubview(backButton)
