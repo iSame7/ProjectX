@@ -10,6 +10,7 @@
 		2B605B217CB906055938609B /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31044250C4CD8586DCE97340 /* Pods_Utils.framework */; };
 		505CDF7625C9CB6100975DC2 /* Error+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CDF7525C9CB6100975DC2 /* Error+Utils.swift */; };
 		505CE08725D0213000975DC2 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE08625D0212F00975DC2 /* UIView+Utils.swift */; };
+		505CE09B25D174B400975DC2 /* FloatingPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE09A25D174B400975DC2 /* FloatingPoint+Utils.swift */; };
 		50A4D97625BE2A0A006E7D1F /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A4D96C25BE2A0A006E7D1F /* Utils.framework */; };
 		50A4D97B25BE2A0A006E7D1F /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D97A25BE2A0A006E7D1F /* UtilsTests.swift */; };
 		50A4D97D25BE2A0A006E7D1F /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 50A4D96F25BE2A0A006E7D1F /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,6 +39,7 @@
 		31044250C4CD8586DCE97340 /* Pods_Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505CDF7525C9CB6100975DC2 /* Error+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Utils.swift"; sourceTree = "<group>"; };
 		505CE08625D0212F00975DC2 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		505CE09A25D174B400975DC2 /* FloatingPoint+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Utils.swift"; sourceTree = "<group>"; };
 		50A4D96C25BE2A0A006E7D1F /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A4D96F25BE2A0A006E7D1F /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		50A4D97025BE2A0A006E7D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				50CA3C5825C16FC600CABE97 /* UIWindow+Utils.swift */,
 				505CDF7525C9CB6100975DC2 /* Error+Utils.swift */,
 				505CE08625D0212F00975DC2 /* UIView+Utils.swift */,
+				505CE09A25D174B400975DC2 /* FloatingPoint+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A4DD1325BF9FB1006E7D1F /* Localize.swift in Sources */,
+				505CE09B25D174B400975DC2 /* FloatingPoint+Utils.swift in Sources */,
 				50A4DD0825BF9F6E006E7D1F /* NavigationControllable.swift in Sources */,
 				50A4DCF225BF9DEC006E7D1F /* ViewType.swift in Sources */,
 				50A4DCF925BF9E7C006E7D1F /* DependencyManager.swift in Sources */,

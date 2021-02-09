@@ -21,6 +21,10 @@
 		505CE03325CC4F3900975DC2 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505CE03225CC4F3900975DC2 /* DesignSystem.framework */; platformFilter = ios; };
 		505CE07B25CE9F5B00975DC2 /* VenueDetailsTableStretchyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE07A25CE9F5B00975DC2 /* VenueDetailsTableStretchyHeader.swift */; };
 		505CE08225CEB22A00975DC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 505CE08125CEB22A00975DC2 /* Assets.xcassets */; };
+		505CE09325D16C0700975DC2 /* RatingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE09225D16C0700975DC2 /* RatingProgressView.swift */; };
+		505CE09725D1748F00975DC2 /* RatingCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE09625D1748F00975DC2 /* RatingCircleView.swift */; };
+		505CE0A125D2447D00975DC2 /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE0A025D2447D00975DC2 /* RatingTableViewCell.swift */; };
+		50E124B625D320C600B0D779 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124B525D320C600B0D779 /* AddressTableViewCell.swift */; };
 		7446A463675ED4A4E661A459 /* Pods_VenueDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896A386D68CEC0FFB3C6DE38 /* Pods_VenueDetails.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +57,10 @@
 		505CE03225CC4F3900975DC2 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505CE07A25CE9F5B00975DC2 /* VenueDetailsTableStretchyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsTableStretchyHeader.swift; sourceTree = "<group>"; };
 		505CE08125CEB22A00975DC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		505CE09225D16C0700975DC2 /* RatingProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgressView.swift; sourceTree = "<group>"; };
+		505CE09625D1748F00975DC2 /* RatingCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCircleView.swift; sourceTree = "<group>"; };
+		505CE0A025D2447D00975DC2 /* RatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
+		50E124B525D320C600B0D779 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		896A386D68CEC0FFB3C6DE38 /* Pods_VenueDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenueDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91BBBF49AB163ECE0864F33B /* Pods_VenueDetails_VenueDetailsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenueDetails_VenueDetailsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		979B74023E8084B146E24D39 /* Pods-VenueDetails-VenueDetailsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenueDetails-VenueDetailsTests.debug.xcconfig"; path = "Target Support Files/Pods-VenueDetails-VenueDetailsTests/Pods-VenueDetails-VenueDetailsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +165,7 @@
 		505CE00425CC4D7100975DC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				505CE08B25D1644000975DC2 /* Cells */,
 				505CDFC925CC4AFE00975DC2 /* VenueDetailsViewController.swift */,
 				505CE07A25CE9F5B00975DC2 /* VenueDetailsTableStretchyHeader.swift */,
 			);
@@ -193,6 +202,17 @@
 				505CE08125CEB22A00975DC2 /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		505CE08B25D1644000975DC2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				505CE09225D16C0700975DC2 /* RatingProgressView.swift */,
+				505CE09625D1748F00975DC2 /* RatingCircleView.swift */,
+				505CE0A025D2447D00975DC2 /* RatingTableViewCell.swift */,
+				50E124B525D320C600B0D779 /* AddressTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		5192CE15D480E9555CBD573C /* Pods */ = {
@@ -387,8 +407,12 @@
 				505CDFCD25CC4AFE00975DC2 /* VenueDetailsModuleBuilder.swift in Sources */,
 				505CDFD025CC4AFE00975DC2 /* VenueDetailsViewModel.swift in Sources */,
 				505CDFCE25CC4AFE00975DC2 /* VenueDetailsUseCase.swift in Sources */,
+				505CE0A125D2447D00975DC2 /* RatingTableViewCell.swift in Sources */,
 				505CDFCF25CC4AFE00975DC2 /* VenueDetailsViewController.swift in Sources */,
+				50E124B625D320C600B0D779 /* AddressTableViewCell.swift in Sources */,
+				505CE09325D16C0700975DC2 /* RatingProgressView.swift in Sources */,
 				505CE07B25CE9F5B00975DC2 /* VenueDetailsTableStretchyHeader.swift in Sources */,
+				505CE09725D1748F00975DC2 /* RatingCircleView.swift in Sources */,
 				505CDFD125CC4AFE00975DC2 /* VenueDetailsService.swift in Sources */,
 				505CDFCC25CC4AFE00975DC2 /* VenueDetailsCoordinator.swift in Sources */,
 			);
