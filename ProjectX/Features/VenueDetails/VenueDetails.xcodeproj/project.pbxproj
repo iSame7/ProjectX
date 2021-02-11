@@ -25,6 +25,11 @@
 		505CE09725D1748F00975DC2 /* RatingCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE09625D1748F00975DC2 /* RatingCircleView.swift */; };
 		505CE0A125D2447D00975DC2 /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE0A025D2447D00975DC2 /* RatingTableViewCell.swift */; };
 		50E124B625D320C600B0D779 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124B525D320C600B0D779 /* AddressTableViewCell.swift */; };
+		50E124BB25D385A000B0D779 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124BA25D385A000B0D779 /* MapTableViewCell.swift */; };
+		50E124BF25D50E0100B0D779 /* PhotoGalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124BE25D50E0100B0D779 /* PhotoGalleryTableViewCell.swift */; };
+		50E124C425D50ECA00B0D779 /* BaseCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124C325D50ECA00B0D779 /* BaseCollectionViewLayout.swift */; };
+		50E124C825D50F3900B0D779 /* PhotoGalleryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124C725D50F3900B0D779 /* PhotoGalleryLayout.swift */; };
+		50E124CC25D50F5500B0D779 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124CB25D50F5500B0D779 /* PhotoCollectionViewCell.swift */; };
 		7446A463675ED4A4E661A459 /* Pods_VenueDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896A386D68CEC0FFB3C6DE38 /* Pods_VenueDetails.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +66,11 @@
 		505CE09625D1748F00975DC2 /* RatingCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCircleView.swift; sourceTree = "<group>"; };
 		505CE0A025D2447D00975DC2 /* RatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
 		50E124B525D320C600B0D779 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		50E124BA25D385A000B0D779 /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		50E124BE25D50E0100B0D779 /* PhotoGalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryTableViewCell.swift; sourceTree = "<group>"; };
+		50E124C325D50ECA00B0D779 /* BaseCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewLayout.swift; sourceTree = "<group>"; };
+		50E124C725D50F3900B0D779 /* PhotoGalleryLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryLayout.swift; sourceTree = "<group>"; };
+		50E124CB25D50F5500B0D779 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		896A386D68CEC0FFB3C6DE38 /* Pods_VenueDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenueDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91BBBF49AB163ECE0864F33B /* Pods_VenueDetails_VenueDetailsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenueDetails_VenueDetailsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		979B74023E8084B146E24D39 /* Pods-VenueDetails-VenueDetailsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenueDetails-VenueDetailsTests.debug.xcconfig"; path = "Target Support Files/Pods-VenueDetails-VenueDetailsTests/Pods-VenueDetails-VenueDetailsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +175,7 @@
 		505CE00425CC4D7100975DC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				50E124C225D50EBE00B0D779 /* PhotoGallery */,
 				505CE08B25D1644000975DC2 /* Cells */,
 				505CDFC925CC4AFE00975DC2 /* VenueDetailsViewController.swift */,
 				505CE07A25CE9F5B00975DC2 /* VenueDetailsTableStretchyHeader.swift */,
@@ -211,8 +222,20 @@
 				505CE09625D1748F00975DC2 /* RatingCircleView.swift */,
 				505CE0A025D2447D00975DC2 /* RatingTableViewCell.swift */,
 				50E124B525D320C600B0D779 /* AddressTableViewCell.swift */,
+				50E124BA25D385A000B0D779 /* MapTableViewCell.swift */,
+				50E124BE25D50E0100B0D779 /* PhotoGalleryTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		50E124C225D50EBE00B0D779 /* PhotoGallery */ = {
+			isa = PBXGroup;
+			children = (
+				50E124C325D50ECA00B0D779 /* BaseCollectionViewLayout.swift */,
+				50E124C725D50F3900B0D779 /* PhotoGalleryLayout.swift */,
+				50E124CB25D50F5500B0D779 /* PhotoCollectionViewCell.swift */,
+			);
+			path = PhotoGallery;
 			sourceTree = "<group>";
 		};
 		5192CE15D480E9555CBD573C /* Pods */ = {
@@ -406,12 +429,17 @@
 			files = (
 				505CDFCD25CC4AFE00975DC2 /* VenueDetailsModuleBuilder.swift in Sources */,
 				505CDFD025CC4AFE00975DC2 /* VenueDetailsViewModel.swift in Sources */,
+				50E124BB25D385A000B0D779 /* MapTableViewCell.swift in Sources */,
 				505CDFCE25CC4AFE00975DC2 /* VenueDetailsUseCase.swift in Sources */,
 				505CE0A125D2447D00975DC2 /* RatingTableViewCell.swift in Sources */,
 				505CDFCF25CC4AFE00975DC2 /* VenueDetailsViewController.swift in Sources */,
 				50E124B625D320C600B0D779 /* AddressTableViewCell.swift in Sources */,
+				50E124C825D50F3900B0D779 /* PhotoGalleryLayout.swift in Sources */,
 				505CE09325D16C0700975DC2 /* RatingProgressView.swift in Sources */,
+				50E124CC25D50F5500B0D779 /* PhotoCollectionViewCell.swift in Sources */,
 				505CE07B25CE9F5B00975DC2 /* VenueDetailsTableStretchyHeader.swift in Sources */,
+				50E124C425D50ECA00B0D779 /* BaseCollectionViewLayout.swift in Sources */,
+				50E124BF25D50E0100B0D779 /* PhotoGalleryTableViewCell.swift in Sources */,
 				505CE09725D1748F00975DC2 /* RatingCircleView.swift in Sources */,
 				505CDFD125CC4AFE00975DC2 /* VenueDetailsService.swift in Sources */,
 				505CDFCC25CC4AFE00975DC2 /* VenueDetailsCoordinator.swift in Sources */,

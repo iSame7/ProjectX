@@ -29,7 +29,7 @@ class AddressTableViewCell: UITableViewCell {
     }()
         
     lazy var addressHeaderLabel: Label = {
-        let label: Label = LabelFactory().textAlignment(.left).style(style: .footNoteMedium).textColor(with: DesignSystem.Colors.Palette.gray200.color).build()
+        let label: Label = LabelFactory().textAlignment(.left).style(style: .footNoteMedium).textColor(with: DesignSystem.Colors.Palette.gray400.color).build()
         label.text = "ADDRESS"
         label.numberOfLines = 0
         
@@ -52,7 +52,7 @@ class AddressTableViewCell: UITableViewCell {
         return label
     }()
     
-    let addressSeparatorView = SeparatorFactory<Separator>().setColor(DesignSystem.Colors.Palette.gray900.color).build()
+    let addressSeparatorView = SeparatorFactory<Separator>().setColor(DesignSystem.Colors.Palette.gray300.color).build()
 
     private lazy var hoursStackView: UIStackView = {
         let stackView = UIStackView()
@@ -64,7 +64,7 @@ class AddressTableViewCell: UITableViewCell {
     }()
     
     lazy var hoursHeaderLabel: Label = {
-        let label: Label = LabelFactory().textAlignment(.left).style(style: .footNoteMedium).textColor(with: DesignSystem.Colors.Palette.gray200.color).build()
+        let label: Label = LabelFactory().textAlignment(.left).style(style: .footNoteMedium).textColor(with: DesignSystem.Colors.Palette.gray400.color).build()
         label.text = "HOURS"
         label.numberOfLines = 0
         
@@ -79,7 +79,7 @@ class AddressTableViewCell: UITableViewCell {
         return label
     }()
     
-    let hoursSeparatorView = SeparatorFactory<Separator>().setColor(DesignSystem.Colors.Palette.gray900.color).build()
+    let hoursSeparatorView = SeparatorFactory<Separator>().setColor(DesignSystem.Colors.Palette.gray300.color).build()
 
     private lazy var categoriesStackView: UIStackView = {
         let stackView = UIStackView()
@@ -91,7 +91,7 @@ class AddressTableViewCell: UITableViewCell {
     }()
     
     lazy var categoriesHeaderLabel: Label = {
-        let label: Label = LabelFactory().textAlignment(.left).style(style: .footNoteMedium).textColor(with: DesignSystem.Colors.Palette.gray200.color).build()
+        let label: Label = LabelFactory().textAlignment(.left).style(style: .footNoteMedium).textColor(with: DesignSystem.Colors.Palette.gray400.color).build()
         label.text = "CATEGORIES"
         label.numberOfLines = 0
         
@@ -132,6 +132,7 @@ class AddressTableViewCell: UITableViewCell {
 private extension AddressTableViewCell {
     
     func setupUI() {
+        selectionStyle = .none
         setupSubviews()
         setupConstraints()
     }
@@ -144,7 +145,7 @@ private extension AddressTableViewCell {
         contentView.addSubview(addressSeparatorView)
         
         hoursStackView.addArrangedSubview(hoursHeaderLabel)
-        hoursStackView.addArrangedSubview(postCodeLabel)
+        hoursStackView.addArrangedSubview(hoursLabel)
         contentView.addSubview(hoursStackView)
         contentView.addSubview(hoursSeparatorView)
         

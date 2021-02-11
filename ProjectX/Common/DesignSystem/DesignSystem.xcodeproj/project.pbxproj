@@ -67,6 +67,15 @@
 		50CA3C2925C164DC00CABE97 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C2825C164DC00CABE97 /* Map.swift */; };
 		50CA3C2D25C1655700CABE97 /* MapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C2C25C1655700CABE97 /* MapFactory.swift */; };
 		50CA3CC525C1735700CABE97 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3CC425C1735700CABE97 /* Core.framework */; platformFilter = ios; };
+		50E124D825D514E900B0D779 /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124D725D514E900B0D779 /* PhotoDataSource.swift */; };
+		50E124DC25D514FF00B0D779 /* GalleryPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124DB25D514FF00B0D779 /* GalleryPhoto.swift */; };
+		50E124E025D5151200B0D779 /* PhotoInteractionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124DF25D5151200B0D779 /* PhotoInteractionAnimator.swift */; };
+		50E124E425D5152500B0D779 /* PhotosOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124E325D5152500B0D779 /* PhotosOverlayView.swift */; };
+		50E124E825D5153600B0D779 /* PhotoTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124E725D5153600B0D779 /* PhotoTransitionAnimator.swift */; };
+		50E124EC25D5154600B0D779 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124EB25D5154600B0D779 /* PhotosViewController.swift */; };
+		50E124F025D5156300B0D779 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124EF25D5156300B0D779 /* PhotoViewController.swift */; };
+		50E124F425D515AD00B0D779 /* ScalingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124F325D515AD00B0D779 /* ScalingImageView.swift */; };
+		50E124F825D515C100B0D779 /* UIVIew+PhotoViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124F725D515C100B0D779 /* UIVIew+PhotoViewer.swift */; };
 		DCFEA5058749BE40DEFBE958 /* Pods_DesignSystem_DesignSystemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F5DD3B14B561909C19D1EB /* Pods_DesignSystem_DesignSystemTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +156,15 @@
 		50CA3C2C25C1655700CABE97 /* MapFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFactory.swift; sourceTree = "<group>"; };
 		50CA3C6425C1727D00CABE97 /* Nuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CA3CC425C1735700CABE97 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50E124D725D514E900B0D779 /* PhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
+		50E124DB25D514FF00B0D779 /* GalleryPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPhoto.swift; sourceTree = "<group>"; };
+		50E124DF25D5151200B0D779 /* PhotoInteractionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInteractionAnimator.swift; sourceTree = "<group>"; };
+		50E124E325D5152500B0D779 /* PhotosOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosOverlayView.swift; sourceTree = "<group>"; };
+		50E124E725D5153600B0D779 /* PhotoTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTransitionAnimator.swift; sourceTree = "<group>"; };
+		50E124EB25D5154600B0D779 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		50E124EF25D5156300B0D779 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		50E124F325D515AD00B0D779 /* ScalingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalingImageView.swift; sourceTree = "<group>"; };
+		50E124F725D515C100B0D779 /* UIVIew+PhotoViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+PhotoViewer.swift"; sourceTree = "<group>"; };
 		50F5DD3B14B561909C19D1EB /* Pods_DesignSystem_DesignSystemTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignSystem_DesignSystemTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7595EA7A4F11CA55460F786 /* Pods-DesignSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignSystem.debug.xcconfig"; path = "Target Support Files/Pods-DesignSystem/Pods-DesignSystem.debug.xcconfig"; sourceTree = "<group>"; };
 		D16BE850D8BFD22685F10607 /* Pods-DesignSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignSystem.release.xcconfig"; path = "Target Support Files/Pods-DesignSystem/Pods-DesignSystem.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,6 +282,7 @@
 		50A4DA8F25BF4A34006E7D1F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				50E124D625D514D800B0D779 /* PhotoGallery */,
 				50A4DC7C25BF96B5006E7D1F /* TableView */,
 				50A4DA9E25BF4B3A006E7D1F /* Extensions */,
 				50A4DA9025BF4A3A006E7D1F /* Protocols */,
@@ -463,6 +482,22 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		50E124D625D514D800B0D779 /* PhotoGallery */ = {
+			isa = PBXGroup;
+			children = (
+				50E124D725D514E900B0D779 /* PhotoDataSource.swift */,
+				50E124DB25D514FF00B0D779 /* GalleryPhoto.swift */,
+				50E124DF25D5151200B0D779 /* PhotoInteractionAnimator.swift */,
+				50E124E325D5152500B0D779 /* PhotosOverlayView.swift */,
+				50E124E725D5153600B0D779 /* PhotoTransitionAnimator.swift */,
+				50E124EB25D5154600B0D779 /* PhotosViewController.swift */,
+				50E124EF25D5156300B0D779 /* PhotoViewController.swift */,
+				50E124F325D515AD00B0D779 /* ScalingImageView.swift */,
+				50E124F725D515C100B0D779 /* UIVIew+PhotoViewer.swift */,
+			);
+			path = PhotoGallery;
+			sourceTree = "<group>";
+		};
 		D8A85DE7553962CDB9824FBF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -658,6 +693,9 @@
 				50A4DD2625BFA126006E7D1F /* CloseBarButtonActionHandling.swift in Sources */,
 				50A4DA5E25BF47C9006E7D1F /* AnimationDuration.swift in Sources */,
 				50CA3C2925C164DC00CABE97 /* Map.swift in Sources */,
+				50E124F025D5156300B0D779 /* PhotoViewController.swift in Sources */,
+				50E124D825D514E900B0D779 /* PhotoDataSource.swift in Sources */,
+				50E124E025D5151200B0D779 /* PhotoInteractionAnimator.swift in Sources */,
 				50CA3C1F25C15F8D00CABE97 /* ViewController.swift in Sources */,
 				50A4DCC025BF97B6006E7D1F /* Colors.swift in Sources */,
 				50A4DCEA25BF9D8C006E7D1F /* SearchBarFactory.swift in Sources */,
@@ -668,16 +706,20 @@
 				50A4DCD825BF9C4A006E7D1F /* ImageViewFactory.swift in Sources */,
 				50A4DCA725BF96B6006E7D1F /* TableViewCellConfigurable.swift in Sources */,
 				50A4DCDF25BF9D13006E7D1F /* SliderFactory.swift in Sources */,
+				50E124E825D5153600B0D779 /* PhotoTransitionAnimator.swift in Sources */,
 				50A4DA9925BF4AA0006E7D1F /* Font.swift in Sources */,
 				50A4DCEC25BF9D8C006E7D1F /* SearchBarDelegate.swift in Sources */,
 				50A4DD3925BFD851006E7D1F /* Button.swift in Sources */,
+				50E124DC25D514FF00B0D779 /* GalleryPhoto.swift in Sources */,
 				50A4DCA825BF96B6006E7D1F /* CustomTableViewCellViewable.swift in Sources */,
 				50A4DCCC25BF994C006E7D1F /* ItemBackgroundCorner.swift in Sources */,
 				50A4DCA525BF96B6006E7D1F /* UIView+BackgroundCorners.swift in Sources */,
+				50E124F825D515C100B0D779 /* UIVIew+PhotoViewer.swift in Sources */,
 				50A4DCAB25BF96B6006E7D1F /* CellItemType.swift in Sources */,
 				50A4DA9225BF4A44006E7D1F /* Factory.swift in Sources */,
 				50A4DD3D25BFD8BE006E7D1F /* UIActivityIndicatorView+Utils.swift in Sources */,
 				50A4DCA925BF96B6006E7D1F /* Selectable.swift in Sources */,
+				50E124E425D5152500B0D779 /* PhotosOverlayView.swift in Sources */,
 				50A4DC9D25BF96B6006E7D1F /* FilterTableViewCell.swift in Sources */,
 				50A4DA6925BF4830006E7D1F /* Label.swift in Sources */,
 				50A4DCD425BF997D006E7D1F /* Separator.swift in Sources */,
@@ -691,6 +733,8 @@
 				50A4DD1725BFA006006E7D1F /* UIViewController+Utils.swift in Sources */,
 				50A4DCD325BF997D006E7D1F /* SeparatorFactory.swift in Sources */,
 				50A4DC9E25BF96B6006E7D1F /* ActionTableViewCell.swift in Sources */,
+				50E124F425D515AD00B0D779 /* ScalingImageView.swift in Sources */,
+				50E124EC25D5154600B0D779 /* PhotosViewController.swift in Sources */,
 				50A4DCE925BF9D8C006E7D1F /* SearchBarConfiguration.swift in Sources */,
 				50CA3C2525C1646D00CABE97 /* MapView.swift in Sources */,
 				50A4DCA225BF96B6006E7D1F /* DefaultTableHeaderView.swift in Sources */,

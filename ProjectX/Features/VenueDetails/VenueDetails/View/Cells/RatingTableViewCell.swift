@@ -21,7 +21,7 @@ class RatingTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     lazy var titleLabel: Label = {
-        let label: Label = LabelFactory().textAlignment(.left).style(style: .footNoteMedium).textColor(with: DesignSystem.Colors.Palette.gray200.color).build()
+        let label: Label = LabelFactory().textAlignment(.left).style(style: .footNoteMedium).textColor(with: DesignSystem.Colors.Palette.gray400.color).build()
         label.text = "RATING"
         label.numberOfLines = 0
         
@@ -31,7 +31,8 @@ class RatingTableViewCell: UITableViewCell {
     lazy var descriptionLabel: Label = {
         let label: Label = LabelFactory().textAlignment(.left).style(style: .footNoteMedium).textColor(with: DesignSystem.Colors.Palette.gray700.color).build()
         label.numberOfLines = 0
-        
+        label.text = "No rating"
+
         return label
     }()
 
@@ -42,7 +43,7 @@ class RatingTableViewCell: UITableViewCell {
     private lazy var ratingLabel: Label = {
         let label: Label = LabelFactory().textAlignment(.center).style(style: .subtitleBold).textColor(with: DesignSystem.Colors.Palette.orange500.color).build()
         label.numberOfLines = 0
-        label.text = "9.5"
+        label.text = "0"
         
         return label
     }()
@@ -80,7 +81,7 @@ class RatingTableViewCell: UITableViewCell {
     func setup(viewData: ViewData) {
         let ratingCircleViewWidth = ratingView.frame.width
         let ratingCircleViewHeight = ratingView.frame.height
-        let circleView = RatingCircleView(frame: CGRect(x: ratingCircleViewWidth + 20, y: ratingCircleViewHeight + 5, width: ratingCircleWidth, height: ratingCircleHeight), rating: Double(viewData.rating * 10))
+        let circleView = RatingCircleView(frame: CGRect(x: ratingCircleViewWidth/2, y: ratingCircleViewHeight/2, width: ratingCircleWidth, height: ratingCircleHeight), rating: Double(viewData.rating * 10))
         ratingView.addSubview(circleView)
         circleView.animateCircle(duration: 1.0)
 
@@ -102,8 +103,19 @@ class RatingTableViewCell: UITableViewCell {
 private extension RatingTableViewCell {
     
     func setupUI() {
+        selectionStyle = .none
         setupSubviews()
         setupConstraints()
+        
+        likesRatingProgressView.setup(title: "0 likes", progress: 0)
+        tipsRatingProgressView.setup(title: "0 tips", progress: 0)
+        checkInRatingProgressView.setup(title: "0 Check in", progress: 0)
+        
+//        let ratingCircleViewWidth = ratingView.frame.width
+//        let ratingCircleViewHeight = ratingView.frame.height
+//        let circleView = RatingCircleView(frame: CGRect(x: ratingCircleViewWidth/2, y: ratingCircleViewHeight/2, width: ratingCircleWidth, height: ratingCircleHeight), rating: Double(5 * 10))
+//        ratingView.addSubview(circleView)
+//        circleView.animateCircle(duration: 1.0)
     }
     
     func setupSubviews() {
@@ -117,6 +129,7 @@ private extension RatingTableViewCell {
         stackView.addArrangedSubview(checkInRatingProgressView)
         
         contentView.addSubview(stackView)
+        ratingView.backgroundColor = .yellow
     }
     
     func setupConstraints() {

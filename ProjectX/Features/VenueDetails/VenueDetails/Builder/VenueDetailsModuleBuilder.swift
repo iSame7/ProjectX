@@ -41,6 +41,7 @@ public class VenueDetailsModuleBuilder: Builder<VenueDetailsDependency> , VenueD
         
         registerService(session: venueDetailsDependencyProvider.session)
         registerUsecase(networkRechabilityManager: venueDetailsDependencyProvider.networkRechabilityManager)
+        registerMapURLHandler()
         registerViewModel(venue: venue, venuePhotoURL: venuePhotoURL)
         registerView()
         registerCoordinator(rootViewController: rootViewController)
@@ -69,11 +70,18 @@ private extension VenueDetailsModuleBuilder {
         }
     }
     
+    func registerMapURLHandler() {
+        container.register(MapURLHandling.self) {
+            MapURLHandler()
+        }
+    }
+    
     func registerViewModel(venue: Venue, venuePhotoURL: String?) {
         container.register(VenueDetailsViewModel.self) { [weak self] in
-            guard let useCase = self?.container.resolve(VenueDetailsInteractable.self) else { return nil }
+            guard let useCase = self?.container.resolve(VenueDetailsInteractable.self),
+                  let mapURLHandler = self?.container.resolve(MapURLHandling.self) else { return nil }
             
-            return VenueDetailsViewModel(useCase: useCase, venue: venue, venuePhotoURL: venuePhotoURL)
+            return VenueDetailsViewModel(useCase: useCase, venue: venue, venuePhotoURL: venuePhotoURL, mapURLHandler: mapURLHandler)
         }
     }
     

@@ -13,8 +13,7 @@ class RatingProgressView: UIView {
     // MARK: - Properties
     
     private lazy var label: Label = {
-        let label: Label = LabelFactory().textAlignment(.left).style(style: .footNoteMedium).textColor(with: DesignSystem.Colors.Palette.gray200.color).build()
-        label.text = "test"
+        let label: Label = LabelFactory().textAlignment(.left).style(style: .footNoteMedium).textColor(with: DesignSystem.Colors.Palette.gray400.color).build()
         return label
     }()
     

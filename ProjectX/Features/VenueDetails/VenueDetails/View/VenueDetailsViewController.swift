@@ -10,6 +10,7 @@ import UIKit
 import Utils
 import DesignSystem
 import RxCocoa
+import FoursquareCore
 
 class Book: NSObject {
     
@@ -28,12 +29,13 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.register(RatingTableViewCell.self, forCellReuseIdentifier: ratingCellReuseIdentifier)
         tableView.register(AddressTableViewCell.self, forCellReuseIdentifier: addressCellReuseIdentifier)
+        tableView.register(MapTableViewCell.self, forCellReuseIdentifier: mapCellReuseIdentifier)
+        tableView.register(PhotoGalleryTableViewCell.self, forCellReuseIdentifier: PhotoGalleryTableViewCell.reuseIdentifier)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -44,6 +46,7 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
     
     private let ratingCellReuseIdentifier = "RatingTableViewCellIdentifier"
     private let addressCellReuseIdentifier = "AddressTableViewCelldentifier"
+    private let mapCellReuseIdentifier = "MapTableViewCelldentifier"
 
     lazy var backButton: UIButton = {
         let button: UIButton = ButtonFactory().build()
@@ -110,8 +113,11 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
     }
     
     override func setupObservers() {
-        viewModel.outputs.showVenueDetailsHeader.subscribe { [weak self] viewData in
-            self?.stretchyHeader.setup(with: viewData)
+        viewModel.outputs.showVenueDetailsHeader.subscribe { [weak self] event in
+            if let viewData = event.element {
+                self?.stretchyHeader.setup(with: viewData)
+            }
+            self?.tableView.reloadData()
         }.disposed(by: viewModel.disposeBag)
         
         viewModel.outputs.showError.subscribe { [weak self] error in
@@ -122,6 +128,22 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
             .bind(to: viewModel.inputs.backButtonTapped)
             .disposed(by: viewModel.disposeBag)
     }
+    
+    func presentMapActionSheet(location: Location) {
+        let optionMenu = UIAlertController(title: "Directions", message: "Which app do you want to use?", preferredStyle: .actionSheet)
+        
+        optionMenu.addAction(UIAlertAction(title: "Use Apple Maps", style: .default) { [weak self] _ in
+            self?.viewModel.inputs.showMap.onNext((type: .apple, location: location))
+        })
+        
+        optionMenu.addAction(UIAlertAction(title: "Use Google Maps", style: .default) { [weak self] _ in
+            self?.viewModel.inputs.showMap.onNext((type: .google, location: location))
+        })
+        
+        optionMenu.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "presentmaps.cancel"), style: .cancel))
+        
+        present(optionMenu, animated: true, completion: nil)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -129,17 +151,39 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
 extension VenueDetailsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ratingCellReuseIdentifier, for: indexPath) as! RatingTableViewCell
-            cell.setup(viewData: RatingTableViewCell.ViewData(rating: 5, visitorsCount: 100, likesCount: 30, checkInsCount: 20, tipCount: 10))
+            if let viewData = viewModel.buildRatingTableViewCellViewData() {
+                cell.setup(viewData: viewData)
+            }
+            return cell
+        } else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: addressCellReuseIdentifier, for: indexPath) as! AddressTableViewCell
+            if let viewData = viewModel.buildAddressTableViewCellViewData() {
+                cell.setup(with: viewData)
+            }
+            return cell
+        } else if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: mapCellReuseIdentifier, for: indexPath) as! MapTableViewCell
+            return cell
+        }  else if indexPath.row == 3 {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: PhotoGalleryTableViewCell.reuseIdentifier) as! PhotoGalleryTableViewCell
+//            if let viewData = viewModel?.buildPhotoGalleryTableViewCellViewData() {
+//                cell.setup(with: viewData, imageSelectionHandler: { [weak self] (galleryPreview) in
+//                    self?.present(galleryPreview, animated: true, completion: nil)
+//                })
+//            }
+//            return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+            cell.backgroundColor = .white
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: addressCellReuseIdentifier, for: indexPath) as! AddressTableViewCell
-            cell.setup(with: AddressTableViewCell.ViewData(address: "Dijksgracht 5", postCode: "1017 JH Amsterdam", hours: "Open Until 1 AM", categories: "Restaurant, Bar"))
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+            cell.backgroundColor = .white
             return cell
         }
 
@@ -154,5 +198,22 @@ extension VenueDetailsViewController: UITableViewDelegate {
         guard let header = tableView.tableHeaderView as? VenueDetailsTableStretchyHeader else { return }
         
         header.scrollViewDidScroll(scrollView: tableView)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 2 {
+            if let location = viewModel?.venueLocation() {
+                presentMapActionSheet(location: location)
+            }
+            
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+}
+
+extension VenueDetailsViewController {
+    
+    struct ViewData {
+        let venue: Venue
     }
 }

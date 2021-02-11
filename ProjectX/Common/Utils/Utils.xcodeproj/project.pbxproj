@@ -37,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		31044250C4CD8586DCE97340 /* Pods_Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5014E75E25D5477C008671EE /* FoursquareCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FoursquareCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505CDF7525C9CB6100975DC2 /* Error+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Utils.swift"; sourceTree = "<group>"; };
 		505CE08625D0212F00975DC2 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		505CE09A25D174B400975DC2 /* FloatingPoint+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Utils.swift"; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		4F6D7BD772844A0CC1443613 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5014E75E25D5477C008671EE /* FoursquareCore.framework */,
 				31044250C4CD8586DCE97340 /* Pods_Utils.framework */,
 			);
 			name = Frameworks;
