@@ -21,6 +21,16 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
     static let reuseIdentifier = "GalleryCollectionViewCell"
     
+    
+    override init(frame: CGRect) {
+       super.init(frame: frame)
+       setupUI()
+    }
+       
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func setup(with viewData: ViewData) {
         if let imagePath = viewData.imageURL, let imageURL = URL(string: imagePath) {
             Nuke.loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "restaurantPlaceholder"), transition: nil, failureImage: #imageLiteral(resourceName: "restaurant"), failureImageTransition: nil, contentModes: nil), into: imageView, progress: nil, completion: nil)

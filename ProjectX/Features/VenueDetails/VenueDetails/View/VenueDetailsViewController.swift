@@ -171,15 +171,12 @@ extension VenueDetailsViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: mapCellReuseIdentifier, for: indexPath) as! MapTableViewCell
             return cell
         }  else if indexPath.row == 3 {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: PhotoGalleryTableViewCell.reuseIdentifier) as! PhotoGalleryTableViewCell
-//            if let viewData = viewModel?.buildPhotoGalleryTableViewCellViewData() {
-//                cell.setup(with: viewData, imageSelectionHandler: { [weak self] (galleryPreview) in
-//                    self?.present(galleryPreview, animated: true, completion: nil)
-//                })
-//            }
-//            return cell
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-            cell.backgroundColor = .white
+            let cell = tableView.dequeueReusableCell(withIdentifier: PhotoGalleryTableViewCell.reuseIdentifier) as! PhotoGalleryTableViewCell
+            if let viewData = viewModel?.buildPhotoGalleryTableViewCellViewData() {
+                cell.setup(with: viewData, imageSelectionHandler: { [weak self] (galleryPreview) in
+                    self?.present(galleryPreview, animated: true, completion: nil)
+                })
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!

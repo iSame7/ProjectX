@@ -42,13 +42,6 @@ class PhotoGalleryTableViewCell: UITableViewCell {
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier)
         return collectionView
     }()
-        
-    lazy var icon: UIImageView = {
-        let icon: UIImageView = ImageViewFactory().build()
-        icon.image = IconFactory(icon: .compass).build()
-        
-        return icon
-    }()
     
     // MARK: - Initalizers
     
@@ -112,9 +105,7 @@ private extension PhotoGalleryTableViewCell {
             label.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: 5),
             label.leftAnchor.constraint(equalTo: marginGuide.leftAnchor),
             label.rightAnchor.constraint(equalTo: marginGuide.rightAnchor),
-            label.heightAnchor.constraint(equalToConstant: 17),
-            
-            collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 16),
+            collectionView.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: 20),
             collectionView.leftAnchor.constraint(equalTo: marginGuide.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: marginGuide.rightAnchor),
             collectionView.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor)
@@ -125,7 +116,7 @@ private extension PhotoGalleryTableViewCell {
 extension PhotoGalleryTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos?.count ?? 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -139,4 +130,21 @@ extension PhotoGalleryTableViewCell: UICollectionViewDataSource {
 
 extension PhotoGalleryTableViewCell: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let photos = photos, let cell = collectionView.cellForItem(at: indexPath) as? PhotoCollectionViewCell {
+            let currentPhoto = photos[indexPath.item]
+            let galleryPreview = PhotosViewController(photos: photos, initialPhoto: currentPhoto, referenceView: cell)
+            
+            galleryPreview.referenceViewForPhotoWhenDismissingHandler = { photo in
+                if let index = photos.firstIndex(where: {$0 === photo}) {
+                    let indexPath = IndexPath(item: index, section: 0)
+                    return collectionView.cellForItem(at: indexPath) as? PhotoCollectionViewCell
+                }
+                return nil
+            }
+            selectedImageClosure?(galleryPreview)
+
+        }
+    }
 }

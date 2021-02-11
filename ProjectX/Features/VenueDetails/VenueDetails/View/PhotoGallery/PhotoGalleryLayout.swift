@@ -35,6 +35,7 @@ class PhotoGalleryLayout: BaseCollectionViewLayout {
     }
     
     //MARK: Override Abstract methods
+    
     override func columnIndexForItemAt(indexPath: IndexPath) -> Int {
         let totalItemsInRow = kNumberOfSideItems + 1
         let columnIndex = indexPath.item % totalItemsInRow
