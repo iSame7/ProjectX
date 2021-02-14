@@ -109,8 +109,7 @@ In case you want to change the project setup like Foursquare API keys:
 
 # Design Patterns used:
 
-Check the architecture that underpins the development of the apps in this repository [here](https://github.com/iSame7/ProjectX/blob/master/Technical-
-Documents/Architecture.md)
+Check the architecture that underpins the development of the apps in this repository [here](https://github.com/iSame7/ProjectX/blob/master/Technical-Documents/Architecture.md)
 
 # VIPER Architecture design pattern:
 
@@ -220,7 +219,7 @@ Libraries/Frameworks i used for unit tests and TDD:
 * XCTest
 
 
-In VIPER every component of a module is strictly separated what creates a very friendly scenario for adopting unit tests in terms of single responsibility principle:
+Every module is strictly separated what creates a very friendly scenario for adopting unit tests in terms of single responsibility principle:
 
 let’s consider an example of a presenter of List Characters Module:
 
