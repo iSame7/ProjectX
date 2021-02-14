@@ -21,7 +21,7 @@ This repository contains some iOS code samples.
 - iOS Foursquare client that display the restaurants around your current location on the
 map. Developed using Swift, VIPER.
 
-<img src="../Assets/Foursquare.gif" alt="Screenshot" width="320px"/>
+<img src="/Assets/Foursquare.gif" alt="Screenshot" width="320px"/>
 <img src="../Assets/map.png" alt="Screenshot" width="320px"/>
 <img src="../Assets/details.png" alt="Screenshot" width="320px"/>
 <img src="../Assets/details1.png" alt="Screenshot" width="320px"/>
