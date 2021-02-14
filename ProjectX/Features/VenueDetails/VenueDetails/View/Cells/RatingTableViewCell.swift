@@ -81,7 +81,7 @@ class RatingTableViewCell: UITableViewCell {
     func setup(viewData: ViewData) {
         let ratingCircleViewWidth = ratingView.frame.width
         let ratingCircleViewHeight = ratingView.frame.height
-        let circleView = RatingCircleView(frame: CGRect(x: ratingCircleViewWidth/2, y: ratingCircleViewHeight/2, width: ratingCircleWidth, height: ratingCircleHeight), rating: Double(viewData.rating * 10))
+        let circleView = RatingCircleView(frame: CGRect(x: ratingCircleViewWidth/2 - ratingCircleWidth/2, y: ratingCircleViewHeight/2 - ratingCircleHeight/2, width: ratingCircleWidth, height: ratingCircleHeight), rating: Double(viewData.rating * 10))
         ratingView.addSubview(circleView)
         circleView.animateCircle(duration: 1.0)
 
@@ -110,12 +110,6 @@ private extension RatingTableViewCell {
         likesRatingProgressView.setup(title: "0 likes", progress: 0)
         tipsRatingProgressView.setup(title: "0 tips", progress: 0)
         checkInRatingProgressView.setup(title: "0 Check in", progress: 0)
-        
-//        let ratingCircleViewWidth = ratingView.frame.width
-//        let ratingCircleViewHeight = ratingView.frame.height
-//        let circleView = RatingCircleView(frame: CGRect(x: ratingCircleViewWidth/2, y: ratingCircleViewHeight/2, width: ratingCircleWidth, height: ratingCircleHeight), rating: Double(5 * 10))
-//        ratingView.addSubview(circleView)
-//        circleView.animateCircle(duration: 1.0)
     }
     
     func setupSubviews() {
@@ -129,7 +123,6 @@ private extension RatingTableViewCell {
         stackView.addArrangedSubview(checkInRatingProgressView)
         
         contentView.addSubview(stackView)
-        ratingView.backgroundColor = .yellow
     }
     
     func setupConstraints() {
