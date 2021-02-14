@@ -111,6 +111,14 @@ class MapViewController: ViewController<MapViewModel> {
             }
         }.disposed(by: viewModel.disposeBag)
         
+        viewModel.outputs.showError.subscribe { error in
+            if let error = error.element, let message = error.errorDescription, let errorTitle = error.errorUserInfo[NSLocalizedDescriptionKey] as? String {
+                let notification: NotificationView
+                notification = InAppNotificationFactory<NotificationView>(type: .normal, title: errorTitle, subtitle: message, image: nil).build()
+                notification.showNotification()
+            }
+        }.disposed(by: viewModel.disposeBag)        
+        
         viewModel.outputs.showVenuePhoto.subscribe {  [weak self] result in
             if let result = result.element {
                 self?.venuePhotos[result.venueId] = result.photo

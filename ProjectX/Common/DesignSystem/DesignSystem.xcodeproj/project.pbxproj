@@ -68,6 +68,11 @@
 		50CA3C2D25C1655700CABE97 /* MapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C2C25C1655700CABE97 /* MapFactory.swift */; };
 		50CA3CC525C1735700CABE97 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3CC425C1735700CABE97 /* Core.framework */; platformFilter = ios; };
 		50CB780F25D9843D0092CC59 /* TableStretchyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB780E25D9843D0092CC59 /* TableStretchyHeader.swift */; };
+		50CB789F25D9CA1F0092CC59 /* InAppNotificationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB789A25D9CA1E0092CC59 /* InAppNotificationViewData.swift */; };
+		50CB78A025D9CA1F0092CC59 /* InAppNotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB789B25D9CA1F0092CC59 /* InAppNotificationType.swift */; };
+		50CB78A125D9CA1F0092CC59 /* InAppNotificationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB789C25D9CA1F0092CC59 /* InAppNotificationFactory.swift */; };
+		50CB78A225D9CA1F0092CC59 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB789D25D9CA1F0092CC59 /* NotificationView.swift */; };
+		50CB78A325D9CA1F0092CC59 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB789E25D9CA1F0092CC59 /* DeviceManager.swift */; };
 		50E124D825D514E900B0D779 /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124D725D514E900B0D779 /* PhotoDataSource.swift */; };
 		50E124DC25D514FF00B0D779 /* GalleryPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124DB25D514FF00B0D779 /* GalleryPhoto.swift */; };
 		50E124E025D5151200B0D779 /* PhotoInteractionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124DF25D5151200B0D779 /* PhotoInteractionAnimator.swift */; };
@@ -158,6 +163,11 @@
 		50CA3C6425C1727D00CABE97 /* Nuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CA3CC425C1735700CABE97 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CB780E25D9843D0092CC59 /* TableStretchyHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableStretchyHeader.swift; sourceTree = "<group>"; };
+		50CB789A25D9CA1E0092CC59 /* InAppNotificationViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppNotificationViewData.swift; sourceTree = "<group>"; };
+		50CB789B25D9CA1F0092CC59 /* InAppNotificationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppNotificationType.swift; sourceTree = "<group>"; };
+		50CB789C25D9CA1F0092CC59 /* InAppNotificationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppNotificationFactory.swift; sourceTree = "<group>"; };
+		50CB789D25D9CA1F0092CC59 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		50CB789E25D9CA1F0092CC59 /* DeviceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		50E124D725D514E900B0D779 /* PhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
 		50E124DB25D514FF00B0D779 /* GalleryPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPhoto.swift; sourceTree = "<group>"; };
 		50E124DF25D5151200B0D779 /* PhotoInteractionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInteractionAnimator.swift; sourceTree = "<group>"; };
@@ -419,6 +429,7 @@
 		50A4DCCF25BF9977006E7D1F /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				50CB789925D9CA090092CC59 /* In App notification */,
 				50CB780D25D9842C0092CC59 /* StretchHeader */,
 				50CA3C2325C1645F00CABE97 /* Map */,
 				50A4DCD725BF9C4A006E7D1F /* ImageViewFactory.swift */,
@@ -491,6 +502,18 @@
 				50CB780E25D9843D0092CC59 /* TableStretchyHeader.swift */,
 			);
 			path = StretchHeader;
+			sourceTree = "<group>";
+		};
+		50CB789925D9CA090092CC59 /* In App notification */ = {
+			isa = PBXGroup;
+			children = (
+				50CB789E25D9CA1F0092CC59 /* DeviceManager.swift */,
+				50CB789C25D9CA1F0092CC59 /* InAppNotificationFactory.swift */,
+				50CB789B25D9CA1F0092CC59 /* InAppNotificationType.swift */,
+				50CB789A25D9CA1E0092CC59 /* InAppNotificationViewData.swift */,
+				50CB789D25D9CA1F0092CC59 /* NotificationView.swift */,
+			);
+			path = "In App notification";
 			sourceTree = "<group>";
 		};
 		50E124D625D514D800B0D779 /* PhotoGallery */ = {
@@ -714,6 +737,7 @@
 				50A4DA5D25BF47C9006E7D1F /* AnimationTiming.swift in Sources */,
 				50A4DCA325BF96B6006E7D1F /* TableViewController.swift in Sources */,
 				50A4DC9B25BF96B6006E7D1F /* MultipleSelectorCell.swift in Sources */,
+				50CB78A125D9CA1F0092CC59 /* InAppNotificationFactory.swift in Sources */,
 				50A4DCD825BF9C4A006E7D1F /* ImageViewFactory.swift in Sources */,
 				50A4DCA725BF96B6006E7D1F /* TableViewCellConfigurable.swift in Sources */,
 				50A4DCDF25BF9D13006E7D1F /* SliderFactory.swift in Sources */,
@@ -722,6 +746,7 @@
 				50A4DCEC25BF9D8C006E7D1F /* SearchBarDelegate.swift in Sources */,
 				50A4DD3925BFD851006E7D1F /* Button.swift in Sources */,
 				50E124DC25D514FF00B0D779 /* GalleryPhoto.swift in Sources */,
+				50CB78A025D9CA1F0092CC59 /* InAppNotificationType.swift in Sources */,
 				50A4DCA825BF96B6006E7D1F /* CustomTableViewCellViewable.swift in Sources */,
 				50A4DCCC25BF994C006E7D1F /* ItemBackgroundCorner.swift in Sources */,
 				50A4DCA525BF96B6006E7D1F /* UIView+BackgroundCorners.swift in Sources */,
@@ -730,6 +755,7 @@
 				50A4DA9225BF4A44006E7D1F /* Factory.swift in Sources */,
 				50A4DD3D25BFD8BE006E7D1F /* UIActivityIndicatorView+Utils.swift in Sources */,
 				50A4DCA925BF96B6006E7D1F /* Selectable.swift in Sources */,
+				50CB78A325D9CA1F0092CC59 /* DeviceManager.swift in Sources */,
 				50E124E425D5152500B0D779 /* PhotosOverlayView.swift in Sources */,
 				50A4DC9D25BF96B6006E7D1F /* FilterTableViewCell.swift in Sources */,
 				50A4DA6925BF4830006E7D1F /* Label.swift in Sources */,
@@ -744,11 +770,13 @@
 				50A4DD1725BFA006006E7D1F /* UIViewController+Utils.swift in Sources */,
 				50A4DCD325BF997D006E7D1F /* SeparatorFactory.swift in Sources */,
 				50A4DC9E25BF96B6006E7D1F /* ActionTableViewCell.swift in Sources */,
+				50CB78A225D9CA1F0092CC59 /* NotificationView.swift in Sources */,
 				50E124F425D515AD00B0D779 /* ScalingImageView.swift in Sources */,
 				50E124EC25D5154600B0D779 /* PhotosViewController.swift in Sources */,
 				50A4DCE925BF9D8C006E7D1F /* SearchBarConfiguration.swift in Sources */,
 				50CA3C2525C1646D00CABE97 /* MapView.swift in Sources */,
 				50A4DCA225BF96B6006E7D1F /* DefaultTableHeaderView.swift in Sources */,
+				50CB789F25D9CA1F0092CC59 /* InAppNotificationViewData.swift in Sources */,
 				50A4DCE025BF9D13006E7D1F /* Slider.swift in Sources */,
 				50A4DC9925BF96B6006E7D1F /* LocationTableViewCell.swift in Sources */,
 				50CB780F25D9843D0092CC59 /* TableStretchyHeader.swift in Sources */,

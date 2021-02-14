@@ -100,8 +100,12 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
             self?.tableView.reloadData()
         }.disposed(by: viewModel.disposeBag)
         
-        viewModel.outputs.showError.subscribe { [weak self] error in
-            // show error
+        viewModel.outputs.showError.subscribe { error in
+            if let error = error.element, let message = error.errorDescription, let errorTitle = error.errorUserInfo[NSLocalizedDescriptionKey] as? String {
+                let notification: NotificationView
+                notification = InAppNotificationFactory<NotificationView>(type: .normal, title: errorTitle, subtitle: message, image: nil).build()
+                notification.showNotification()
+            }
         }.disposed(by: viewModel.disposeBag)
         
         backButtonTapped
