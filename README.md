@@ -22,11 +22,11 @@ This repository contains some iOS code samples.
 map. Developed using Swift, VIPER.
 
 <img src="/Assets/Foursquare.gif" alt="Screenshot" width="320px"/>
-<img src="../Assets/map.png" alt="Screenshot" width="320px"/>
-<img src="../Assets/details.png" alt="Screenshot" width="320px"/>
-<img src="../Assets/details1.png" alt="Screenshot" width="320px"/>
-<img src="../Assets/gallery.png" alt="Screenshot" width="320px"/>
-<img src="../Assets/tips.png" alt="Screenshot" width="320px"/>
+<img src="/Assets/map.png" alt="Screenshot" width="320px"/>
+<img src="/Assets/details.png" alt="Screenshot" width="320px"/>
+<img src="/Assets/details1.png" alt="Screenshot" width="320px"/>
+<img src="/Assets/gallery.png" alt="Screenshot" width="320px"/>
+<img src="/Assets/tips.png" alt="Screenshot" width="320px"/>
 
 ## App Description
 
@@ -72,7 +72,7 @@ In case you want to change the project setup like Foursquare API keys:
 
 * Get your own keys from https://developer.foursquare.com/docs/api
 * Change CLIENT_ID, CLIENT_SECRET user defined keys in the project's build settings as shown below:
-<img src="../Assets/config.png" alt="Screenshot" width="320px"/>
+<img src="/Assets/config.png" alt="Screenshot" width="320px"/>
 
 
 
@@ -116,7 +116,7 @@ Documents/Architecture.md)
 
 **What is VIPER?**
 VIPER is an application of Clean Architecture to iOS apps. The word VIPER is a backronym for View, Interactor, Presenter, Entity, and Routing. Clean Architecture divides an app’s logical structure into distinct layers of responsibility. This makes it easier to isolate dependencies (e.g. your database) and to test the interactions at the boundaries between layers:
-<img src="../Assets/VIPER.components.png" height="335" />
+<img src="/Assets/VIPER.components.png" height="335" />
 
 - Know more about VIPER through this post http://www.objc.io/issue-13/viper.html
 
