@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,10 +12,15 @@
 		50CB77C525D958FA0092CC59 /* Tips.h in Headers */ = {isa = PBXBuildFile; fileRef = 50CB77B725D958FA0092CC59 /* Tips.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50CB77D625D9592A0092CC59 /* TipsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77D025D9592A0092CC59 /* TipsCoordinator.swift */; };
 		50CB77D725D9592A0092CC59 /* TipsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77D125D9592A0092CC59 /* TipsModuleBuilder.swift */; };
-		50CB77D825D9592A0092CC59 /* TipsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77D225D9592A0092CC59 /* TipsUseCase.swift */; };
 		50CB77D925D9592A0092CC59 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77D325D9592A0092CC59 /* TipsViewController.swift */; };
 		50CB77DA25D9592A0092CC59 /* TipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77D425D9592A0092CC59 /* TipsViewModel.swift */; };
-		50CB77DB25D9592A0092CC59 /* TipsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77D525D9592A0092CC59 /* TipsService.swift */; };
+		50CB781725D988C60092CC59 /* TipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB781625D988C60092CC59 /* TipTableViewCell.swift */; };
+		50CB788225D9BD570092CC59 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB788125D9BD570092CC59 /* Core.framework */; platformFilter = ios; };
+		50CB788625D9BD640092CC59 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB788525D9BD640092CC59 /* Utils.framework */; platformFilter = ios; };
+		50CB788C25D9BD740092CC59 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB788B25D9BD740092CC59 /* DesignSystem.framework */; platformFilter = ios; };
+		50CB789225D9BD860092CC59 /* FoursquareCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB789125D9BD860092CC59 /* FoursquareCore.framework */; platformFilter = ios; };
+		A1C9831B6B2CB584AB9BED95 /* Pods_Tips_TipsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA27BEC3318914BE5095AA2 /* Pods_Tips_TipsTests.framework */; };
+		F80965E170A3469D2DAB4F39 /* Pods_Tips.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E969B015A9F7AF889D269775 /* Pods_Tips.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FEB50CAB42DAC708AFE3337 /* Pods-Tips-TipsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tips-TipsTests.release.xcconfig"; path = "Target Support Files/Pods-Tips-TipsTests/Pods-Tips-TipsTests.release.xcconfig"; sourceTree = "<group>"; };
+		3037A67FC6869CC95B4DF1F4 /* Pods-Tips.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tips.release.xcconfig"; path = "Target Support Files/Pods-Tips/Pods-Tips.release.xcconfig"; sourceTree = "<group>"; };
+		4AA27BEC3318914BE5095AA2 /* Pods_Tips_TipsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tips_TipsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CB77B425D958FA0092CC59 /* Tips.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tips.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CB77B725D958FA0092CC59 /* Tips.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tips.h; sourceTree = "<group>"; };
 		50CB77B825D958FA0092CC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,10 +45,16 @@
 		50CB77C425D958FA0092CC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50CB77D025D9592A0092CC59 /* TipsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCoordinator.swift; sourceTree = "<group>"; };
 		50CB77D125D9592A0092CC59 /* TipsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsModuleBuilder.swift; sourceTree = "<group>"; };
-		50CB77D225D9592A0092CC59 /* TipsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsUseCase.swift; sourceTree = "<group>"; };
 		50CB77D325D9592A0092CC59 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		50CB77D425D9592A0092CC59 /* TipsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewModel.swift; sourceTree = "<group>"; };
-		50CB77D525D9592A0092CC59 /* TipsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsService.swift; sourceTree = "<group>"; };
+		50CB781625D988C60092CC59 /* TipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTableViewCell.swift; sourceTree = "<group>"; };
+		50CB788125D9BD570092CC59 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CB788525D9BD640092CC59 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CB788B25D9BD740092CC59 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CB789125D9BD860092CC59 /* FoursquareCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FoursquareCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6EB3668B3BD4DF3F7F074B /* Pods-Tips.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tips.debug.xcconfig"; path = "Target Support Files/Pods-Tips/Pods-Tips.debug.xcconfig"; sourceTree = "<group>"; };
+		E616DBA075FC71433573C907 /* Pods-Tips-TipsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tips-TipsTests.debug.xcconfig"; path = "Target Support Files/Pods-Tips-TipsTests/Pods-Tips-TipsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E969B015A9F7AF889D269775 /* Pods_Tips.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tips.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +62,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CB789225D9BD860092CC59 /* FoursquareCore.framework in Frameworks */,
+				F80965E170A3469D2DAB4F39 /* Pods_Tips.framework in Frameworks */,
+				50CB788C25D9BD740092CC59 /* DesignSystem.framework in Frameworks */,
+				50CB788625D9BD640092CC59 /* Utils.framework in Frameworks */,
+				50CB788225D9BD570092CC59 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CB77BE25D958FA0092CC59 /* Tips.framework in Frameworks */,
+				A1C9831B6B2CB584AB9BED95 /* Pods_Tips_TipsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +88,8 @@
 				50CB77B625D958FA0092CC59 /* Tips */,
 				50CB77C125D958FA0092CC59 /* TipsTests */,
 				50CB77B525D958FA0092CC59 /* Products */,
+				BD5FCC5F12676DFA6F805AA3 /* Pods */,
+				CAA3132D3BC93E4BE2679E5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,14 +105,13 @@
 		50CB77B625D958FA0092CC59 /* Tips */ = {
 			isa = PBXGroup;
 			children = (
-				50CB77B725D958FA0092CC59 /* Tips.h */,
-				50CB77B825D958FA0092CC59 /* Info.plist */,
 				50CB77D025D9592A0092CC59 /* TipsCoordinator.swift */,
 				50CB77D125D9592A0092CC59 /* TipsModuleBuilder.swift */,
-				50CB77D225D9592A0092CC59 /* TipsUseCase.swift */,
 				50CB77D325D9592A0092CC59 /* TipsViewController.swift */,
 				50CB77D425D9592A0092CC59 /* TipsViewModel.swift */,
-				50CB77D525D9592A0092CC59 /* TipsService.swift */,
+				50CB77B725D958FA0092CC59 /* Tips.h */,
+				50CB77B825D958FA0092CC59 /* Info.plist */,
+				50CB781625D988C60092CC59 /* TipTableViewCell.swift */,
 			);
 			path = Tips;
 			sourceTree = "<group>";
@@ -102,6 +123,31 @@
 				50CB77C425D958FA0092CC59 /* Info.plist */,
 			);
 			path = TipsTests;
+			sourceTree = "<group>";
+		};
+		BD5FCC5F12676DFA6F805AA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A6EB3668B3BD4DF3F7F074B /* Pods-Tips.debug.xcconfig */,
+				3037A67FC6869CC95B4DF1F4 /* Pods-Tips.release.xcconfig */,
+				E616DBA075FC71433573C907 /* Pods-Tips-TipsTests.debug.xcconfig */,
+				2FEB50CAB42DAC708AFE3337 /* Pods-Tips-TipsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../../Pods;
+			sourceTree = "<group>";
+		};
+		CAA3132D3BC93E4BE2679E5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50CB789125D9BD860092CC59 /* FoursquareCore.framework */,
+				50CB788B25D9BD740092CC59 /* DesignSystem.framework */,
+				50CB788525D9BD640092CC59 /* Utils.framework */,
+				50CB788125D9BD570092CC59 /* Core.framework */,
+				E969B015A9F7AF889D269775 /* Pods_Tips.framework */,
+				4AA27BEC3318914BE5095AA2 /* Pods_Tips_TipsTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +168,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50CB77C825D958FA0092CC59 /* Build configuration list for PBXNativeTarget "Tips" */;
 			buildPhases = (
+				AA2E191660AB8AEC46304BEE /* [CP] Check Pods Manifest.lock */,
 				50CB77AF25D958FA0092CC59 /* Headers */,
 				50CB77B025D958FA0092CC59 /* Sources */,
 				50CB77B125D958FA0092CC59 /* Frameworks */,
@@ -140,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50CB77CB25D958FA0092CC59 /* Build configuration list for PBXNativeTarget "TipsTests" */;
 			buildPhases = (
+				17B8B45E0837D3753033A93E /* [CP] Check Pods Manifest.lock */,
 				50CB77B925D958FA0092CC59 /* Sources */,
 				50CB77BA25D958FA0092CC59 /* Frameworks */,
 				50CB77BB25D958FA0092CC59 /* Resources */,
+				A55CACEC0B10CD1644B8C23A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,15 +257,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17B8B45E0837D3753033A93E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tips-TipsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A55CACEC0B10CD1644B8C23A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tips-TipsTests/Pods-Tips-TipsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tips-TipsTests/Pods-Tips-TipsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tips-TipsTests/Pods-Tips-TipsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA2E191660AB8AEC46304BEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tips-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50CB77B025D958FA0092CC59 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				50CB77D625D9592A0092CC59 /* TipsCoordinator.swift in Sources */,
-				50CB77D825D9592A0092CC59 /* TipsUseCase.swift in Sources */,
 				50CB77D925D9592A0092CC59 /* TipsViewController.swift in Sources */,
-				50CB77DB25D9592A0092CC59 /* TipsService.swift in Sources */,
+				50CB781725D988C60092CC59 /* TipTableViewCell.swift in Sources */,
 				50CB77D725D9592A0092CC59 /* TipsModuleBuilder.swift in Sources */,
 				50CB77DA25D9592A0092CC59 /* TipsViewModel.swift in Sources */,
 			);
@@ -293,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -351,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -365,6 +477,7 @@
 		};
 		50CB77C925D958FA0092CC59 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A6EB3668B3BD4DF3F7F074B /* Pods-Tips.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -391,6 +504,7 @@
 		};
 		50CB77CA25D958FA0092CC59 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3037A67FC6869CC95B4DF1F4 /* Pods-Tips.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -416,6 +530,7 @@
 		};
 		50CB77CC25D958FA0092CC59 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E616DBA075FC71433573C907 /* Pods-Tips-TipsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -435,6 +550,7 @@
 		};
 		50CB77CD25D958FA0092CC59 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FEB50CAB42DAC708AFE3337 /* Pods-Tips-TipsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

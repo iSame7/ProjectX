@@ -10,13 +10,14 @@ import RxSwift
 import Utils
 import Core
 import FoursquareCore
+import DesignSystem
 
 protocol VenueDetailsViewModellable: ViewModellable {
     var disposeBag: DisposeBag { get }
     var inputs: VenueDetailsViewModelInputs { get }
     var outputs: VenueDetailsViewModelOutputs { get }
     
-    func buildVenueTableHeaderViewData() -> VenueDetailsTableStretchyHeader.ViewData
+    func buildVenueTableHeaderViewData() -> TableStretchyHeader.ViewData
     func buildAddressTableViewCellViewData() -> AddressTableViewCell.ViewData?
     func buildRatingTableViewCellViewData() -> RatingTableViewCell.ViewData?
     func buildPhotoGalleryTableViewCellViewData() -> PhotoGalleryTableViewCell.ViewData?
@@ -28,12 +29,14 @@ struct VenueDetailsViewModelInputs {
     var viewState = PublishSubject<ViewState>()
     var backButtonTapped = PublishSubject<Void>()
     var showMap = PublishSubject<(type: MapType, location: Location)>()
+    var itemSelected = PublishSubject<Void>()
 }
 
 struct VenueDetailsViewModelOutputs {
-    var showVenueDetailsHeader = PublishSubject<VenueDetailsTableStretchyHeader.ViewData>()
+    var showVenueDetailsHeader = PublishSubject<TableStretchyHeader.ViewData>()
     var showError = PublishSubject<FoursquareError>()
     var showMap = PublishSubject<Void>()
+    var showTips = PublishSubject<(tips: [TipItem], venuePhotoURL: String?)>()
 }
 
 class VenueDetailsViewModel: VenueDetailsViewModellable {
@@ -56,8 +59,8 @@ class VenueDetailsViewModel: VenueDetailsViewModellable {
         setupObservables()
     }
     
-    func buildVenueTableHeaderViewData() -> VenueDetailsTableStretchyHeader.ViewData {
-        return VenueDetailsTableStretchyHeader.ViewData(title: venue.name, description: venue.categories.first?.name ?? "", imageURL: nil, imagePlaceholder: "restraunt-placeholder")
+    func buildVenueTableHeaderViewData() -> TableStretchyHeader.ViewData {
+        return TableStretchyHeader.ViewData(title: venue.name, description: venue.categories.first?.name ?? "", imageURL: nil, imagePlaceholder: "restraunt-placeholder")
     }
     
     func buildRatingTableViewCellViewData() -> RatingTableViewCell.ViewData? {
@@ -107,7 +110,7 @@ private extension VenueDetailsViewModel {
             case .loaded:
                 self.useCase.getVenueDetails(venueId: self.venue.id).subscribe { event in
                     if let venue = event.element?.venue, let category = venue.categories.first {
-                        self.outputs.showVenueDetailsHeader.onNext(VenueDetailsTableStretchyHeader.ViewData(title: venue.name, description: category.name, imageURL: self.venuePhotoURL, imagePlaceholder: "restraunt-placeholder"))
+                        self.outputs.showVenueDetailsHeader.onNext(TableStretchyHeader.ViewData(title: venue.name, description: category.name, imageURL: self.venuePhotoURL, imagePlaceholder: "restraunt-placeholder"))
                         self.viewData = VenueDetailsViewController.ViewData(venue: venue)
                     } else if let error = event.element?.error {
                         self.outputs.showError.onNext(error)
@@ -124,6 +127,14 @@ private extension VenueDetailsViewModel {
         
         inputs.showMap.subscribe(onNext: { [weak self] (type, location) in
             self?.mapURLHandler.openMap(location: location, type: type)
+        }).disposed(by: disposeBag)
+        
+        inputs.itemSelected.subscribe(onNext: { [weak self] in
+            guard let self = self else { return }
+
+            if let viewData = self.viewData, let groups = viewData.venue.tips?.groups, let tips = groups.first?.items {
+                self.outputs.showTips.onNext((tips: tips, venuePhotoURL: self.venuePhotoURL))
+            }
         }).disposed(by: disposeBag)
     }
 }

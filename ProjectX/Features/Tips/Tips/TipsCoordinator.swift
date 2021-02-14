@@ -8,22 +8,26 @@
 
 import RxSwift
 import Core
-import Components
+import DesignSystem
 import Utils
 
 class TipsCoordinator: BaseCoordinator<Void> {
     
-    private weak var rootViewController: NavigationControllable?
+    private weak var rootViewController: Presentable?
     private let viewController: UIViewController
     
-    init(rootViewController: NavigationControllable?, viewController: UIViewController) {
+    var backButtonTapped = PublishSubject<Void>()
+
+    init(rootViewController: Presentable?, viewController: UIViewController) {
         self.rootViewController = rootViewController
         self.viewController = viewController
     }
     
     override public func start() -> Observable<Void> {
-        rootViewController?.pushViewController(viewController, animated: true)
+        rootViewController?.presentInFullScreen(viewController, animated: true, completion: nil)
         
-        return .never()
+        return backButtonTapped.do(onNext: { [weak self] in
+            self?.viewController.dismiss(animated: true, completion: nil)
+        })
     }
 }

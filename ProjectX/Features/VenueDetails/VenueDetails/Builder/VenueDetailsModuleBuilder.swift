@@ -12,6 +12,7 @@ import DesignSystem
 import Core
 import Alamofire
 import FoursquareCore
+import Tips
 
 public protocol VenueDetailsDependency {
     var session: Session { get }
@@ -21,13 +22,9 @@ public protocol VenueDetailsDependency {
 /// Provides all dependencies to build the VenueDetailsModuleBuilder
 private final class VenueDetailsDependencyProvider: DependencyProvider<VenueDetailsDependency> {
     
-    var session: Session {
-        return dependency.session
-    }
-    
-    fileprivate var networkRechabilityManager: NetworkReachabilityManager? {
-        return dependency.networkRechabilityManager
-    }
+    var session: Session { return dependency.session }
+    fileprivate var networkRechabilityManager: NetworkReachabilityManager? { return dependency.networkRechabilityManager }
+    fileprivate var tipsModuleBuilder: TipsModuleBuildable { TipsModuleBuilder() }
 }
 
 public protocol VenueDetailsModuleBuildable: ModuleBuildable {
@@ -44,7 +41,7 @@ public class VenueDetailsModuleBuilder: Builder<VenueDetailsDependency> , VenueD
         registerMapURLHandler()
         registerViewModel(venue: venue, venuePhotoURL: venuePhotoURL)
         registerView()
-        registerCoordinator(rootViewController: rootViewController)
+        registerCoordinator(rootViewController: rootViewController, tipsModuleBuilder: venueDetailsDependencyProvider.tipsModuleBuilder)
         
         guard let coordinator = container.resolve(VenueDetailsCoordinator.self) else {
             return nil
@@ -95,14 +92,15 @@ private extension VenueDetailsModuleBuilder {
         }
     }
     
-    func registerCoordinator(rootViewController: NavigationControllable? = nil) {
+    func registerCoordinator(rootViewController: NavigationControllable? = nil, tipsModuleBuilder: TipsModuleBuildable) {
         container.register(VenueDetailsCoordinator.self) { [weak self] in
             guard let viewController = self?.container.resolve(VenueDetailsViewController.self) else {
                 return nil
             }
             
-            let coordinator = VenueDetailsCoordinator(rootViewController: rootViewController, viewController: viewController)
+            let coordinator = VenueDetailsCoordinator(rootViewController: rootViewController, viewController: viewController, tipsModuleBuilder: tipsModuleBuilder)
             coordinator.backButtonTapped = viewController.viewModel.outputs.showMap
+            coordinator.showTips = viewController.viewModel.outputs.showTips
             return coordinator
         }
     }

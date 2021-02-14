@@ -15,6 +15,7 @@ import VenueDetails
 
 /// Provides all dependencies to build the MapModuleBuilder
 private final class MapDependencyProvider: DependencyProvider<EmptyDependency>, VenueDetailsDependency {
+    
     fileprivate var session: Session { AF }
     fileprivate var requestRetrier: RequestRetrier { NetworkRequestRetrier() }
     fileprivate var networkRechabilityManager: NetworkReachabilityManager? { NetworkReachabilityManager() }

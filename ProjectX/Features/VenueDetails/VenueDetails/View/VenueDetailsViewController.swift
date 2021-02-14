@@ -32,7 +32,7 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
         return tableView
     }()
     
-    private var stretchyHeader: VenueDetailsTableStretchyHeader!
+    private var stretchyHeader: TableStretchyHeader!
     
     private let ratingCellReuseIdentifier = "RatingTableViewCellIdentifier"
     private let addressCellReuseIdentifier = "AddressTableViewCelldentifier"
@@ -55,12 +55,9 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
         super.viewDidLoad()
         
         viewModel.inputs.viewState.onNext(.loaded)
+        
         setupUI()
         setupObservers()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     // MARK: - setupUI
@@ -89,7 +86,7 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
     
     func setupSubviews() {
         view.addSubview(tableView)
-        stretchyHeader = VenueDetailsTableStretchyHeader(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width), viewData: viewModel.buildVenueTableHeaderViewData())
+        stretchyHeader = TableStretchyHeader(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width), viewData: viewModel.buildVenueTableHeaderViewData())
         tableView.tableHeaderView = stretchyHeader
         
         view.addSubview(backButton)
@@ -166,13 +163,7 @@ extension VenueDetailsViewController: UITableViewDataSource {
             if let viewData = viewModel?.buildtipsTableViewCellViewModel() {
                 cell.setup(with: viewData) { [weak self] in
                     tableView.deselectRow(at: indexPath, animated: true)
-                    
-//                    guard let `self` = self else { return }
-                    
-//                    let a = tableView.convert(cell.frame, to: tableView.superview)
-//                    self.transition.startingFrame = CGRect(x: a.minX+15, y: a.minY+15, width: 375 / 414 * self.view.frame.width - 30, height: 408 / 736 * self.view.frame.height - 30)
-                    
-//                    self.presenter?.showTipsViewController()
+                    self?.viewModel.inputs.itemSelected.onNext(())
                 }
             }
             return cell
@@ -190,7 +181,7 @@ extension VenueDetailsViewController: UITableViewDataSource {
 extension VenueDetailsViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let header = tableView.tableHeaderView as? VenueDetailsTableStretchyHeader else { return }
+        guard let header = tableView.tableHeaderView as? TableStretchyHeader else { return }
         
         header.scrollViewDidScroll(scrollView: tableView)
     }

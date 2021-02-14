@@ -6,21 +6,27 @@
 //
 
 import UIKit
-import DesignSystem
 import Nuke
 
-class VenueDetailsTableStretchyHeader: UIView {
+public class TableStretchyHeader: UIView {
     
     public struct ViewData {
-        var title: String
-        var description: String
-        var imageURL: String?
-        var imagePlaceholder: String
+        public var title: String
+        public var description: String
+        public var imageURL: String?
+        public var imagePlaceholder: String
+        
+        public init(title: String, description: String, imageURL: String?, imagePlaceholder: String) {
+            self.title = title
+            self.description = description
+            self.imageURL = imageURL
+            self.imagePlaceholder = imagePlaceholder
+        }
     }
     
     lazy var imageView: UIImageView = {
         let imageView: UIImageView = ImageViewFactory().build()
-        imageView.image = UIImage(named: "placeholder", in: Bundle(for: VenueDetailsTableStretchyHeader.self), with: nil)
+        imageView.image = UIImage(named: "placeholder", in: Bundle(for: TableStretchyHeader.self), with: nil)
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -53,7 +59,7 @@ class VenueDetailsTableStretchyHeader: UIView {
     private var containerView = UIView()
     private var containerViewHeight = NSLayoutConstraint()
     
-    init(frame: CGRect, viewData: ViewData) {
+    public init(frame: CGRect, viewData: ViewData) {
         super.init(frame: frame)
         
         setupUI()
@@ -73,11 +79,11 @@ class VenueDetailsTableStretchyHeader: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(with viewData: ViewData) {
+    public func setup(with viewData: ViewData) {
         titleLabel.text = viewData.title
         descriptionLabel.text = viewData.description
         
-        let placeholderImage = UIImage(named: viewData.imagePlaceholder, in: Bundle(for: VenueDetailsTableStretchyHeader.self), with: nil)
+        let placeholderImage = UIImage(named: viewData.imagePlaceholder, in: Bundle(for: TableStretchyHeader.self), with: nil)
         
         if let imagePath = viewData.imageURL, let imageURL = URL(string: imagePath) {
             Nuke.loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: placeholderImage, transition: nil, failureImage: placeholderImage, failureImageTransition: nil, contentModes: nil), into: imageView, progress: nil, completion: nil)
@@ -86,7 +92,7 @@ class VenueDetailsTableStretchyHeader: UIView {
         }
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    public func scrollViewDidScroll(scrollView: UIScrollView) {
         containerViewHeight.constant = scrollView.contentInset.top
         let offsetY = -(scrollView.contentOffset.y + scrollView.contentInset.top)
         containerView.clipsToBounds = offsetY <= 0
@@ -97,7 +103,7 @@ class VenueDetailsTableStretchyHeader: UIView {
 
 // MARK: - Setup UI
 
-private extension VenueDetailsTableStretchyHeader {
+private extension TableStretchyHeader {
     
     func setupUI() {
         setupSubviews()
@@ -110,11 +116,8 @@ private extension VenueDetailsTableStretchyHeader {
         addSubview(containerView)
         containerView.addSubview(imageView)
         containerView.addSubview(shadowView)
-                
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(descriptionLabel)
-        
-        containerView.addSubview(stackView)
+        containerView.addSubview(titleLabel)
+        containerView.addSubview(descriptionLabel)
     }
     
     func setupConstraints() {
@@ -131,10 +134,14 @@ private extension VenueDetailsTableStretchyHeader {
             shadowView.rightAnchor.constraint(equalTo: containerView.rightAnchor),
             shadowView.heightAnchor.constraint(equalToConstant: 60),
             shadowView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            stackView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 0),
-            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -5),
-            stackView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: 0),
-            stackView.heightAnchor.constraint(equalToConstant: 70)
+            
+            titleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 10),
+            titleLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: 10),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            descriptionLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 10),
+            descriptionLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: 10),
+            descriptionLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -5)
         ])
         
         containerViewHeight = containerView.heightAnchor.constraint(equalTo: heightAnchor)

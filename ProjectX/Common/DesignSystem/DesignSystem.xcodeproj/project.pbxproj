@@ -67,6 +67,7 @@
 		50CA3C2925C164DC00CABE97 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C2825C164DC00CABE97 /* Map.swift */; };
 		50CA3C2D25C1655700CABE97 /* MapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C2C25C1655700CABE97 /* MapFactory.swift */; };
 		50CA3CC525C1735700CABE97 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3CC425C1735700CABE97 /* Core.framework */; platformFilter = ios; };
+		50CB780F25D9843D0092CC59 /* TableStretchyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB780E25D9843D0092CC59 /* TableStretchyHeader.swift */; };
 		50E124D825D514E900B0D779 /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124D725D514E900B0D779 /* PhotoDataSource.swift */; };
 		50E124DC25D514FF00B0D779 /* GalleryPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124DB25D514FF00B0D779 /* GalleryPhoto.swift */; };
 		50E124E025D5151200B0D779 /* PhotoInteractionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124DF25D5151200B0D779 /* PhotoInteractionAnimator.swift */; };
@@ -156,6 +157,7 @@
 		50CA3C2C25C1655700CABE97 /* MapFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFactory.swift; sourceTree = "<group>"; };
 		50CA3C6425C1727D00CABE97 /* Nuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CA3CC425C1735700CABE97 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CB780E25D9843D0092CC59 /* TableStretchyHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableStretchyHeader.swift; sourceTree = "<group>"; };
 		50E124D725D514E900B0D779 /* PhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
 		50E124DB25D514FF00B0D779 /* GalleryPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPhoto.swift; sourceTree = "<group>"; };
 		50E124DF25D5151200B0D779 /* PhotoInteractionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInteractionAnimator.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 		50A4DCCF25BF9977006E7D1F /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				50CB780D25D9842C0092CC59 /* StretchHeader */,
 				50CA3C2325C1645F00CABE97 /* Map */,
 				50A4DCD725BF9C4A006E7D1F /* ImageViewFactory.swift */,
 				50A4DCD025BF997D006E7D1F /* Separator */,
@@ -480,6 +483,14 @@
 				50CA3C2C25C1655700CABE97 /* MapFactory.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		50CB780D25D9842C0092CC59 /* StretchHeader */ = {
+			isa = PBXGroup;
+			children = (
+				50CB780E25D9843D0092CC59 /* TableStretchyHeader.swift */,
+			);
+			path = StretchHeader;
 			sourceTree = "<group>";
 		};
 		50E124D625D514D800B0D779 /* PhotoGallery */ = {
@@ -740,6 +751,7 @@
 				50A4DCA225BF96B6006E7D1F /* DefaultTableHeaderView.swift in Sources */,
 				50A4DCE025BF9D13006E7D1F /* Slider.swift in Sources */,
 				50A4DC9925BF96B6006E7D1F /* LocationTableViewCell.swift in Sources */,
+				50CB780F25D9843D0092CC59 /* TableStretchyHeader.swift in Sources */,
 				50A4DCA625BF96B6006E7D1F /* TableViewSectionable.swift in Sources */,
 				50A4DCAA25BF96B6006E7D1F /* TableViewCellItemPresentable.swift in Sources */,
 				50A4DCEB25BF9D8C006E7D1F /* SearchBar.swift in Sources */,

@@ -35,6 +35,8 @@
 		50CA3D0525C1DE1000CABE97 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3D0425C1DE1000CABE97 /* RootBuilder.swift */; };
 		50CA3DA025C2C54900CABE97 /* FoursquareCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3D9F25C2C54900CABE97 /* FoursquareCore.framework */; };
 		50CA3DA125C2C54900CABE97 /* FoursquareCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3D9F25C2C54900CABE97 /* FoursquareCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50CB782625D9B25B0092CC59 /* Tips.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB782525D9B25B0092CC59 /* Tips.framework */; };
+		50CB782725D9B25B0092CC59 /* Tips.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB782525D9B25B0092CC59 /* Tips.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 				50CA3DA125C2C54900CABE97 /* FoursquareCore.framework in Embed Frameworks */,
 				505CE07625CE94F400975DC2 /* VenueDetails.framework in Embed Frameworks */,
 				50CA3C6225C171E700CABE97 /* Utils.framework in Embed Frameworks */,
+				50CB782725D9B25B0092CC59 /* Tips.framework in Embed Frameworks */,
 				50CA3C5E25C171DD00CABE97 /* DesignSystem.framework in Embed Frameworks */,
 				50A4D90725BE1FF9006E7D1F /* Core.framework in Embed Frameworks */,
 				50CA3C4A25C16A9A00CABE97 /* Map.framework in Embed Frameworks */,
@@ -96,6 +99,7 @@
 		50CA3C6025C171E700CABE97 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CA3D0425C1DE1000CABE97 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		50CA3D9F25C2C54900CABE97 /* FoursquareCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FoursquareCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CB782525D9B25B0092CC59 /* Tips.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tips.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66390B07404D223856A79FCA /* Pods_ProjectX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,6 +110,7 @@
 			files = (
 				50CA3DA025C2C54900CABE97 /* FoursquareCore.framework in Frameworks */,
 				505CE07525CE94F400975DC2 /* VenueDetails.framework in Frameworks */,
+				50CB782625D9B25B0092CC59 /* Tips.framework in Frameworks */,
 				50CA3C4C25C16A9D00CABE97 /* Pods_ProjectX.framework in Frameworks */,
 				50CA3C6125C171E700CABE97 /* Utils.framework in Frameworks */,
 				50CA3C5D25C171DD00CABE97 /* DesignSystem.framework in Frameworks */,
@@ -128,6 +133,7 @@
 		07DF6CB792607D67BD2BEB48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50CB782525D9B25B0092CC59 /* Tips.framework */,
 				505CE07425CE94F400975DC2 /* VenueDetails.framework */,
 				50CA3D9F25C2C54900CABE97 /* FoursquareCore.framework */,
 				50CA3C6025C171E700CABE97 /* Utils.framework */,

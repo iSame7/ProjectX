@@ -21,11 +21,11 @@
 		505CDFD125CC4AFE00975DC2 /* VenueDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CDFCB25CC4AFE00975DC2 /* VenueDetailsService.swift */; };
 		505CDFD625CC4CA500975DC2 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505CDFD525CC4CA500975DC2 /* Core.framework */; platformFilter = ios; };
 		505CE03325CC4F3900975DC2 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505CE03225CC4F3900975DC2 /* DesignSystem.framework */; platformFilter = ios; };
-		505CE07B25CE9F5B00975DC2 /* VenueDetailsTableStretchyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE07A25CE9F5B00975DC2 /* VenueDetailsTableStretchyHeader.swift */; };
 		505CE08225CEB22A00975DC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 505CE08125CEB22A00975DC2 /* Assets.xcassets */; };
 		505CE09325D16C0700975DC2 /* RatingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE09225D16C0700975DC2 /* RatingProgressView.swift */; };
 		505CE09725D1748F00975DC2 /* RatingCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE09625D1748F00975DC2 /* RatingCircleView.swift */; };
 		505CE0A125D2447D00975DC2 /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE0A025D2447D00975DC2 /* RatingTableViewCell.swift */; };
+		50CB781F25D9B2460092CC59 /* Tips.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB781E25D9B2460092CC59 /* Tips.framework */; platformFilter = ios; };
 		50E124B625D320C600B0D779 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124B525D320C600B0D779 /* AddressTableViewCell.swift */; };
 		50E124BB25D385A000B0D779 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124BA25D385A000B0D779 /* MapTableViewCell.swift */; };
 		50E124BF25D50E0100B0D779 /* PhotoGalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E124BE25D50E0100B0D779 /* PhotoGalleryTableViewCell.swift */; };
@@ -64,11 +64,11 @@
 		505CDFCB25CC4AFE00975DC2 /* VenueDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsService.swift; sourceTree = "<group>"; };
 		505CDFD525CC4CA500975DC2 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505CE03225CC4F3900975DC2 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		505CE07A25CE9F5B00975DC2 /* VenueDetailsTableStretchyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsTableStretchyHeader.swift; sourceTree = "<group>"; };
 		505CE08125CEB22A00975DC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		505CE09225D16C0700975DC2 /* RatingProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgressView.swift; sourceTree = "<group>"; };
 		505CE09625D1748F00975DC2 /* RatingCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCircleView.swift; sourceTree = "<group>"; };
 		505CE0A025D2447D00975DC2 /* RatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
+		50CB781E25D9B2460092CC59 /* Tips.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tips.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E124B525D320C600B0D779 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		50E124BA25D385A000B0D779 /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		50E124BE25D50E0100B0D779 /* PhotoGalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryTableViewCell.swift; sourceTree = "<group>"; };
@@ -88,6 +88,7 @@
 			files = (
 				505CE03325CC4F3900975DC2 /* DesignSystem.framework in Frameworks */,
 				505CDFD625CC4CA500975DC2 /* Core.framework in Frameworks */,
+				50CB781F25D9B2460092CC59 /* Tips.framework in Frameworks */,
 				7446A463675ED4A4E661A459 /* Pods_VenueDetails.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +153,7 @@
 		505CDFD425CC4CA500975DC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50CB781E25D9B2460092CC59 /* Tips.framework */,
 				505CE03225CC4F3900975DC2 /* DesignSystem.framework */,
 				505CDFD525CC4CA500975DC2 /* Core.framework */,
 				896A386D68CEC0FFB3C6DE38 /* Pods_VenueDetails.framework */,
@@ -182,7 +184,6 @@
 				50E124C225D50EBE00B0D779 /* PhotoGallery */,
 				505CE08B25D1644000975DC2 /* Cells */,
 				505CDFC925CC4AFE00975DC2 /* VenueDetailsViewController.swift */,
-				505CE07A25CE9F5B00975DC2 /* VenueDetailsTableStretchyHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -445,7 +446,6 @@
 				50E124C825D50F3900B0D779 /* PhotoGalleryLayout.swift in Sources */,
 				505CE09325D16C0700975DC2 /* RatingProgressView.swift in Sources */,
 				50E124CC25D50F5500B0D779 /* PhotoCollectionViewCell.swift in Sources */,
-				505CE07B25CE9F5B00975DC2 /* VenueDetailsTableStretchyHeader.swift in Sources */,
 				50E124C425D50ECA00B0D779 /* BaseCollectionViewLayout.swift in Sources */,
 				50E124BF25D50E0100B0D779 /* PhotoGalleryTableViewCell.swift in Sources */,
 				505CE09725D1748F00975DC2 /* RatingCircleView.swift in Sources */,

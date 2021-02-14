@@ -8,26 +8,52 @@
 
 import RxSwift
 import Utils
+import Core
+import DesignSystem
+import FoursquareCore
 
-protocol TipsViewModellable: class {
+protocol TipsViewModellable: ViewModellable {
     var disposeBag: DisposeBag { get }
     var inputs: TipsViewModelInputs { get }
     var outputs: TipsViewModelOutputs { get }
+    
+    func buildTableHeaderViewData() -> TableStretchyHeader.ViewData
+    func buildTipTableCellViewData(userName: String, userImageURL: String?, createdAt: String, tipText: String) -> TipTableViewCell.ViewData
 }
 
-struct TipsViewModelInputs {}
+struct TipsViewModelInputs {
+    var viewState = PublishSubject<ViewState>()
+    var backButtonTapped = PublishSubject<Void>()
+}
 
-struct TipsViewModelOutputs {}
+struct TipsViewModelOutputs {
+    var showVenueDetailsHeader = PublishSubject<TableStretchyHeader.ViewData>()
+    var showTips = PublishSubject<TipsViewController.ViewData>()
+    var showVenueDetails = PublishSubject<Void>()
+}
 
 class TipsViewModel: TipsViewModellable {
 
     let disposeBag = DisposeBag()
     let inputs = TipsViewModelInputs()
     let outputs = TipsViewModelOutputs()
-    var useCase: TipsInteractable
-
-    init(useCase: TipsInteractable) {
-        self.useCase = useCase
+    
+    private let tips: [TipItem]
+    private let venuePhotoURL: String?
+    
+    init(tips: [TipItem], venuePhotoURL: String?) {
+        self.tips = tips
+        self.venuePhotoURL = venuePhotoURL
+        
+        setupObservables()
+    }
+    
+    func buildTableHeaderViewData() -> TableStretchyHeader.ViewData {
+        return TableStretchyHeader.ViewData(title: "", description: "", imageURL: nil, imagePlaceholder: "restraunt-placeholder")
+    }
+    
+    func buildTipTableCellViewData(userName: String, userImageURL: String?, createdAt: String, tipText: String) -> TipTableViewCell.ViewData {
+        return TipTableViewCell.ViewData(userName: userName, userImageURL: userImageURL, createdAt: createdAt, tipText: tipText)
     }
 }
 
@@ -35,5 +61,25 @@ class TipsViewModel: TipsViewModellable {
 
 private extension TipsViewModel {
 
-    func setupObservables() {}
+    func setupObservables() {
+        observeInputs()
+    }
+    
+    func observeInputs() {
+        inputs.viewState.subscribe(onNext: { [weak self] state in
+            guard let self = self else { return }
+            
+            switch state {
+            case .loaded:
+                self.outputs.showVenueDetailsHeader.onNext(TableStretchyHeader.ViewData(title: "Tips", description: "", imageURL: self.venuePhotoURL, imagePlaceholder: "restraunt-placeholder"))
+                self.outputs.showTips.onNext(TipsViewController.ViewData(tips: self.tips))
+            default:
+                break
+            }
+        }).disposed(by: disposeBag)
+        
+        inputs.backButtonTapped.subscribe(onNext: { [weak self] in
+            self?.outputs.showVenueDetails.onNext(())
+        }).disposed(by: disposeBag)
+    }
 }
