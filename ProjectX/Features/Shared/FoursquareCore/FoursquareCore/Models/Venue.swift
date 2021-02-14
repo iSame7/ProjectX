@@ -57,6 +57,12 @@ public struct TipItem: Codable {
     public let createdAt: Int?
     public let text: String?
     public let user: User?
+    
+    public init(createdAt: Int?, text: String?, user: User?) {
+        self.createdAt = createdAt
+        self.text = text
+        self.user = user
+    }
 }
 
 public struct User: Codable {

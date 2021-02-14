@@ -21,6 +21,7 @@ protocol VenueDetailsViewModellable: ViewModellable {
     func buildRatingTableViewCellViewData() -> RatingTableViewCell.ViewData?
     func buildPhotoGalleryTableViewCellViewData() -> PhotoGalleryTableViewCell.ViewData?
     func venueLocation() -> Location?
+    func buildtipsTableViewCellViewModel() -> TipsTableViewCell.ViewData?
 }
 
 struct VenueDetailsViewModelInputs {
@@ -77,6 +78,12 @@ class VenueDetailsViewModel: VenueDetailsViewModellable {
         guard let viewData = viewData, let groups = viewData.venue.photos?.groups, let photos = groups.first?.items else { return nil }
 
         return PhotoGalleryTableViewCell.ViewData(photos: photos)
+    }
+    
+    func buildtipsTableViewCellViewModel() -> TipsTableViewCell.ViewData? {
+        guard let viewModel = viewData, let groups = viewModel.venue.tips?.groups, let tips = groups.first?.items else { return nil }
+        
+        return TipsTableViewCell.ViewData(tips: tips)
     }
     
     func venueLocation() -> Location? {

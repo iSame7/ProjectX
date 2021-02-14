@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3244FB4F422653232B4F69EE /* Pods_VenueDetails_VenueDetailsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91BBBF49AB163ECE0864F33B /* Pods_VenueDetails_VenueDetailsTests.framework */; };
+		5014E7CF25D5EF20008671EE /* TipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014E7CE25D5EF20008671EE /* TipsTableViewCell.swift */; };
+		5014E7D325D5F170008671EE /* TipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014E7D225D5F170008671EE /* TipTableViewCell.swift */; };
 		505CDFB425CC4AA100975DC2 /* VenueDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505CDFAA25CC4AA100975DC2 /* VenueDetails.framework */; };
 		505CDFB925CC4AA100975DC2 /* VenueDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CDFB825CC4AA100975DC2 /* VenueDetailsTests.swift */; };
 		505CDFBB25CC4AA100975DC2 /* VenueDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 505CDFAD25CC4AA100975DC2 /* VenueDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		05CD4DAD4E250CBB1939C277 /* Pods-VenueDetails.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenueDetails.debug.xcconfig"; path = "Target Support Files/Pods-VenueDetails/Pods-VenueDetails.debug.xcconfig"; sourceTree = "<group>"; };
 		25A90DFB828F05B1635164EA /* Pods-VenueDetails-VenueDetailsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenueDetails-VenueDetailsTests.release.xcconfig"; path = "Target Support Files/Pods-VenueDetails-VenueDetailsTests/Pods-VenueDetails-VenueDetailsTests.release.xcconfig"; sourceTree = "<group>"; };
+		5014E7CE25D5EF20008671EE /* TipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsTableViewCell.swift; sourceTree = "<group>"; };
+		5014E7D225D5F170008671EE /* TipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTableViewCell.swift; sourceTree = "<group>"; };
 		505CDFAA25CC4AA100975DC2 /* VenueDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VenueDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505CDFAD25CC4AA100975DC2 /* VenueDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenueDetails.h; sourceTree = "<group>"; };
 		505CDFAE25CC4AA100975DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				50E124B525D320C600B0D779 /* AddressTableViewCell.swift */,
 				50E124BA25D385A000B0D779 /* MapTableViewCell.swift */,
 				50E124BE25D50E0100B0D779 /* PhotoGalleryTableViewCell.swift */,
+				5014E7CE25D5EF20008671EE /* TipsTableViewCell.swift */,
+				5014E7D225D5F170008671EE /* TipTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -434,6 +440,8 @@
 				505CE0A125D2447D00975DC2 /* RatingTableViewCell.swift in Sources */,
 				505CDFCF25CC4AFE00975DC2 /* VenueDetailsViewController.swift in Sources */,
 				50E124B625D320C600B0D779 /* AddressTableViewCell.swift in Sources */,
+				5014E7D325D5F170008671EE /* TipTableViewCell.swift in Sources */,
+				5014E7CF25D5EF20008671EE /* TipsTableViewCell.swift in Sources */,
 				50E124C825D50F3900B0D779 /* PhotoGalleryLayout.swift in Sources */,
 				505CE09325D16C0700975DC2 /* RatingProgressView.swift in Sources */,
 				50E124CC25D50F5500B0D779 /* PhotoCollectionViewCell.swift in Sources */,

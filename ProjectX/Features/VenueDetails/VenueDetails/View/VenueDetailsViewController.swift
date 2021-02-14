@@ -12,17 +12,6 @@ import DesignSystem
 import RxCocoa
 import FoursquareCore
 
-class Book: NSObject {
-    
-    let name: String
-    let details: String
-    
-    init(name: String, details: String) {
-        self.name = name
-        self.details = details
-    }
-}
-
 class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
     
     // MARK: - Properties
@@ -36,6 +25,7 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
         tableView.register(AddressTableViewCell.self, forCellReuseIdentifier: addressCellReuseIdentifier)
         tableView.register(MapTableViewCell.self, forCellReuseIdentifier: mapCellReuseIdentifier)
         tableView.register(PhotoGalleryTableViewCell.self, forCellReuseIdentifier: PhotoGalleryTableViewCell.reuseIdentifier)
+        tableView.register(TipsTableViewCell.self, forCellReuseIdentifier: TipsTableViewCell.reuseIdentifier)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -59,13 +49,6 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
         return backButton.rx.tap
     }
     
-    private let viewData = ["New York", "London", "Cairo", "Amsterdam"]
-    let bookList = [
-          Book(name: "Count of Monte Cristo", details: "The Count of Monte Cristo (French: Le Comte de Monte-Cristo) is an adventure novel by French author Alexandre Dumas (père) completed in 1844. It is one of the author's most popular works, along with The Three Musketeers. Like many of his novels, it is expanded from plot outlines suggested by his collaborating ghostwriter Auguste Maquet. The story takes place in France, Italy, and islands in the Mediterranean during the historical events of 1815–1839: the era of the Bourbon Restoration through the reign of Louis-Philippe of France."),
-          Book(name: "Harry Potter and the Philosopher's Stone", details: "Harry Potter and the Philosopher's Stone is the first novel in the Harry Potter series and J. K. Rowling's debut novel, first published in 1997 by Bloomsbury. It was published in the United States as Harry Potter and the Sorcerer's Stone by Scholastic Corporation in 1998. The plot follows Harry Potter, a young wizard who discovers his magical heritage as he makes close friends and a few enemies in his first year at the Hogwarts School of Witchcraft and Wizardry."),
-          Book(name: "The Monstrumologist", details: "The Monstrumologist (2009) is a young adult horror novel by Rick Yancey. It received the 2010 Michael L. Printz Honor Award for excellence in young adult literature."),
-          Book(name: "Nineteen Eighty-Four", details: "Nineteen Eighty-Four, often published as 1984, is a dystopian novel by English author George Orwell published in 1949. The novel is set in Airstrip One (formerly known as Great Britain), a province of the superstate Oceania in a world of perpetual war, omnipresent government surveillance and public manipulation, dictated by a political system euphemistically named English Socialism (or Ingsoc in the government's invented language, Newspeak) under the control of a privileged elite of the Inner Party, that persecutes individualism and independent thinking as thoughtcrime.")
-      ]
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -151,7 +134,7 @@ class VenueDetailsViewController: ViewController<VenueDetailsViewModel> {
 extension VenueDetailsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -176,6 +159,21 @@ extension VenueDetailsViewController: UITableViewDataSource {
                 cell.setup(with: viewData, imageSelectionHandler: { [weak self] (galleryPreview) in
                     self?.present(galleryPreview, animated: true, completion: nil)
                 })
+            }
+            return cell
+        } else if indexPath.row == 4 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TipsTableViewCell.reuseIdentifier) as! TipsTableViewCell
+            if let viewData = viewModel?.buildtipsTableViewCellViewModel() {
+                cell.setup(with: viewData) { [weak self] in
+                    tableView.deselectRow(at: indexPath, animated: true)
+                    
+//                    guard let `self` = self else { return }
+                    
+//                    let a = tableView.convert(cell.frame, to: tableView.superview)
+//                    self.transition.startingFrame = CGRect(x: a.minX+15, y: a.minY+15, width: 375 / 414 * self.view.frame.width - 30, height: 408 / 736 * self.view.frame.height - 30)
+                    
+//                    self.presenter?.showTipsViewController()
+                }
             }
             return cell
         } else {

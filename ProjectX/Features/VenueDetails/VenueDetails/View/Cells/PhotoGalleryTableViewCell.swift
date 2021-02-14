@@ -39,6 +39,7 @@ class PhotoGalleryTableViewCell: UITableViewCell {
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier)
         return collectionView
     }()
@@ -55,7 +56,7 @@ class PhotoGalleryTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // resize cell according to collection view size
+    // Resize cell according to collection view size
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         if let viewModel = viewData, !viewModel.photos.isEmpty {
             collectionView.layoutIfNeeded()
