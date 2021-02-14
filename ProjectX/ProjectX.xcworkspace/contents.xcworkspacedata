@@ -23,9 +23,6 @@
    <Group
       location = "container:Features"
       name = "Features">
-      <FileRef
-         location = "group:Tips/Tips.xcodeproj">
-      </FileRef>
       <Group
          location = "group:Shared"
          name = "Shared">
@@ -33,6 +30,9 @@
             location = "group:FoursquareCore/FoursquareCore.xcodeproj">
          </FileRef>
       </Group>
+      <FileRef
+         location = "group:Tips/Tips.xcodeproj">
+      </FileRef>
       <FileRef
          location = "group:VenueDetails/VenueDetails.xcodeproj">
       </FileRef>

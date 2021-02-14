@@ -82,6 +82,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		500BB3BF25D9D17A00F9E470 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				50CB77D125D9592A0092CC59 /* TipsModuleBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		500BB3C025D9D18000F9E470 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				50CB77D425D9592A0092CC59 /* TipsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		500BB3C125D9D18A00F9E470 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50CB77D325D9592A0092CC59 /* TipsViewController.swift */,
+				50CB781625D988C60092CC59 /* TipTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		500BB3C225D9D19600F9E470 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				50CB77D025D9592A0092CC59 /* TipsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		50CB77AA25D958FA0092CC59 = {
 			isa = PBXGroup;
 			children = (
@@ -105,13 +138,12 @@
 		50CB77B625D958FA0092CC59 /* Tips */ = {
 			isa = PBXGroup;
 			children = (
-				50CB77D025D9592A0092CC59 /* TipsCoordinator.swift */,
-				50CB77D125D9592A0092CC59 /* TipsModuleBuilder.swift */,
-				50CB77D325D9592A0092CC59 /* TipsViewController.swift */,
-				50CB77D425D9592A0092CC59 /* TipsViewModel.swift */,
+				500BB3BF25D9D17A00F9E470 /* Builder */,
+				500BB3C225D9D19600F9E470 /* Coordinator */,
+				500BB3C125D9D18A00F9E470 /* View */,
+				500BB3C025D9D18000F9E470 /* ViewModel */,
 				50CB77B725D958FA0092CC59 /* Tips.h */,
 				50CB77B825D958FA0092CC59 /* Info.plist */,
-				50CB781625D988C60092CC59 /* TipTableViewCell.swift */,
 			);
 			path = Tips;
 			sourceTree = "<group>";
