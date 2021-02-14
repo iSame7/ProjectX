@@ -10,6 +10,12 @@
 		50CB77BE25D958FA0092CC59 /* Tips.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB77B425D958FA0092CC59 /* Tips.framework */; };
 		50CB77C325D958FA0092CC59 /* TipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77C225D958FA0092CC59 /* TipsTests.swift */; };
 		50CB77C525D958FA0092CC59 /* Tips.h in Headers */ = {isa = PBXBuildFile; fileRef = 50CB77B725D958FA0092CC59 /* Tips.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50CB77D625D9592A0092CC59 /* TipsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77D025D9592A0092CC59 /* TipsCoordinator.swift */; };
+		50CB77D725D9592A0092CC59 /* TipsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77D125D9592A0092CC59 /* TipsModuleBuilder.swift */; };
+		50CB77D825D9592A0092CC59 /* TipsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77D225D9592A0092CC59 /* TipsUseCase.swift */; };
+		50CB77D925D9592A0092CC59 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77D325D9592A0092CC59 /* TipsViewController.swift */; };
+		50CB77DA25D9592A0092CC59 /* TipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77D425D9592A0092CC59 /* TipsViewModel.swift */; };
+		50CB77DB25D9592A0092CC59 /* TipsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77D525D9592A0092CC59 /* TipsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 		50CB77BD25D958FA0092CC59 /* TipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CB77C225D958FA0092CC59 /* TipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsTests.swift; sourceTree = "<group>"; };
 		50CB77C425D958FA0092CC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50CB77D025D9592A0092CC59 /* TipsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCoordinator.swift; sourceTree = "<group>"; };
+		50CB77D125D9592A0092CC59 /* TipsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsModuleBuilder.swift; sourceTree = "<group>"; };
+		50CB77D225D9592A0092CC59 /* TipsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsUseCase.swift; sourceTree = "<group>"; };
+		50CB77D325D9592A0092CC59 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		50CB77D425D9592A0092CC59 /* TipsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewModel.swift; sourceTree = "<group>"; };
+		50CB77D525D9592A0092CC59 /* TipsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,12 @@
 			children = (
 				50CB77B725D958FA0092CC59 /* Tips.h */,
 				50CB77B825D958FA0092CC59 /* Info.plist */,
+				50CB77D025D9592A0092CC59 /* TipsCoordinator.swift */,
+				50CB77D125D9592A0092CC59 /* TipsModuleBuilder.swift */,
+				50CB77D225D9592A0092CC59 /* TipsUseCase.swift */,
+				50CB77D325D9592A0092CC59 /* TipsViewController.swift */,
+				50CB77D425D9592A0092CC59 /* TipsViewModel.swift */,
+				50CB77D525D9592A0092CC59 /* TipsService.swift */,
 			);
 			path = Tips;
 			sourceTree = "<group>";
@@ -147,6 +165,7 @@
 				TargetAttributes = {
 					50CB77B325D958FA0092CC59 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					50CB77BC25D958FA0092CC59 = {
 						CreatedOnToolsVersion = 12.3;
@@ -194,6 +213,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CB77D625D9592A0092CC59 /* TipsCoordinator.swift in Sources */,
+				50CB77D825D9592A0092CC59 /* TipsUseCase.swift in Sources */,
+				50CB77D925D9592A0092CC59 /* TipsViewController.swift in Sources */,
+				50CB77DB25D9592A0092CC59 /* TipsService.swift in Sources */,
+				50CB77D725D9592A0092CC59 /* TipsModuleBuilder.swift in Sources */,
+				50CB77DA25D9592A0092CC59 /* TipsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +366,7 @@
 		50CB77C925D958FA0092CC59 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8U3N7M58T5;
@@ -357,6 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.smapps.Tips;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +392,7 @@
 		50CB77CA25D958FA0092CC59 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8U3N7M58T5;
@@ -389,6 +417,7 @@
 		50CB77CC25D958FA0092CC59 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8U3N7M58T5;
 				INFOPLIST_FILE = TipsTests/Info.plist;
@@ -407,6 +436,7 @@
 		50CB77CD25D958FA0092CC59 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8U3N7M58T5;
 				INFOPLIST_FILE = TipsTests/Info.plist;
