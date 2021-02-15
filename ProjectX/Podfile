@@ -21,6 +21,10 @@ def shared_core_pods
   pod 'Nuke'
 end
 
+def shared_test_pods
+  pod 'RxTest', '~> 5'
+end
+
 # Common modules
 target 'Core' do
   project 'Common/Core/Core'
@@ -53,6 +57,13 @@ end
 target 'Map' do
   project 'Features/Map/Map'
   shared_core_pods
+  
+  target 'MapTests' do
+    inherit! :search_paths
+    pod 'RxTest'
+    shared_core_pods
+    shared_UI_pods
+  end
 end
 
 target 'FoursquareCore' do

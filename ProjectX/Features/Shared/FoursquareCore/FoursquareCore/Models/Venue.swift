@@ -19,6 +19,22 @@ public struct Venue: Codable {
     public let hours: Hours?
     public let photos: VenuePhotos?
     public let tips: Tips?
+    
+    public init(id: String, name: String, contact: Contact?, location: Location, categories: [Category], verified: Bool?, url: String?, stats: Stats?, likes: Likes?, rating: Double?, hours: Hours?, photos: VenuePhotos?, tips: Tips?) {
+        self.id = id
+        self.name = name
+        self.contact = contact
+        self.location = location
+        self.categories = categories
+        self.verified = verified
+        self.url = url
+        self.stats = stats
+        self.likes = likes
+        self.rating = rating
+        self.hours = hours
+        self.photos = photos
+        self.tips = tips
+    }
 }
 
 public struct Hours: Codable {
