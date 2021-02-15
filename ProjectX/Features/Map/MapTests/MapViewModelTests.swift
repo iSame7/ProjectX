@@ -16,13 +16,16 @@ import FoursquareCore
 
 class MapViewModelTests: XCTestCase {
     
+    // MARK: - Test variables
+
     private var sut: MapViewModel!
     private let useCaseMock = MapUseCase()
     private var disposeBag: DisposeBag!
     private var scheduler: TestScheduler!
-    
     private let location = Location(lat: 1023456, lng: 1023456, address: "Prinsengraght", crossStreet: nil, distance: nil, postalCode: "1017 JH", cc: nil, city: "Amsterdam", state: nil, country: "The Netherlands")
     
+    // MARK: - Test life cycle
+
     override func setUp() {
         super.setUp()
         
@@ -38,6 +41,8 @@ class MapViewModelTests: XCTestCase {
         super.tearDown()
     }
     
+    // MARK: - Tests
+
     func testInputLoaded() {
         // given
         let viewData = scheduler.createObserver((lat: Double, lng: Double).self)
