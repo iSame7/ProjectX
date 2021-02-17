@@ -111,38 +111,6 @@ In case you want to change the project setup like Foursquare API keys:
 
 Check the architecture that underpins the development of the apps in this repository [here](https://github.com/iSame7/ProjectX/blob/master/Technical-Documents/Architecture.md)
 
-# VIPER Architecture design pattern:
-
-**What is VIPER?**
-VIPER is an application of Clean Architecture to iOS apps. The word VIPER is a backronym for View, Interactor, Presenter, Entity, and Routing. Clean Architecture divides an app’s logical structure into distinct layers of responsibility. This makes it easier to isolate dependencies (e.g. your database) and to test the interactions at the boundaries between layers:
-<img src="/Assets/VIPER.components.png" height="335" />
-
-- Know more about VIPER through this post http://www.objc.io/issue-13/viper.html
-
-**Why VIPER**:
-
-*Smaller files*:
-
-- VIPER (without a few exceptions:) ) has very clear politics about responsibility for each component. It helps with reducing amount of code in files and putting into the right place according to a single responsibility principle. 
-
-*Better code coverage*: 
-
-- Smaller classes mean smaller test cases as well. Tests resort less to exotic tricks and are simpler to read. The barrier to entry to write unit tests is lower, so more developers write them. 
-
-*Good for unit testing*:
-
-- On the basis of VIPER principles, everything in one module is very well separated, so it creates good environment for unit testing. Look at [this](http://iosunittesting.com/tdd-with-viper/?utm_source=swifting.io) article regarding more info about TDD in VIPER.
-
-**VIPER modules Generator** : 
-
-If you really want to make your application based on VIPER architecture, do not even think to make it all manually. It will be a disaster! You need an automated process to create a new module.
-
-By the way I've created an opens source tool that automate the process of generating VIPER modules. A simple OS X App for generating VIPER modules's skeleton to use them in your Objective-C/Swift projects.
-You can download it now:
-
-* [ViperCode](https://github.com/iSame7/ViperCode)
-* [VIPER-Module](https://github.com/iSame7/VIPER-Module)
-
 # Dependency Injection:
 
 Use of VIPER architecture gives great possibility to apply dependency injection. For example, let’s consider an example of a presenter:
