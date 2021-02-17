@@ -111,38 +111,6 @@ In case you want to change the project setup like Foursquare API keys:
 
 Check the architecture that underpins the development of the apps in this repository [here](https://github.com/iSame7/ProjectX/blob/master/Technical-Documents/Architecture.md)
 
-# VIPER Architecture design pattern:
-
-**What is VIPER?**
-VIPER is an application of Clean Architecture to iOS apps. The word VIPER is a backronym for View, Interactor, Presenter, Entity, and Routing. Clean Architecture divides an app’s logical structure into distinct layers of responsibility. This makes it easier to isolate dependencies (e.g. your database) and to test the interactions at the boundaries between layers:
-<img src="/Assets/VIPER.components.png" height="335" />
-
-- Know more about VIPER through this post http://www.objc.io/issue-13/viper.html
-
-**Why VIPER**:
-
-*Smaller files*:
-
-- VIPER (without a few exceptions:) ) has very clear politics about responsibility for each component. It helps with reducing amount of code in files and putting into the right place according to a single responsibility principle. 
-
-*Better code coverage*: 
-
-- Smaller classes mean smaller test cases as well. Tests resort less to exotic tricks and are simpler to read. The barrier to entry to write unit tests is lower, so more developers write them. 
-
-*Good for unit testing*:
-
-- On the basis of VIPER principles, everything in one module is very well separated, so it creates good environment for unit testing. Look at [this](http://iosunittesting.com/tdd-with-viper/?utm_source=swifting.io) article regarding more info about TDD in VIPER.
-
-**VIPER modules Generator** : 
-
-If you really want to make your application based on VIPER architecture, do not even think to make it all manually. It will be a disaster! You need an automated process to create a new module.
-
-By the way I've created an opens source tool that automate the process of generating VIPER modules. A simple OS X App for generating VIPER modules's skeleton to use them in your Objective-C/Swift projects.
-You can download it now:
-
-* [ViperCode](https://github.com/iSame7/ViperCode)
-* [VIPER-Module](https://github.com/iSame7/VIPER-Module)
-
 # Dependency Injection:
 
 Use of VIPER architecture gives great possibility to apply dependency injection. For example, let’s consider an example of a presenter:
@@ -228,120 +196,128 @@ by separating components in our test we can focus only on testing responsibility
 How does it look like in perspective of code?
 
 ```swift
-class MapPresenterTests: XCTestCase {
-    // MARK: - Test variables
-    private let mockMapViewController = MockMapViewController()
-    private let mockMapInteractor = MockMapInteractor()
-    private let mockDetailsModuleBuilder = MockDetailsBuilder()
-    private let mockNavigationController = MockNavigationController()
-    private var mockRouter = MockRouter()
-    private var sut: MapPresenter?
+class MapViewModelTests: XCTestCase {
     
-    private let mockVenue = Venue(id: "123", name: "Restaurant A", contact: nil, location: Location(lat: 52.36795609763071, lng: 4.895555168247901, address: "Nieuwe Doelenstraat 20-22", crossStreet: nil, distance: nil, postalCode: "1012 CP", cc: nil, city: "Amsterdam", state: "North Holland", country: "Netherlands"), categories: [Category(id: "4bf58dd8d48988d16d941735", name: "Café", pluralName: "Cafés", shortName: "Café", icon: Category.Icon(prefix: "https://ss3.4sqi.net/img/categories_v2/food/cafe_", suffix: ".png"), primary: nil)], verified: false, url: nil, stats: nil, likes: nil, rating: nil, hours: nil, photos: nil, tips: nil)
+    // MARK: - Test variables
+
+    private var sut: MapViewModel!
+    private let useCaseMock = MapUseCase()
+    private var disposeBag: DisposeBag!
+    private var scheduler: TestScheduler!
+    private let location = Location(lat: 1023456, lng: 1023456, address: "Prinsengraght", crossStreet: nil, distance: nil, postalCode: "1017 JH", cc: nil, city: "Amsterdam", state: nil, country: "The Netherlands")
     
     // MARK: - Test life cycle
+
     override func setUp() {
-        sut = MapPresenter(view: mockMapViewController, mapInteractor: mockMapInteractor, router: mockRouter)
+        super.setUp()
+        
+        sut = MapViewModel(useCase: useCaseMock)
+        scheduler = TestScheduler(initialClock: 0)
+        disposeBag = DisposeBag()
+    }
+    
+    override func tearDown() {
+        sut = nil
+        disposeBag = nil
+        
+        super.tearDown()
     }
     
     // MARK: - Tests
-    func testIsMapViewLoaded() {
-        sut?.viewDidLoad()
+
+    func testInputLoaded() {
+        // given
+        let viewData = scheduler.createObserver((lat: Double, lng: Double).self)
         
-        XCTAssertNotNil(mockMapViewController.locationViewModel)
-        XCTAssertEqual(mockMapViewController.locationViewModel.lat, 52.36795609763071)
-        XCTAssertEqual(mockMapViewController.locationViewModel.lng, 4.895555168247901)
+        sut.outputs.showUserLocation
+            .bind(to: viewData)
+            .disposed(by: disposeBag)
+        
+        // when
+        
+        scheduler.createColdObservable([.next(10, .loaded)])
+            .bind(to: sut.inputs.viewState)
+            .disposed(by: disposeBag)
+        
+        useCaseMock.stubbedDetermineUserLocationResult = Observable.just(location)
+        
+        scheduler.start()
+        
+        // then
+        let resultViewData = viewData.events.first?.value.element
+        
+        XCTAssertTrue(useCaseMock.invokedDetermineUserLocation)
+        XCTAssertEqual(useCaseMock.invokedDetermineUserLocationCount, 1)
+        
+        XCTAssertEqual(resultViewData?.lat, location.lat)
     }
     
-    func testGetRestaurantsArountCoordinate() {
-        sut?.getRestaurantsAround(coordinate: "52.362305405787325,4.8999109843211")
-        XCTAssertNotNil(mockMapViewController.venues)
-        XCTAssertEqual(mockMapViewController.venues.count, 2)
-        XCTAssertEqual(mockMapViewController.venues.first?.name, "Restaurant A")
-        XCTAssertEqual(mockMapViewController.venues.first?.location.lat, 52.36795609763071)
-        XCTAssertEqual(mockMapViewController.venues.first?.location.lng, 4.895555168247901)
-        XCTAssertEqual(mockMapViewController.venues.first?.location.address, "Nieuwe Doelenstraat 20-22")
-        XCTAssertEqual(mockMapViewController.venues[1].name, "Starbucks")
-        XCTAssertEqual(mockMapViewController.venues[1].location.lat, 52.36607678472145)
-        XCTAssertEqual(mockMapViewController.venues[1].location.lng, 4.897430803910262)
-        XCTAssertEqual(mockMapViewController.venues[1].location.address, "Utrechtsestraat 9")
-    }
-    
-    func testGetRestaurantsAroundCoordinateWithError() {
-        sut?.getRestaurantsAround(coordinate: "")
+    func testObserverInputsLoadRestaurantsList() {
+        // given
+        let viewData = scheduler.createObserver([Venue].self)
         
-        XCTAssertNotNil(mockMapViewController.error)
-        XCTAssertEqual(mockMapViewController.error, .noResponse)
-    }
-    
-    func testGetPhotosForVenue() {
-        sut?.getPhotos(venueId: "4f019124a69d45461f2458e7")
+        sut.outputs.showRestaurantsList
+            .bind(to: viewData)
+            .disposed(by: disposeBag)
         
-        XCTAssertNotNil(mockMapViewController.venuePhotoURL)
-        XCTAssertNotNil(mockMapViewController.venueId)
+        // when
+        scheduler.createColdObservable([.next(10, ("1023456", "1023456"))])
+            .bind(to: sut.inputs.restaurantsListAroundCoordinatedRequested)
+            .disposed(by: disposeBag)
         
-        XCTAssertEqual(mockMapViewController.venuePhotoURL, "https://fastly.4sqi.net/img/general/700x500/WfIypTz_PxPvh75QSIBwomCu-jK_72UDiBauHc6L1dU.jpg")
-    }
-    
-    func testIsDetailsModulePushedInNavigationController() {
-        sut?.showDetailsViewController(venue: mockVenue, venuePhotoURL: "")
+        let category = Category(id: "1", name: "Restaurant1", pluralName: "Restaurants", shortName: "Restaurant", icon: Category.Icon(prefix: nil, suffix: nil), primary: false)
         
-        XCTAssertTrue(mockRouter.didGoToDetailsModule)
+        let venues = [Venue(id: "1", name: "Coffe Bru", contact: nil, location: location, categories: [category], verified: nil, url: nil, stats: nil, likes: nil, rating: nil, hours: nil, photos: nil, tips: nil)]
+        
+        useCaseMock.stubbedGetRestaurantsAroundResult = Observable.just((venues: venues, error: nil))
+        
+        scheduler.start()
+        
+        // then
+        let resultViewData = viewData.events.first?.value.element
+        
+        XCTAssertTrue(useCaseMock.invokedGetRestaurantsAround)
+        XCTAssertEqual(useCaseMock.invokedGetRestaurantsAroundCount, 1)
+        
+        XCTAssertEqual(resultViewData?.first?.name, "Coffe Bru")
     }
 }
 
-private class MockMapViewController: UIViewController, MapViewable {
-    var locationViewModel: MapViewController.LocationViewModel!
-    var venues: [Venue]!
-    var error: FoursquareError!
-    var venuePhotoURL: String!
-    var venueId: String!
+class MapUseCase: MapInteractable {
     
-    func update(_ model: [Venue]) {
-        venues = model
-    }
-    
-    func showError(error: FoursquareError) {
-        self.error = error
-    }
-    
-    func update(with photo: String, for venueId: String) {
-        venuePhotoURL = photo
-        self.venueId = venueId
+    var invokedGetRestaurantsAround = false
+    var invokedGetRestaurantsAroundCount = 0
+    var invokedGetRestaurantsAroundParameters: (coordinates: String, Void)?
+    var invokedGetRestaurantsAroundParametersList = [(coordinates: String, Void)]()
+    var stubbedGetRestaurantsAroundResult: Observable<(venues: [Venue]?, error: FoursquareError?)>!
+    func getRestaurantsAround(coordinates: String) -> Observable<(venues: [Venue]?, error: FoursquareError?)> {
+        invokedGetRestaurantsAround = true
+        invokedGetRestaurantsAroundCount += 1
+        invokedGetRestaurantsAroundParameters = (coordinates, ())
+        invokedGetRestaurantsAroundParametersList.append((coordinates, ()))
+        return stubbedGetRestaurantsAroundResult
     }
     
-    func updateUserLocation(_ locationViewModel: MapViewController.LocationViewModel) {
-        self.locationViewModel = locationViewModel
-    }
-}
-
-private class MockMapInteractor: MapInteracting {
-    func getRestaurantsAround(coordinate: String, completion: @escaping ([Venue]?, FoursquareError?) -> Void) {
-        if !coordinate.isEmpty {
-            let mockVenue1 = Venue(id: "123", name: "Restaurant A", contact: nil, location: Location(lat: 52.36795609763071, lng: 4.895555168247901, address: "Nieuwe Doelenstraat 20-22", crossStreet: nil, distance: nil, postalCode: "1012 CP", cc: nil, city: "Amsterdam", state: "North Holland", country: "Netherlands"), categories: [Category(id: "4bf58dd8d48988d16d941735", name: "Café", pluralName: "Cafés", shortName: "Café", icon: Category.Icon(prefix: "https://fastly.4sqi.net/img/general/", suffix: "/WfIypTz_PxPvh75QSIBwomCu-jK_72UDiBauHc6L1dU.jpg"), primary: nil)], verified: false, url: nil, stats: nil, likes: nil, rating: nil, hours: nil, photos: nil, tips: nil)
-            
-            let mockVenue2 = Venue(id: "4f019124a69d45461f2458e7", name: "Starbucks", contact: nil, location: Location(lat: 52.36607678472145, lng: 4.897430803910262, address: "Utrechtsestraat 9", crossStreet: nil, distance: nil, postalCode: "1017 CV", cc: nil, city: "Amsterdam", state: "North Holland", country: "Netherlands"), categories: [Category(id: "4bf58dd8d48988d16d941735", name: "Coffee Shops", pluralName: "Coffee Shops", shortName: "Coffee Shops", icon: Category.Icon(prefix: "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_", suffix: ".png"), primary: nil)], verified: false, url: nil, stats: nil, likes: nil, rating: nil, hours: nil, photos: nil, tips: nil)
-            completion([mockVenue1, mockVenue2], nil)
-        } else {
-            completion(nil, .noResponse)
-        }
+    var invokedDetermineUserLocation = false
+    var invokedDetermineUserLocationCount = 0
+    var stubbedDetermineUserLocationResult: Observable<Location>!
+    func determineUserLocation() -> Observable<Location> {
+        invokedDetermineUserLocation = true
+        invokedDetermineUserLocationCount += 1
+        return stubbedDetermineUserLocationResult
     }
     
-    func getVenuePhotos(venueId: String, completion: @escaping ([Photo]) -> Void) {
-        let photo1 = Photo(id: "4fe03279e4b0690a86767319", prefix: "https://fastly.4sqi.net/img/general/", suffix: "/WfIypTz_PxPvh75QSIBwomCu-jK_72UDiBauHc6L1dU.jpg", width: 720, height: 540, visibility: "public", source: Source(name: "Foursquare for iOS", url: "https://foursquare.com/download/#/iphone"))
-        let photo2 = Photo(id: "51dbe1e9498e361de7fccbb7", prefix: "https://fastly.4sqi.net/img/general/", suffix: "/9664729_cr9GMPE2yxpPO_e4CFx5xtyNdjWqNQa06SZBO3aFbio.jpg", width: 720, height: 720, visibility: "public", source: Source(name: "Foursquare for iOS", url: "https://foursquare.com/download/#/iphone"))
-        completion([photo1, photo2])
-    }
-    
-    func determineUserLocation(completion: @escaping UserLocationBlock) {
-        completion(Location(lat: 52.36795609763071, lng: 4.895555168247901, address: "Nieuwe Doelenstraat 20-22", crossStreet: nil, distance: nil, postalCode: nil, cc: nil, city: nil, state: nil, country: nil))
-    }
-}
-
-private class MockRouter: MapRoutable {
-    var didGoToDetailsModule = false
-    func navigateToDetailsModule(navController: NavigationControlling?, venue: Venue, venuePhotoURL: String?) {
-        didGoToDetailsModule = true
+    var invokedGetVenuesPhotos = false
+    var invokedGetVenuesPhotosCount = 0
+    var invokedGetVenuesPhotosParameters: (venueId: String, Void)?
+    var invokedGetVenuesPhotosParametersList = [(venueId: String, Void)]()
+    var stubbedGetVenuesPhotosResult: Observable<[Photo]?>!
+    func getVenuesPhotos(venueId: String) -> Observable<[Photo]?> {
+        invokedGetVenuesPhotos = true
+        invokedGetVenuesPhotosCount += 1
+        invokedGetVenuesPhotosParameters = (venueId, ())
+        invokedGetVenuesPhotosParametersList.append((venueId, ()))
+        return stubbedGetVenuesPhotosResult
     }
 }
 ```
