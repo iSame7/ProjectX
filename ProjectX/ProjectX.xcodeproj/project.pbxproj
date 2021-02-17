@@ -35,6 +35,7 @@
 		50CA3DA125C2C54900CABE97 /* FoursquareCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3D9F25C2C54900CABE97 /* FoursquareCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50CB782625D9B25B0092CC59 /* Tips.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB782525D9B25B0092CC59 /* Tips.framework */; };
 		50CB782725D9B25B0092CC59 /* Tips.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB782525D9B25B0092CC59 /* Tips.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50CCACE125DD56440053DECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CCACE025DD56440053DECA /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		50CA3D0425C1DE1000CABE97 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		50CA3D9F25C2C54900CABE97 /* FoursquareCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FoursquareCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CB782525D9B25B0092CC59 /* Tips.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tips.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CCACE025DD56440053DECA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		66390B07404D223856A79FCA /* Pods_ProjectX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,7 @@
 				50A4D8FC25BE1FC0006E7D1F /* App */,
 				5065AB4A23AFA5FA0011CE98 /* Assets.xcassets */,
 				5065AB4C23AFA5FA0011CE98 /* LaunchScreen.storyboard */,
+				50CCACE025DD56440053DECA /* Main.storyboard */,
 				5065AB4F23AFA5FA0011CE98 /* Info.plist */,
 			);
 			path = ProjectX;
@@ -345,6 +348,7 @@
 				5065AB4E23AFA5FA0011CE98 /* LaunchScreen.storyboard in Resources */,
 				5065AB4B23AFA5FA0011CE98 /* Assets.xcassets in Resources */,
 				50A4D91425BE23A6006E7D1F /* Staging.xcconfig in Resources */,
+				50CCACE125DD56440053DECA /* Main.storyboard in Resources */,
 				50A4D91325BE23A6006E7D1F /* Common.xcconfig in Resources */,
 				50A4D91525BE23A6006E7D1F /* Production.xcconfig in Resources */,
 			);
