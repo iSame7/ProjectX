@@ -7,8 +7,4 @@
 //
 
 /// List of supported universal links in Freeflexer app 
-enum UniversalLinksRoutes: String {
-    case magicLink = "login/magic-link/{magic_link}"
-    case shiftOverview = "werk-zoeken"
-    case jobPage = "werken-bij/{client}/{jobcategory}/{job}"
-}
+enum UniversalLinksRoutes {}

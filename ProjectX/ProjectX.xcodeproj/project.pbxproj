@@ -21,7 +21,6 @@
 		50A4D91425BE23A6006E7D1F /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 50A4D91125BE23A6006E7D1F /* Staging.xcconfig */; };
 		50A4D91525BE23A6006E7D1F /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 50A4D91225BE23A6006E7D1F /* Production.xcconfig */; };
 		50A4D9A925BEC11E006E7D1F /* SceneDelegateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D9A825BEC11E006E7D1F /* SceneDelegateViewModel.swift */; };
-		50A4D9B125BEC1A5006E7D1F /* UniversalLinksRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4D9B025BEC1A5006E7D1F /* UniversalLinksRoutes.swift */; };
 		50CA3C4325C1699100CABE97 /* AppRootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA3C4225C1699100CABE97 /* AppRootCoordinator.swift */; };
 		50CA3C4925C16A9A00CABE97 /* Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3C4825C16A9A00CABE97 /* Map.framework */; };
 		50CA3C4A25C16A9A00CABE97 /* Map.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA3C4825C16A9A00CABE97 /* Map.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -36,6 +35,7 @@
 		50CB782625D9B25B0092CC59 /* Tips.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB782525D9B25B0092CC59 /* Tips.framework */; };
 		50CB782725D9B25B0092CC59 /* Tips.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB782525D9B25B0092CC59 /* Tips.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50CCACE125DD56440053DECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CCACE025DD56440053DECA /* Main.storyboard */; };
+		50CCACE625DD56AF0053DECA /* UniversalLinksRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCACE525DD56AF0053DECA /* UniversalLinksRoutes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +89,6 @@
 		50A4D91125BE23A6006E7D1F /* Staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		50A4D91225BE23A6006E7D1F /* Production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		50A4D9A825BEC11E006E7D1F /* SceneDelegateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateViewModel.swift; sourceTree = "<group>"; };
-		50A4D9B025BEC1A5006E7D1F /* UniversalLinksRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalLinksRoutes.swift; sourceTree = "<group>"; };
 		50CA3C4225C1699100CABE97 /* AppRootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootCoordinator.swift; sourceTree = "<group>"; };
 		50CA3C4825C16A9A00CABE97 /* Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CA3C5C25C171DD00CABE97 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +97,7 @@
 		50CA3D9F25C2C54900CABE97 /* FoursquareCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FoursquareCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CB782525D9B25B0092CC59 /* Tips.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tips.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CCACE025DD56440053DECA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		50CCACE525DD56AF0053DECA /* UniversalLinksRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalLinksRoutes.swift; sourceTree = "<group>"; };
 		66390B07404D223856A79FCA /* Pods_ProjectX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -210,7 +210,7 @@
 				5065AB4123AFA5FA0011CE98 /* AppDelegate.swift */,
 				5065AB4323AFA5FA0011CE98 /* SceneDelegate.swift */,
 				50A4D9A825BEC11E006E7D1F /* SceneDelegateViewModel.swift */,
-				50A4D9B025BEC1A5006E7D1F /* UniversalLinksRoutes.swift */,
+				50CCACE525DD56AF0053DECA /* UniversalLinksRoutes.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -435,7 +435,7 @@
 				50A4D9A925BEC11E006E7D1F /* SceneDelegateViewModel.swift in Sources */,
 				5065AB4223AFA5FA0011CE98 /* AppDelegate.swift in Sources */,
 				50CA3C4325C1699100CABE97 /* AppRootCoordinator.swift in Sources */,
-				50A4D9B125BEC1A5006E7D1F /* UniversalLinksRoutes.swift in Sources */,
+				50CCACE625DD56AF0053DECA /* UniversalLinksRoutes.swift in Sources */,
 				50A4D90025BE1FE4006E7D1F /* AppConfig+ProjectX.swift in Sources */,
 				5065AB4423AFA5FA0011CE98 /* SceneDelegate.swift in Sources */,
 				50CA3D0525C1DE1000CABE97 /* RootBuilder.swift in Sources */,

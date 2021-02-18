@@ -33,17 +33,7 @@ class SceneDelegateViewModel: SceneDelegateViewModellable {
         bindUniversalLinksRoutes()
     }
     
-    func bindUniversalLinksRoutes() {
-        universalLinksRouter.register(UniversalLinksRoutes.magicLink.rawValue) { [weak self] parameters in
-            if let token = parameters["magic_link"] {
-                self?.handleMagicLinkAuthentication(token: token)
-            }
-        }
-        
-        universalLinksRouter.register(UniversalLinksRoutes.shiftOverview.rawValue) { [weak self] _ in
-            self?.selectTab(tap: .overview)
-        }
-    }
+    func bindUniversalLinksRoutes() {}
     
     func scene(continue userActivity: NSUserActivity) {
         if let url = userActivity.webpageURL {

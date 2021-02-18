@@ -32,6 +32,8 @@
 	<string>For the app to work as intended. Please provide location service.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>For the app to work as intended. Please provide location service.</string>
+	<key>NSMainNibFile</key>
+	<string>Main</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
