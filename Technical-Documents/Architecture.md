@@ -6,7 +6,7 @@ This document describes the current architecture approach for the iOS App.
 
 The application is structured using modularised architecture In this architecture, the App is separated into totally isolated Feature modules which depend on Shared and Core modules. Having isolated modules so people can work easily in separate cross-functional teams and it's easy to reuse modules as frameworks.
 
-![](../Assets/modularized-architecture.png)
+![](../Assets/iOS-modularized-architecture.png)
 
 ## Module Architecture
 
