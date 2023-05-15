@@ -1,6 +1,6 @@
 # iOS Architecture
 
-This document describes the current architecture approach for the iOS App.
+This document describes the current architecture approach for the iOS App. inspired by [nl-covid19-notification-app-ios](https://github.com/minvws/nl-covid19-notification-app-ios/blob/main/ARCHITECTURE.md)
 
 ## Holistic App Architecture
 
